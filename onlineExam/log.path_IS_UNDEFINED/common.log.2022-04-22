@@ -1,0 +1,162 @@
+2022-04-22 22:56:00 c.o.OnlineExamApplicationTests 55 [INFO] Starting OnlineExamApplicationTests using Java 1.8.0_311 on DESKTOP-3058MDQ with PID 9752 (started by Serendipity in E:\springbootProject\onlineExam)
+ 2022-04-22 22:56:00 c.o.OnlineExamApplicationTests 646 [INFO] The following 1 profile is active: "prod"
+ 2022-04-22 22:56:00 o.h.v.i.u.Version 21 [INFO] HV000001: Hibernate Validator 6.2.3.Final
+ 2022-04-22 22:56:01 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-22 22:56:01 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+ 2022-04-22 22:56:01 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 185 ms. Found 1 Elasticsearch repository interfaces.
+ 2022-04-22 22:56:01 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-22 22:56:01 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+ 2022-04-22 22:56:01 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 5 ms. Found 0 Reactive Elasticsearch repository interfaces.
+ 2022-04-22 22:56:01 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-22 22:56:01 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+ 2022-04-22 22:56:01 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.onlineExam.service.es.StudentEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-04-22 22:56:01 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+ 2022-04-22 22:56:07 c.o.OnlineExamApplicationTests 61 [INFO] Started OnlineExamApplicationTests in 7.043 seconds (JVM running for 8.286)
+ 2022-04-22 23:00:56 c.o.OnlineExamApplicationTests 55 [INFO] Starting OnlineExamApplicationTests using Java 1.8.0_311 on DESKTOP-3058MDQ with PID 8788 (started by Serendipity in E:\springbootProject\onlineExam)
+ 2022-04-22 23:00:56 o.h.v.i.u.Version 21 [INFO] HV000001: Hibernate Validator 6.2.3.Final
+ 2022-04-22 23:00:56 c.o.OnlineExamApplicationTests 646 [INFO] The following 1 profile is active: "prod"
+ 2022-04-22 23:00:57 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-22 23:00:57 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+ 2022-04-22 23:00:57 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 162 ms. Found 1 Elasticsearch repository interfaces.
+ 2022-04-22 23:00:57 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-22 23:00:57 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+ 2022-04-22 23:00:57 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 5 ms. Found 0 Reactive Elasticsearch repository interfaces.
+ 2022-04-22 23:00:57 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-22 23:00:57 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+ 2022-04-22 23:00:57 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.onlineExam.service.es.StudentEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-04-22 23:00:57 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+ 2022-04-22 23:01:02 c.o.OnlineExamApplicationTests 61 [INFO] Started OnlineExamApplicationTests in 6.772 seconds (JVM running for 8.002)
+ 2022-04-22 23:01:02 c.z.h.HikariDataSource 110 [INFO] HikariPool-1 - Starting...
+ 2022-04-22 23:02:18 c.o.OnlineExamApplicationTests 55 [INFO] Starting OnlineExamApplicationTests using Java 1.8.0_311 on DESKTOP-3058MDQ with PID 7972 (started by Serendipity in E:\springbootProject\onlineExam)
+ 2022-04-22 23:02:18 o.h.v.i.u.Version 21 [INFO] HV000001: Hibernate Validator 6.2.3.Final
+ 2022-04-22 23:02:18 c.o.OnlineExamApplicationTests 646 [INFO] The following 1 profile is active: "publish"
+ 2022-04-22 23:02:19 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-22 23:02:19 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+ 2022-04-22 23:02:19 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 166 ms. Found 1 Elasticsearch repository interfaces.
+ 2022-04-22 23:02:19 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-22 23:02:19 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+ 2022-04-22 23:02:19 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 7 ms. Found 0 Reactive Elasticsearch repository interfaces.
+ 2022-04-22 23:02:19 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-22 23:02:19 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+ 2022-04-22 23:02:19 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.onlineExam.service.es.StudentEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-04-22 23:02:19 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+ 2022-04-22 23:02:25 c.o.OnlineExamApplicationTests 61 [INFO] Started OnlineExamApplicationTests in 6.7 seconds (JVM running for 7.803)
+ 2022-04-22 23:02:25 c.z.h.HikariDataSource 110 [INFO] HikariPool-1 - Starting...
+ 2022-04-22 23:02:25 c.z.h.HikariDataSource 123 [INFO] HikariPool-1 - Start completed.
+ 2022-04-22 23:02:26 c.z.h.HikariDataSource 350 [INFO] HikariPool-1 - Shutdown initiated...
+ 2022-04-22 23:02:26 c.z.h.HikariDataSource 352 [INFO] HikariPool-1 - Shutdown completed.
+ 2022-04-22 23:03:18 c.o.OnlineExamApplicationTests 55 [INFO] Starting OnlineExamApplicationTests using Java 1.8.0_311 on DESKTOP-3058MDQ with PID 10724 (started by Serendipity in E:\springbootProject\onlineExam)
+ 2022-04-22 23:03:18 c.o.OnlineExamApplicationTests 646 [INFO] The following 1 profile is active: "publish"
+ 2022-04-22 23:03:18 o.h.v.i.u.Version 21 [INFO] HV000001: Hibernate Validator 6.2.3.Final
+ 2022-04-22 23:03:19 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-22 23:03:19 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+ 2022-04-22 23:03:19 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 165 ms. Found 1 Elasticsearch repository interfaces.
+ 2022-04-22 23:03:19 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-22 23:03:19 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+ 2022-04-22 23:03:19 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 5 ms. Found 0 Reactive Elasticsearch repository interfaces.
+ 2022-04-22 23:03:19 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-22 23:03:19 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+ 2022-04-22 23:03:19 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.onlineExam.service.es.StudentEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-04-22 23:03:19 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+ 2022-04-22 23:03:24 c.o.OnlineExamApplicationTests 61 [INFO] Started OnlineExamApplicationTests in 6.794 seconds (JVM running for 8.067)
+ 2022-04-22 23:03:24 c.z.h.HikariDataSource 110 [INFO] HikariPool-1 - Starting...
+ 2022-04-22 23:04:32 c.o.OnlineExamApplicationTests 55 [INFO] Starting OnlineExamApplicationTests using Java 1.8.0_311 on DESKTOP-3058MDQ with PID 17416 (started by Serendipity in E:\springbootProject\onlineExam)
+ 2022-04-22 23:04:32 c.o.OnlineExamApplicationTests 646 [INFO] The following 1 profile is active: "dev"
+ 2022-04-22 23:04:32 o.h.v.i.u.Version 21 [INFO] HV000001: Hibernate Validator 6.2.3.Final
+ 2022-04-22 23:04:33 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-22 23:04:33 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+ 2022-04-22 23:04:33 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 154 ms. Found 1 Elasticsearch repository interfaces.
+ 2022-04-22 23:04:33 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-22 23:04:33 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+ 2022-04-22 23:04:33 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 7 ms. Found 0 Reactive Elasticsearch repository interfaces.
+ 2022-04-22 23:04:33 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-22 23:04:33 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+ 2022-04-22 23:04:33 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.onlineExam.service.es.StudentEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-04-22 23:04:33 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+ 2022-04-22 23:04:39 c.o.OnlineExamApplicationTests 61 [INFO] Started OnlineExamApplicationTests in 7.004 seconds (JVM running for 8.141)
+ 2022-04-22 23:04:39 c.z.h.HikariDataSource 110 [INFO] HikariPool-1 - Starting...
+ 2022-04-22 23:04:39 c.z.h.HikariDataSource 123 [INFO] HikariPool-1 - Start completed.
+ 2022-04-22 23:04:39 c.z.h.HikariDataSource 350 [INFO] HikariPool-1 - Shutdown initiated...
+ 2022-04-22 23:04:39 c.z.h.HikariDataSource 352 [INFO] HikariPool-1 - Shutdown completed.
+ 2022-04-22 23:05:27 o.h.v.i.u.Version 21 [INFO] HV000001: Hibernate Validator 6.2.3.Final
+ 2022-04-22 23:05:27 c.o.OnlineExamApplication 55 [INFO] Starting OnlineExamApplication using Java 1.8.0_311 on DESKTOP-3058MDQ with PID 9168 (E:\springbootProject\onlineExam\target\classes started by Serendipity in E:\springbootProject\onlineExam)
+ 2022-04-22 23:05:27 c.o.OnlineExamApplication 646 [INFO] The following 1 profile is active: "dev"
+ 2022-04-22 23:05:28 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-22 23:05:28 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+ 2022-04-22 23:05:29 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 53 ms. Found 1 Elasticsearch repository interfaces.
+ 2022-04-22 23:05:29 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-22 23:05:29 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+ 2022-04-22 23:05:29 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 7 ms. Found 0 Reactive Elasticsearch repository interfaces.
+ 2022-04-22 23:05:29 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-22 23:05:29 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+ 2022-04-22 23:05:29 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.onlineExam.service.es.StudentEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-04-22 23:05:29 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+ 2022-04-22 23:05:29 o.s.b.w.e.t.TomcatWebServer 108 [INFO] Tomcat initialized with port(s): 8989 (http)
+ 2022-04-22 23:05:29 o.a.c.h.Http11NioProtocol 173 [INFO] Initializing ProtocolHandler ["http-nio-8989"]
+ 2022-04-22 23:05:29 o.a.c.c.StandardService 173 [INFO] Starting service [Tomcat]
+ 2022-04-22 23:05:29 o.a.c.c.StandardEngine 173 [INFO] Starting Servlet engine: [Apache Tomcat/9.0.60]
+ 2022-04-22 23:05:29 o.a.c.c.C.[.[.[/] 173 [INFO] Initializing Spring embedded WebApplicationContext
+ 2022-04-22 23:05:29 o.s.b.w.s.c.ServletWebServerApplicationContext 290 [INFO] Root WebApplicationContext: initialization completed in 1743 ms
+ 2022-04-22 23:05:32 o.a.c.h.Http11NioProtocol 173 [INFO] Starting ProtocolHandler ["http-nio-8989"]
+ 2022-04-22 23:05:32 o.s.b.w.e.t.TomcatWebServer 220 [INFO] Tomcat started on port(s): 8989 (http) with context path ''
+ 2022-04-22 23:05:33 c.o.OnlineExamApplication 61 [INFO] Started OnlineExamApplication in 5.541 seconds (JVM running for 6.407)
+ 2022-04-22 23:05:51 o.a.c.c.C.[.[.[/] 173 [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+ 2022-04-22 23:05:51 o.s.w.s.DispatcherServlet 525 [INFO] Initializing Servlet 'dispatcherServlet'
+ 2022-04-22 23:05:51 o.s.w.s.DispatcherServlet 547 [INFO] Completed initialization in 2 ms
+ 2022-04-22 23:06:15 c.z.h.HikariDataSource 110 [INFO] HikariPool-1 - Starting...
+ 2022-04-22 23:06:15 c.z.h.HikariDataSource 123 [INFO] HikariPool-1 - Start completed.
+ 2022-04-23 08:41:42 c.o.OnlineExamApplicationTests 55 [INFO] Starting OnlineExamApplicationTests using Java 1.8.0_311 on DESKTOP-3058MDQ with PID 4676 (started by Serendipity in E:\springbootProject\onlineExam)
+ 2022-04-23 08:41:42 c.o.OnlineExamApplicationTests 646 [INFO] The following 1 profile is active: "dev"
+ 2022-04-23 08:41:42 o.h.v.i.u.Version 21 [INFO] HV000001: Hibernate Validator 6.2.3.Final
+ 2022-04-23 08:41:43 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-23 08:41:43 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+ 2022-04-23 08:41:43 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 178 ms. Found 1 Elasticsearch repository interfaces.
+ 2022-04-23 08:41:43 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-23 08:41:43 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+ 2022-04-23 08:41:43 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 5 ms. Found 0 Reactive Elasticsearch repository interfaces.
+ 2022-04-23 08:41:43 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-23 08:41:43 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+ 2022-04-23 08:41:43 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.onlineExam.service.es.StudentEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-04-23 08:41:43 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+ 2022-04-23 08:41:48 c.o.OnlineExamApplicationTests 61 [INFO] Started OnlineExamApplicationTests in 7.123 seconds (JVM running for 8.368)
+ 2022-04-23 08:41:49 c.z.h.HikariDataSource 110 [INFO] HikariPool-1 - Starting...
+ 2022-04-23 08:41:49 c.z.h.HikariDataSource 123 [INFO] HikariPool-1 - Start completed.
+ 2022-04-23 08:41:49 c.z.h.HikariDataSource 350 [INFO] HikariPool-1 - Shutdown initiated...
+ 2022-04-23 08:41:49 c.z.h.HikariDataSource 352 [INFO] HikariPool-1 - Shutdown completed.
+ 2022-04-23 08:42:07 c.o.OnlineExamApplicationTests 55 [INFO] Starting OnlineExamApplicationTests using Java 1.8.0_311 on DESKTOP-3058MDQ with PID 588 (started by Serendipity in E:\springbootProject\onlineExam)
+ 2022-04-23 08:42:07 c.o.OnlineExamApplicationTests 646 [INFO] The following 1 profile is active: "dev"
+ 2022-04-23 08:42:07 o.h.v.i.u.Version 21 [INFO] HV000001: Hibernate Validator 6.2.3.Final
+ 2022-04-23 08:42:08 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-23 08:42:08 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+ 2022-04-23 08:42:08 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 160 ms. Found 1 Elasticsearch repository interfaces.
+ 2022-04-23 08:42:08 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-23 08:42:08 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+ 2022-04-23 08:42:08 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 5 ms. Found 0 Reactive Elasticsearch repository interfaces.
+ 2022-04-23 08:42:08 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-23 08:42:08 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+ 2022-04-23 08:42:08 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.onlineExam.service.es.StudentEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-04-23 08:42:08 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+ 2022-04-23 08:42:14 c.o.OnlineExamApplicationTests 61 [INFO] Started OnlineExamApplicationTests in 6.919 seconds (JVM running for 8.03)
+ 2022-04-23 08:42:14 c.z.h.HikariDataSource 110 [INFO] HikariPool-1 - Starting...
+ 2022-04-23 08:42:14 c.z.h.HikariDataSource 123 [INFO] HikariPool-1 - Start completed.
+ 2022-04-23 08:42:14 c.z.h.HikariDataSource 350 [INFO] HikariPool-1 - Shutdown initiated...
+ 2022-04-23 08:42:14 c.z.h.HikariDataSource 352 [INFO] HikariPool-1 - Shutdown completed.
+ 2022-04-23 08:43:03 c.o.OnlineExamApplicationTests 55 [INFO] Starting OnlineExamApplicationTests using Java 1.8.0_311 on DESKTOP-3058MDQ with PID 10720 (started by Serendipity in E:\springbootProject\onlineExam)
+ 2022-04-23 08:43:03 c.o.OnlineExamApplicationTests 646 [INFO] The following 1 profile is active: "dev"
+ 2022-04-23 08:43:03 o.h.v.i.u.Version 21 [INFO] HV000001: Hibernate Validator 6.2.3.Final
+ 2022-04-23 08:43:04 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-23 08:43:04 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+ 2022-04-23 08:43:04 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 168 ms. Found 1 Elasticsearch repository interfaces.
+ 2022-04-23 08:43:04 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-23 08:43:04 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+ 2022-04-23 08:43:04 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 8 ms. Found 0 Reactive Elasticsearch repository interfaces.
+ 2022-04-23 08:43:04 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-04-23 08:43:04 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+ 2022-04-23 08:43:04 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.onlineExam.service.es.StudentEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-04-23 08:43:04 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+ 2022-04-23 08:43:09 c.o.OnlineExamApplicationTests 61 [INFO] Started OnlineExamApplicationTests in 6.907 seconds (JVM running for 7.963)
+ 2022-04-23 08:43:10 c.z.h.HikariDataSource 110 [INFO] HikariPool-1 - Starting...
+ 2022-04-23 08:43:10 c.z.h.HikariDataSource 123 [INFO] HikariPool-1 - Start completed.
+ 2022-04-23 08:43:10 c.z.h.HikariDataSource 350 [INFO] HikariPool-1 - Shutdown initiated...
+ 2022-04-23 08:43:10 c.z.h.HikariDataSource 352 [INFO] HikariPool-1 - Shutdown completed.
+ 

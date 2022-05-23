@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b6fa6e32-3d2a-44eb-8a04-9ed79d4ff226" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\studytools\Apache\Maven\apache-maven-3.8.1\newrepository" />
+        <option name="mavenHome" value="D:/studytools/Apache/Maven/apache-maven-3.8.1" />
+        <option name="userSettingsFile" value="D:\studytools\Apache\Maven\apache-maven-3.8.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="28PFgCn8WX0GXlVAsZo1gYNEa5B" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\NetStudy\java\captcha\captcha\springboot-aj-captcha\src\main\java\com\example\captcha\pojo" />
+      <recent name="E:\NetStudy\java\captcha\captcha\springboot-aj-captcha\src\main\java\com\example\captcha\controller" />
+      <recent name="E:\NetStudy\java\captcha\captcha\springboot-aj-captcha\src\main\java\com\example\captcha\config" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.captcha.utils.redis" />
+      <recent name="com.example.captcha.config" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="SpringbootAjCaptchaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="springboot-aj-captcha" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.captcha.SpringbootAjCaptchaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b6fa6e32-3d2a-44eb-8a04-9ed79d4ff226" name="Changes" comment="" />
+      <created>1651110428459</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1651110428459</updated>
+      <workItem from="1651110433147" duration="2694000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -1,0 +1,6 @@
+mica:
+  xss:
+    enabled: true
+spring:
+  profiles:
+    active: prod

@@ -1,0 +1,4 @@
+# 定时清除过多的内容 包括浏览记录和收藏记录
+[com.nongXingGang.controller.cron]
+CronTask.removeExpireBrowseRecords = 0 0 3 * * ?
+CronTask.removeExpireStoreRecords = 0 0 3 * * ?

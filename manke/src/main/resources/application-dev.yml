@@ -1,0 +1,95 @@
+server:
+  port: 8980
+spring:
+  datasource:
+    username: root               #数据库的用户名
+    password: mysql729           #数据库的密码
+    url: jdbc:mysql://localhost:3306/manke?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=GMT%2B8    #url
+    driver-class-name: com.mysql.cj.jdbc.Driver             #数据库的驱动
+    hikari:
+      minimum-idle: 5
+      max-lifetime: 100
+      maximum-pool-size: 30
+      auto-commit: true
+  redis:
+    database: 0             #redis 数据库索引（默认为0）
+    host: 10.111.43.55   #redis 服务器地址
+    port: 6379              #redis 服务器连接端口号
+    password:               #redis 服务器连接密码  默认为空
+    lettuce:
+      pool:
+        max-active: 8        # 连接池最大连接数(使用负值表示没有限制） 默认8
+        max-wait: -1         #连接池最大阻塞等待时间（使用负值表示没有限制） 默认-1
+        max-idle: 8          #连接池最大空闲连接 默认8
+        min-idle: 0          #连接池最小空闲连接 默认 0
+    timeout: 3000
+  application:
+    name: manke
+mybatis-plus:
+  configuration:
+    call-setters-on-nulls: true                             #如果map查出字段为空，也显示
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true                          #下划线转驼峰
+  mapper-locations: classpath:/mapper/xml/*Mapper.xml
+  type-aliases-package: com.manke.pojo
+  global-config:
+    db-config:
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+
+
+path:
+  localPath: "E:\\test\\"
+  serverPath: "/home/"
+
+# 腾讯云发短信的一些配置
+txsms:
+  AppId: 1400640150
+  AppKey: 40c489c1430ead6d313f17ffee4859a1
+  TemplateId: 1323547
+  signName: "董博阳成大事个人网"
+
+# Sa-Token配置
+sa-token:
+  jwt-secret-key: "bigDataStudio666##@@&#*#"
+  # token名称 (同时也是cookie名称)
+  token-name: satoken
+  # token有效期，单位s 默认30天, -1代表永不过期
+  timeout: 2592000
+  # token临时有效期 (指定时间内无操作就视为token过期) 单位: 秒
+  activity-timeout: -1
+  # 是否允许同一账号并发登录 (为true时允许一起登录, 为false时新登录挤掉旧登录)
+  is-concurrent: true
+  # 在多人登录同一账号时，是否共用一个token (为true时所有登录共用一个token, 为false时每次登录新建一个token)
+  is-share: false
+  # token风格
+  token-style: uuid
+  # 是否输出操作日志
+  is-log: false
+
+
+alipay:
+  appId: 2021000119648001
+  privateKey: MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCb9o8c3vk65/l2rCzA0YyQ3Ti6gfxD9+4arsSbQ3XfkPauXuf46tzgTSMknWOc/I9ApEtMmEnDohYwp3pi08n57JQ5/kfqDWr0nd8xzm57adF82Uwc4TbRpKxhbHfE1KDuQpWfsjgSq9W3rSInsjfjJOTC8/fZuUMaXkV9cqWW/nDEQdtC9Q2QvEI0HcCZYQ/eROaiq9uiXalv4Z4QpHW71rWDDqobpC2aIPsKJ12uZpN9+9U/YHxK16uK155mcAi52hggfWqxGdFW7ZQJBarYnZWhByph61LV9OX8CO85VF2FB3b6mhACDBAfwEWF4lBKcSg6UGTi3cX/xfIIH1llAgMBAAECggEAHgtsXGJz3q4rd3oJkQeNLacAM6WwxCMx4kACrepb/bp+Wu77fw83h5o0h+wt8WMR8aD0xIedxismXS8WO42THis+DsH2dpcpIIB9K6oZzHqBGaz+pZ2ZIt+3OXlcxTU031FCY6ZAeRBTNnQK3VzOuVo1G31GJNI0pBK/DkCUt7Z1B1LzWFQs4pb/X/0GZpKOjGf/k2mMxfpNfoBND7qQKI5ipxB7pjaURZxfBOdtFNkRmnlH7Wh8XGEhalY4MpmskUdgXMTno+U97Gfv8HW6Ak5UK1F2FHtAsVxa+IesWRKkjXFDp+1N/I0cQzDQK6b6cE9zmRza8nH65FhDGDAqLQKBgQDcMiL6n6jtbXw2RRqheKDwBHv4ZVhCacinG5lVUXvNoFTzlw7Pos1OnvwhTAz9/9lAru3+LT8XmY2RGgEi4AM++/wUZCfyy5h6wpnRr1MRmRkTs0R8q2Q6/OBWWUBovGaeAd7jsGq4Ul6cGg39jcSwe0KBRHmEcSQ0hHfokbnqIwKBgQC1UqxwhPjseeB7Essbpf41+VM98OYtyBUcbhRC/MTF+S/QIIj0G82DbO081PJJNYjVQvDV5qr/0Ol3V3AXiq+OvGNdaz1kFva6C91AhwtXsPEKueDnYfHUNgKHJFysWcnYP7MrD5rVeAO8kWzdZyaa79nf/RwU6mVpNFoIPJnS1wKBgQCBBpfch6Wyyk7YdhGuwEJ9ogMKgEgBUn8S/GcSyVZkHSjqO3+gR2NKSHqxACE0zLB+6IHoSJcJux5rAfPcfaspQvpo8G9AI/DLLjB33+YrD6zUEF13N+7ZacgCkPXe6VawC6SRgpRmQU3S5qmAA4xXZUKJAJi79JgkdeLVUl7ARQKBgQCGlPVekqO7yX4/eyR7wgnb/9G0INCH3IEm1+F8EubuVlURsoRUQyqXyMqRIzEt+2kzePsOmKYFOAeBR8nv/0TsuZE67nTjjFPWpSW0Vkep77AJGQwAUWdP7kKUEf4jAoXZVvZiGLQAi5KibIIUFxLFXw8kvFYShCN/IZdNk8VMgwKBgQCKGKB4DFVQdnXoHE48Z6PCoZDXkL5Tw4VPb9tte4x3K6A5kLQFAqPZBb7VYEYJMlTiIsdkuFyp7bigvrbWrD9kqtnPhwAH0PvbTPHc+rnDJTDHj0rr3FA+vB5h6GEVxIG44Ys497RMKtZ1jqqiaQ9yh9ANxoMVV5p8yqISJdxT5A==
+  publicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAm/aPHN75Ouf5dqwswNGMkN04uoH8Q/fuGq7Em0N135D2rl7n+Orc4E0jJJ1jnPyPQKRLTJhJw6IWMKd6YtPJ+eyUOf5H6g1q9J3fMc5ue2nRfNlMHOE20aSsYWx3xNSg7kKVn7I4EqvVt60iJ7I34yTkwvP32blDGl5FfXKllv5wxEHbQvUNkLxCNB3AmWEP3kTmoqvbol2pb+GeEKR1u9a1gw6qG6QtmiD7CiddrmaTffvVP2B8SteriteeZnAIudoYIH1qsRnRVu2UCQWq2J2VoQcqYetS1fTl/AjvOVRdhQd2+poQAgwQH8BFheJQSnEoOlBk4t3F/8XyCB9ZZQIDAQAB
+  # 固定openapi.alipay.com
+  gateway: openapi.alipaydev.com
+  # 成功后调用
+  returnUrl: http://6750-220-197-205-61.ngrok.io/pay/successReturn
+  # 通知
+  notifyUrl: http://6750-220-197-205-61.ngrok.io/pay/successReturn
+  errorUrl: http://6750-220-197-205-61.ngrok.io/pay/errorBack
+
+
+justauth:
+  enabled: true
+  type:
+    gitee:
+      clientId: 204300a2252aab19c2c6fe0a29b6d82faa65439effe3a3fe964548e2ddcace7a
+      clientSecret: 403bb6895bb426b23a9164d9f684c21812121bd6eb5d913be65604f1ba54705a
+      redirectUri: http://127.0.0.1:9999/oauth/gitee/callback
+
+#Logger Config
+logging:
+  level:
+    com.baomidou.mybatisplus.samples: debug

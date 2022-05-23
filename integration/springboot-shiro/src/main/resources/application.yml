@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    username: root
+    password: mysql729
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=GMT
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+    #Spring Boot ???????????????????
+    #Druid ???????
+    initialSize: 5
+    minIdle: 5
+    maxActive: 60000
+    timeEvictableIdleTimeMills: 30000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+
+    #?????????filters?stat:?????Log4j:?????waLl:??sqL??
+    #???????java.Lang.CLassNotFoundException: org.apache.Log4j.Priority
+    #??? Log4j?????Naven??: https : / / mvnrepository .com/artifact/log4j/Log4j
+
+    filters: stat,wall,log4j
+    maxPoolPreparedStatementsPerConnectionSize: 20
+    useGlobalDataSourceStat: trued
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500

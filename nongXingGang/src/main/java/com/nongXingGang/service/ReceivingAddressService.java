@@ -1,0 +1,26 @@
+package com.nongXingGang.service;
+
+import com.nongXingGang.pojo.ReceivingAddress;
+import com.baomidou.mybatisplus.extension.service.IService;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Map;
+
+/**
+ * <p>
+ *  服务类
+ * </p>
+ *
+ * @author 成大事
+ * @since 2022-03-18
+ */
+@Transactional
+public interface ReceivingAddressService extends IService<ReceivingAddress> {
+
+    //获取收货地址
+    Map<String,Object> getSelfAddress(String openid);
+
+    //添加收货地址
+    int addAddress(String openid, String userRealName, String userTel, String userDetailedAddress);
+
+}

@@ -1,0 +1,10 @@
+justauth:
+  enabled: true
+  type:
+    gitee:
+      clientId: 204300a2252aab19c2c6fe0a29b6d82faa65439effe3a3fe964548e2ddcace7a
+      clientSecret: 403bb6895bb426b23a9164d9f684c21812121bd6eb5d913be65604f1ba54705a
+      redirectUri: http://127.0.0.1:9999/oauth/callback
+
+server:
+  port: 9999

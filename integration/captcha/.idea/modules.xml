@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/aj-captcha-demo-master/aj-captcha-demo.iml" filepath="$PROJECT_DIR$/aj-captcha-demo-master/aj-captcha-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/captcha/captcha.iml" filepath="$PROJECT_DIR$/captcha/captcha.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-captcha/springboot-captcha.iml" filepath="$PROJECT_DIR$/springboot-captcha/springboot-captcha.iml" />
+    </modules>
+  </component>
+</project>

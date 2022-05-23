@@ -1,0 +1,1 @@
+"D:\studytools\wechatdevtools\微信web开发者工具\cli.bat" cloud functions deploy --e zhao-5gzhq8qu5d011268 --n quickstartFunctions --r --project "E:\springbootProject\demo" --report_first --report

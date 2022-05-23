@@ -1,0 +1,37 @@
+server:
+  servlet:
+    encoding:
+      charset: utf-8
+      force: true
+      enabled: true
+
+spring:
+  redis:
+    database: 0
+    host: 10.111.43.10
+    port: 6379
+    password:
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+    timeout: 3000
+  datasource:
+    username: root               #???????
+    password: mysql729           #??????
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=GMT    #url
+    driver-class-name: com.mysql.cj.jdbc.Driver             #??????
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true                          #??????
+  mapper-locations: classpath:/com/example/mapper/xml/*Mapper.xml
+  type-aliases-package: com.example.pojo
+
+#Logger Config
+logging:
+  level:
+    com.baomidou.mybatisplus.samples: debug
