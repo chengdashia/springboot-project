@@ -1,5 +1,7 @@
 package com.nongXingGang.controller.search;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.TypeReference;
 import com.nongXingGang.pojo.es.DemandEs;
 import com.nongXingGang.pojo.es.GoodEs;
 import com.nongXingGang.utils.es.EsUtil;
@@ -8,6 +10,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +18,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import org.springframework.data.elasticsearch.core.SearchHit;
 import org.springframework.data.elasticsearch.core.SearchHits;
+import org.springframework.data.elasticsearch.core.query.FetchSourceFilterBuilder;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQuery;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.validation.annotation.Validated;
@@ -26,12 +30,14 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
  * @author 成大事
  * @since 2022/5/21 19:41
  */
+@Slf4j
 @Api(tags = "搜索")
 @RestController
 @RequestMapping("/search")
@@ -54,38 +60,26 @@ public class SearchController {
         String filed2 = "goodsVarieties";
 //
         NativeSearchQuery query = new NativeSearchQueryBuilder()
-                .withQuery(QueryBuilders.queryStringQuery(name).defaultField(filed1).defaultField(filed2))
+//                .withQuery(QueryBuilders.queryStringQuery(name).defaultField(filed1).defaultField(filed2))
+                .withQuery(QueryBuilders.multiMatchQuery(name,filed1,filed2))
                 .withPageable(PageRequest.of(pageNum,pageSize))
-                .withHighlightBuilder(new HighlightBuilder()
-                        .field(filed1)
-                        .field(filed2)
-                        .preTags("<span style='color:red'>")
-                        .postTags("</span>"))
+                .withSourceFilter(new FetchSourceFilterBuilder().withIncludes("goodsUuid", "goodsStatus", "goodsVarieties", "goodsPrice", "goodsProductionArea", "goodsMainImgUrl","goodsCreateTime").build())
                 .build();
         SearchHits<GoodEs> search = restTemplate.search(query, GoodEs.class);
         List<SearchHit<GoodEs>> searchHits = search.getSearchHits();
 
-        ArrayList<GoodEs> list = new ArrayList<>();
+        List<Map<String, Object>> result = new ArrayList<>();
         for (SearchHit<GoodEs> searchHit : searchHits) {
             GoodEs goodEs = searchHit.getContent();
-
-            String goodsType = searchHit.getHighlightField(filed1).toString();
-            String goodsVarieties = searchHit.getHighlightField(filed2).toString();
-            searchHit.getHighlightField(filed2);
-            if (!goodsType.equals("[]")){
-                goodEs.setGoodsType(goodsType.substring(1,goodsType.length()-1));
-            }
-            if (!goodsVarieties.equals("[]")){
-                goodEs.setGoodsVarieties(goodsVarieties.substring(1,goodsVarieties.length()-1));
-            }
-
-            list.add(goodEs);
-
+            Map<String, Object> resultMap = JSON.parseObject(JSON.toJSONString(goodEs), new TypeReference<Map<String, Object>>() {});
+            resultMap.remove("userOpenid");
+            resultMap.remove("goodsType");
+            resultMap.remove("goodsKilogram");
+            resultMap.remove("remark");
+            resultMap.remove("goodsNewTime");
+            result.add(resultMap);
         }
-        List<GoodEs> collect = list.stream().sorted((e1, e2) -> e1.getGoodsCreateTime().compareTo(e2.getGoodsCreateTime())).collect(Collectors.toList());
-
-
-        return R.ok(collect);
+        return R.ok(result);
 
     }
 
@@ -103,35 +97,24 @@ public class SearchController {
         NativeSearchQuery query = new NativeSearchQueryBuilder()
                 .withQuery(QueryBuilders.queryStringQuery(name).defaultField(filed1).defaultField(filed2))
                 .withPageable(PageRequest.of(pageNum,pageSize))
-                .withHighlightBuilder(new HighlightBuilder()
-                        .field(filed1)
-                        .field(filed2)
-                        .preTags("<span style='color:red'>")
-                        .postTags("</span>"))
+                .withSourceFilter(new FetchSourceFilterBuilder().withIncludes("demandUuid", "demandVarieties", "demandPrice", "demandProductionArea", "demandMainImgUrl").build())
                 .build();
-
 
         SearchHits<DemandEs> search = restTemplate.search(query, DemandEs.class);
         List<SearchHit<DemandEs>> searchHits = search.getSearchHits();
 
-        ArrayList<DemandEs> list = new ArrayList<>();
+        List<Map<String, Object>> result = new ArrayList<>();
         for (SearchHit<DemandEs> searchHit : searchHits) {
             DemandEs demandEs = searchHit.getContent();
-
-            String goodsType = searchHit.getHighlightField(filed1).toString();
-            String goodsVarieties = searchHit.getHighlightField(filed2).toString();
-            searchHit.getHighlightField(filed2);
-            if (!goodsType.equals("[]")){
-                demandEs.setDemandType(goodsType.substring(1,goodsType.length()-1));
-            }
-            if (!goodsVarieties.equals("[]")){
-                demandEs.setDemandVarieties(goodsVarieties.substring(1,goodsVarieties.length()-1));
-            }
-
-            list.add(demandEs);
-
+            Map<String, Object> resultMap = JSON.parseObject(JSON.toJSONString(demandEs), new TypeReference<Map<String, Object>>() {});
+            resultMap.remove("remark");
+            resultMap.remove("detailedAddress");
+            resultMap.remove("remark");
+            resultMap.remove("demandCreateTime");
+            resultMap.remove("deadline");
+            result.add(resultMap);
         }
-        return R.ok(list);
+        return R.ok(result);
     }
 
     @ApiOperation("商品匹配")

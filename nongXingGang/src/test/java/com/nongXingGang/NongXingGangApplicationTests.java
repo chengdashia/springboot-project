@@ -105,7 +105,7 @@ class NongXingGangApplicationTests {
         List<String> list = Arrays.asList(fruits.split("，"));
         List<User> users = userMapper.selectList(null);
         for (User user : users) {
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 10; i++) {
                 Goods goods = new Goods();
                 goods.setGoodsUuid(IdUtil.fastUUID());
                 goods.setUserOpenid(user.getUserOpenid());
@@ -119,7 +119,7 @@ class NongXingGangApplicationTests {
                 goods.setGoodsMainImgUrl(collect.get(RandomUtil.randomInt(0,collect.size() - 1)));
                 goods.setRemark("小赵");
                 goods.setGoodsStatus(0);
-//                goods.setGoodsNewTime(DateUtil.nextMonth());
+                goods.setGoodsNewTime(DateUtil.nextMonth());
                 goodsMapper.insert(goods);
 
                 for(int j = 0;j < RandomUtil.randomInt(3,6);j++){

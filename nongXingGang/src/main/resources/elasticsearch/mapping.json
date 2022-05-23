@@ -1,0 +1,48 @@
+{
+  "properties": {
+    "goodsUuid": {
+      "type": "keyword"
+    },
+    "goodsVarieties": {
+      "type": "text",
+      "analyzer": "pinyin",
+      "search_analyzer": "pinyin"
+    },
+    "userOpenid": {
+      "type": "keyword"
+    },
+    "goodsType": {
+      "type": "keyword"
+    },
+    "goodsPrice": {
+      "type": "integer"
+    },
+    "goodsKilogram": {
+      "type": "integer"
+    },
+    "goodsProductionArea": {
+      "type": "text",
+      "analyzer": "ik_max_word",
+      "search_analyzer": "ik_max_word"
+    },
+    "goodsMainImgUrl": {
+      "type": "keyword"
+    },
+    "remark": {
+      "type": "text"
+    },
+    "goodsStatus": {
+      "type": "integer"
+    },
+    "goodsCreateTime": {
+      "type": "date"
+    },
+    "goodsNewTime": {
+      "type": "date"
+    },
+    "suggest": {
+      "type": "completion",
+      "analyzer": "pinyin"
+    }
+  }
+}

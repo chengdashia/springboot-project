@@ -1,0 +1,44 @@
+{
+  "properties": {
+    "demandUuid": {
+      "type": "keyword"
+    },
+    "demandVarieties": {
+      "type": "text",
+      "analyzer": "pinyin",
+      "search_analyzer": "pinyin"
+    },
+    "userOpenid": {
+      "type": "keyword"
+    },
+    "demandType": {
+      "type": "text",
+      "analyzer": "pinyin",
+      "search_analyzer": "pinyin"
+    },
+    "demandPrice": {
+      "type": "integer"
+    },
+    "demandKilogram": {
+      "type": "integer"
+    },
+    "detailedAddress": {
+      "type": "text",
+      "analyzer": "ik_max_word",
+      "search_analyzer": "ik_max_word"
+    },
+    "demandImgUrl": {
+      "type": "keyword"
+    },
+    "remarks": {
+      "type": "text"
+    },
+    "deadline": {
+      "type": "date"
+    },
+    "suggest": {
+      "type": "completion",
+      "analyzer": "pinyin"
+    }
+  }
+}

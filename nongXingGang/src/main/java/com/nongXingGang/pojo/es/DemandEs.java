@@ -6,10 +6,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.elasticsearch.annotations.CompletionField;
-import org.springframework.data.elasticsearch.annotations.Document;
-import org.springframework.data.elasticsearch.annotations.Field;
-import org.springframework.data.elasticsearch.annotations.FieldType;
+import org.springframework.data.elasticsearch.annotations.*;
 import org.springframework.data.elasticsearch.core.suggest.Completion;
 
 import javax.validation.constraints.Future;
@@ -25,51 +22,53 @@ import java.util.Date;
  */
 @Data
 @Document(indexName = "demand")
+@Setting(settingPath = "elasticsearch/setting.json")
+@Mapping(mappingPath = "elasticsearch/demand/mapping.json")
 public class DemandEs implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
-    @Field(type = FieldType.Keyword)
+//    @Field(type = FieldType.Keyword)
     @ApiModelProperty(value = "需求的uuid")
     private String demandUuid;
 
 
-    @Field(type = FieldType.Text)
+//    @Field(type = FieldType.Text)
     @ApiModelProperty(value = "需求的品种")
     private String demandVarieties;
 
-    @Field(type = FieldType.Text)
+//    @Field(type = FieldType.Text)
     @ApiModelProperty(value = "需求的种类")
     private String demandType;
 
-    @Field(type = FieldType.Double)
+//    @Field(type = FieldType.Double)
     @ApiModelProperty(value = "需求的重量")
     private BigDecimal demandKilogram;
 
-    @Field(type = FieldType.Double)
+//    @Field(type = FieldType.Double)
     @ApiModelProperty(value = "价格")
     private BigDecimal demandPrice;
 
 
-    @Field(type = FieldType.Text)
+//    @Field(type = FieldType.Text)
     @ApiModelProperty(value = "详细地址")
     private String detailedAddress;
 
 
-    @Field(type = FieldType.Text)
+//    @Field(type = FieldType.Text)
     @ApiModelProperty(value = "图片地址")
     private String demandImgUrl;
 
-    @Field(type = FieldType.Text)
+//    @Field(type = FieldType.Text)
     @ApiModelProperty(value = "备注")
     private String remarks;
 
-    @Field(type = FieldType.Date)
+//    @Field(type = FieldType.Date)
     @ApiModelProperty(value = "发布时间")
     private Date createTime;
 
-    @Field(type = FieldType.Date)
+//    @Field(type = FieldType.Date)
     @ApiModelProperty(value = "截止日期时间")
     private Date deadline;
 

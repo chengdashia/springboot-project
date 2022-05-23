@@ -88,28 +88,24 @@ public class GoodsController {
                         .must(QueryBuilders.termQuery("goodsStatus",status)))
                 .withPageable(PageRequest.of(pageNum, pageSize))
                 .withSorts(SortBuilders.fieldSort("goodsCreateTime").order(SortOrder.DESC))
-                .withSourceFilter(new FetchSourceFilterBuilder().withIncludes("goodsUuid", "goodsStatus", "goodsVarieties", "goodsPrice", "goodsProductionArea", "goodsMainImgUrl").build())
+                .withSourceFilter(new FetchSourceFilterBuilder().withIncludes("goodsUuid", "goodsStatus", "goodsVarieties", "goodsPrice", "goodsProductionArea", "goodsMainImgUrl","goodsCreateTime").build())
                 .build();
 
         List<GoodEs> temp = new ArrayList<>();
         //搜索
         SearchHits<GoodEs> search = restTemplate.search(build, GoodEs.class);
-        for (SearchHit<GoodEs> searchHit : search.getSearchHits()) {
-            GoodEs content = searchHit.getContent();
-            temp.add(content);
-        }
         List<Map<String, Object>> result = new ArrayList<>();
-        for (GoodEs goodEs : temp) {
+        for (SearchHit<GoodEs> searchHit : search.getSearchHits()) {
+            GoodEs goodEs = searchHit.getContent();
             Map<String, Object> resultMap = JSON.parseObject(JSON.toJSONString(goodEs), new TypeReference<Map<String, Object>>() {});
             resultMap.remove("userOpenid");
             resultMap.remove("goodsType");
             resultMap.remove("goodsKilogram");
             resultMap.remove("remark");
             resultMap.remove("goodsNewTime");
-            resultMap.remove("goodsCreateTime");
             result.add(resultMap);
-
         }
+
         return R.ok(result);
 
     }
