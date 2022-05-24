@@ -2,6 +2,7 @@ package com.nongXingGang.service;
 
 import com.nongXingGang.pojo.Demand;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.nongXingGang.utils.result.R;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Map;
@@ -17,17 +18,17 @@ import java.util.Map;
 @Transactional
 public interface DemandService extends IService<Demand> {
     //获取需求数据
-    Map<String ,Object> getDemandGoods(int pageNum, int pageSize);
+    R getDemandGoods(int pageNum, int pageSize);
 
     //获取需求的详细数据
-    Map<String ,Object> getNeedDetails(String demandUUId);
+    R getNeedDetails(String demandUUId);
 
     //添加需求
-    int addDemand(String openid, Demand demand);
+    R addDemand(String openid, Demand demand);
 
     //修改需求
-    int updateDemand(String openid, Demand demand);
+    R updateDemand(String openid, Demand demand);
 
     //删除需求信息
-    int delDemand(String id, String demandUUId);
+    R delDemand(String id, String demandUUId);
 }

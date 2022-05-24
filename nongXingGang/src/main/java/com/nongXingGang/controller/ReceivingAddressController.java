@@ -51,20 +51,9 @@ public class ReceivingAddressController {
 
     ){
         String openid = (String) StpUtil.getLoginId();
-
         log.info("收货地址的：  openid:  "+StpUtil.getTokenInfo().getTokenValue());
+        return receivingAddressService.getSelfAddress(openid);
 
-        Map<String, Object> map = receivingAddressService.getSelfAddress(openid);
-        int status = (int) map.get("status");
-        if(status == StatusType.SUCCESS){
-            return R.ok(map.get("data"));
-        }else if(status == StatusType.SQL_ERROR){
-            return R.sqlError();
-        }else if(status == StatusType.NOT_EXISTS){
-            return R.notExists();
-        }else {
-            return R.error();
-        }
     }
 
 
@@ -76,14 +65,7 @@ public class ReceivingAddressController {
                         @ApiParam(value = "用户地址",required = true) @NotNull @NotBlank(message = "地址不能为空") @RequestParam("userDetailedAddress") String userDetailedAddress
                         ){
         String openid = (String) StpUtil.getLoginId();
-        int i = receivingAddressService.addAddress(openid, userRealName, userTel, userDetailedAddress);
-        if(i == StatusType.SUCCESS){
-            return R.ok();
-        }else if(i == StatusType.SQL_ERROR){
-            return R.sqlError();
-        }else {
-            return R.error();
-        }
+        return receivingAddressService.addAddress(openid, userRealName, userTel, userDetailedAddress);
     }
 
 

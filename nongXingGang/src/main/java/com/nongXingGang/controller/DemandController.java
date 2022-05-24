@@ -58,15 +58,7 @@ public class DemandController {
     @PostMapping("/getNeedGoods")
     public R getNeedGoods( @NotNull(message = "页数不能为空") @RequestParam("pageNum") int pageNum,
                            @NotNull(message = "数量不能为空") @RequestParam("pageSize") int pageSize) {
-        Map<String, Object> map = demandService.getDemandGoods(pageNum,pageSize);
-        Object resStatus =  map.get("status");
-        if(resStatus.equals(StatusType.SUCCESS)){
-            map.remove("status");
-            System.out.println(map.get("data"));
-            return R.ok(map.get("data"));
-        }else {
-            return R.error();
-        }
+        return demandService.getDemandGoods(pageNum,pageSize);
     }
 
 
@@ -79,14 +71,7 @@ public class DemandController {
     @PostMapping("/getNeedDetails")
     public R getNeedDetails(
             @NotBlank(message = "需求的uuid不能为空") @ApiParam(value = "需求的uuid",required = true) @RequestParam("demandUUId") String demandUUId){
-        Map<String, Object> needMap = demandService.getNeedDetails(demandUUId);
-        Object status = needMap.get("status");
-        if(status.equals(StatusType.SUCCESS)){
-            needMap.remove("status");
-            return R.ok(needMap);
-        }else {
-            return R.error();
-        }
+        return demandService.getNeedDetails(demandUUId);
     }
 
 
@@ -99,12 +84,7 @@ public class DemandController {
     @PostMapping("/addDemand")
     public R addDemand(@Valid @RequestBody Demand demand){
         String openid = (String) StpUtil.getLoginId();
-        int resStatus = demandService.addDemand(openid, demand);
-        if(resStatus == StatusType.SUCCESS){
-            return R.ok();
-        }else {
-            return R.error();
-        }
+        return demandService.addDemand(openid, demand);
     }
 
 
@@ -117,12 +97,7 @@ public class DemandController {
     @PostMapping("/updateDemand")
     public R updateDemand(@Valid @RequestBody Demand demand){
         String openid = (String) StpUtil.getLoginId();
-        int resStatus = demandService.updateDemand(openid, demand);
-        if(resStatus == StatusType.SUCCESS){
-            return R.ok();
-        }else {
-            return R.error();
-        }
+        return  demandService.updateDemand(openid, demand);
     }
 
 
@@ -137,14 +112,7 @@ public class DemandController {
             @NotNull @NotBlank(message = "状态不能为空") @ApiParam(value = "商品的uuid",required = true) @RequestParam("demandUUId") String demandUUId
     ){
         String id = (String) StpUtil.getLoginId();
-        int resStatus = demandService.delDemand(id,demandUUId);
-        if(resStatus == StatusType.SUCCESS){
-            return R.ok();
-        }else if (resStatus == StatusType.NOT_EXISTS){
-            return R.error();
-        }else {
-            return R.error();
-        }
+        return demandService.delDemand(id,demandUUId);
     }
 
 

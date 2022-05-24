@@ -46,28 +46,12 @@ public class CertificationController {
     @ApiOperation("认证")
     @PostMapping("/idAuthentication")
     public R idAuthentication(
-                              @ApiParam(value = "身份证号",required = true) @Phone @RequestParam("idNum") String idNum,
-                              @ApiParam(value = "真实姓名",required = true) @NotBlank(message = "姓名不能为空") @NotNull(message = "姓名不能为空") @RequestParam("realName") String realName,
-                              @ApiParam(value = "身份证前面图片",required = true)@NotBlank(message = "图片地址不能为空") @NotNull(message = "图片地址不能为空")@RequestParam("idImgFrontPath") String idImgFrontPath,
-                              @ApiParam(value = "身份证后面面图片",required = true)@NotBlank(message = "图片地址不能为空") @NotNull(message = "图片地址不能为空")@RequestParam("idImgBackPath") String idImgBackPath) throws Exception {
+          @ApiParam(value = "身份证号",required = true) @Phone @RequestParam("idNum") String idNum,
+          @ApiParam(value = "真实姓名",required = true) @NotBlank(message = "姓名不能为空") @NotNull(message = "姓名不能为空") @RequestParam("realName") String realName,
+          @ApiParam(value = "身份证前面图片",required = true)@NotBlank(message = "图片地址不能为空") @NotNull(message = "图片地址不能为空")@RequestParam("idImgFrontPath") String idImgFrontPath,
+          @ApiParam(value = "身份证后面面图片",required = true)@NotBlank(message = "图片地址不能为空") @NotNull(message = "图片地址不能为空")@RequestParam("idImgBackPath") String idImgBackPath) throws Exception {
         String openid = (String) StpUtil.getLoginId();
-        int result = certificationService.idAuthentication(openid, idNum, realName, idImgFrontPath, idImgBackPath);
-        if(result == StatusType.SUCCESS){
-            // 成功
-            return R.ok();
-        }else if(result == StatusType.SQL_ERROR){
-            // 数据库错误
-            return R.sqlError();
-        }else if(result == StatusType.ID_INFO_ERROR){
-            //身份证信息错误
-            return R.error(CodeType.ID_INFO_ERROR, MsgType.ID_INFO_ERROR);
-        }else if(result == StatusType.ID_CARD_ERROR){
-            //身份证图片错误
-            return R.error(CodeType.ID_CARD_ERROR,MsgType.ID_CARD_ERROR);
-        } else {
-            // 错误
-            return R.error();
-        }
+        return certificationService.idAuthentication(openid, idNum, realName, idImgFrontPath, idImgBackPath);
     }
 
 }

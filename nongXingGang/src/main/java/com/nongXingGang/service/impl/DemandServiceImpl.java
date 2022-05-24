@@ -13,6 +13,7 @@ import com.nongXingGang.service.DemandService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.nongXingGang.service.es.DemandEsDao;
 import com.nongXingGang.utils.result.Constants;
+import com.nongXingGang.utils.result.R;
 import com.nongXingGang.utils.result.StatusType;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
@@ -49,31 +50,27 @@ public class DemandServiceImpl extends ServiceImpl<DemandMapper, Demand> impleme
 
     //获取需求的列表数据
     @Override
-    public Map<String, Object> getDemandGoods(int pageNum, int pageSize) {
+    public R getDemandGoods(int pageNum, int pageSize) {
         log.info("获取需求：{}",pageNum * pageSize);
         log.info("获取需求{}",pageSize);
-        Map<String, Object> map = new HashMap<>();
         try {
             Page<Map<String, Object>> mapPage = demandMapper.selectMapsPage(new Page<>(pageNum + 1, pageSize,false), new QueryWrapper<Demand>()
                     .select("demand_uuid", "demand_type", "demand_varieties", "demand_kilogram", "demand_img_url", "deadline","detailed_address")
                     .orderByDesc("create_time"));
             if(mapPage != null){
-                map.put("status", StatusType.SUCCESS);
-                map.put("data",mapPage);
-                return map;
+                return R.ok(mapPage);
             }else {
-                map.put("status",StatusType.ERROR);
+               return R.error();
             }
         } catch (Exception e) {
-            map.put("status",StatusType.SQL_ERROR);
             e.printStackTrace();
+            return R.sqlError();
         }
-        return map;
     }
 
     //获取需求的详细数据
     @Override
-    public Map<String, Object> getNeedDetails(String demandUUId) {
+    public R getNeedDetails(String demandUUId) {
         String id = (String) StpUtil.getLoginId();
         Map<String, Object> map = new HashMap<>();
         try {
@@ -88,23 +85,22 @@ public class DemandServiceImpl extends ServiceImpl<DemandMapper, Demand> impleme
                 }else {
                     map.put("colStatus", Constants.NOT_STORE);
                 }
-                map.put("status", StatusType.SUCCESS);
                 map.put("data",demand);
+                return R.ok(map);
             }
             else {
-                map.put("status",StatusType.ERROR);
+                return R.error();
             }
         } catch (Exception e) {
             e.printStackTrace();
-            map.put("status",StatusType.SQL_ERROR);
+            return R.sqlError();
         }
-        return map;
     }
 
 
     //添加需求
     @Override
-    public int addDemand(String openid, Demand demand) {
+    public R addDemand(String openid, Demand demand) {
         demand.setDemandUuid(IdUtil.simpleUUID());
         demand.setUserOpenid(openid);
         demand.setCreateTime(new Date());
@@ -112,41 +108,39 @@ public class DemandServiceImpl extends ServiceImpl<DemandMapper, Demand> impleme
         if(insert == 1){
             DemandEs demandEs = getDemandEs(demand);
             demandEsDao.save(demandEs);
-            return StatusType.SUCCESS;
-        }else {
-            return StatusType.ERROR;
+            return R.ok();
         }
+        return R.error();
     }
 
     //修改需求
     @Override
-    public int updateDemand(String openid, Demand demand) {
+    public R updateDemand(String openid, Demand demand) {
             demand.setUserOpenid(openid);
             int i = demandMapper.updateById(demand);
             if(i == 1){
                 DemandEs demandEs = getDemandEs(demand);
                 demandEsDao.save(demandEs);
-                return StatusType.SUCCESS;
-            }else {
-                return StatusType.ERROR;
+                return R.ok();
             }
+            return R.error();
     }
 
     //删除需求信息
     @Override
-    public int delDemand(String id, String demandUUId) {
+    public R delDemand(String id, String demandUUId) {
         try {
             int delete = demandMapper.delete(new QueryWrapper<Demand>()
                     .eq("user_openid", id)
                     .eq("demand_uuid", demandUUId));
             if (delete == 1){
                 restTemplate.delete(demandUUId,DemandEs.class);
-                return StatusType.SUCCESS;
+                return R.ok();
             }
-            return StatusType.NOT_EXISTS;
+            return R.notExists();
         } catch (Exception e) {
             e.printStackTrace();
-            return StatusType.ERROR;
+            return R.error();
         }
     }
 

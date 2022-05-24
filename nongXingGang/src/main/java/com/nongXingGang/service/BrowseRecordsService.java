@@ -2,9 +2,8 @@ package com.nongXingGang.service;
 
 import com.nongXingGang.pojo.BrowseRecords;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.nongXingGang.utils.result.R;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.Map;
 
 /**
  * <p>
@@ -18,5 +17,5 @@ import java.util.Map;
 public interface BrowseRecordsService extends IService<BrowseRecords> {
 
     //查询浏览记录
-    Map<String,Object> getBrowseRecords(String id);
+    R getBrowseRecords(String id);
 }

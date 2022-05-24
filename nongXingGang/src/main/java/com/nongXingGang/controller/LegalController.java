@@ -49,16 +49,7 @@ public class LegalController {
             @ApiParam(value = "imgPath",required = true)@NotBlank(message = "不能为空")@NotNull @RequestParam("imgPath") String imgPath
     ){
         String openid = (String) StpUtil.getLoginId();
-        int certification = legalService.certification(openid, legalNum, imgPath);
-        if(certification == StatusType.SUCCESS){
-            return R.ok();
-        }else if(certification == StatusType.FIRST_CERTIFICATION_ID){
-            return R.error("请先认证身份");
-        }else if(certification == StatusType.SQL_ERROR){
-            return R.sqlError();
-        }else {
-            return R.error();
-        }
+        return legalService.certification(openid, legalNum, imgPath);
 
     }
 

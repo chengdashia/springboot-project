@@ -54,11 +54,7 @@ public class StoreController {
             @ApiParam(value = "在售、预售、需求类型",required = true)  @RequestParam("thingType") int thingType
     ){
         String id = (String) StpUtil.getLoginId();
-        int result = storeService.addStore(id, thingUUId, thingType);
-        if(result == StatusType.SUCCESS){
-            return R.ok();
-        }
-        return R.error();
+        return storeService.addStore(id, thingUUId, thingType);
     }
 
     /**
@@ -72,15 +68,7 @@ public class StoreController {
             @Min(0) @Max(30)@NotNull(message = "数量不能为空")@ApiParam(value = "数量",required = true) @RequestParam("pageSize") int pageSize
     ){
         String id = (String) StpUtil.getLoginId();
-        Map<String, Object> map = storeService.getMyStoreList(id,pageNum,pageSize);
-        Object status = map.get("status");
-        if (status.equals(StatusType.SUCCESS)){
-            return R.ok(map);
-        }else if (status.equals(StatusType.NOT_EXISTS)){
-            return R.notExists();
-        }else {
-            return R.error();
-        }
+        return storeService.getMyStoreList(id,pageNum,pageSize);
     }
 
 
@@ -95,15 +83,7 @@ public class StoreController {
             @Min(0) @Max(30)@NotNull(message = "数量不能为空")@ApiParam(value = "数量",required = true) @RequestParam("pageSize") int pageSize
     ){
         String id = (String) StpUtil.getLoginId();
-        Map<String, Object> map = storeService.findMyStoreGoodsList(id,pageNum,pageSize);
-        Object status = map.get("status");
-        if (status.equals(StatusType.SUCCESS)){
-            return R.ok(map);
-        }else if (status.equals(StatusType.NOT_EXISTS)){
-            return R.notExists();
-        }else {
-            return R.error();
-        }
+        return storeService.findMyStoreGoodsList(id,pageNum,pageSize);
     }
 
 
@@ -118,15 +98,8 @@ public class StoreController {
             @Min(0) @Max(30)@NotNull(message = "数量不能为空")@ApiParam(value = "数量",required = true) @RequestParam("pageSize") int pageSize
     ){
         String id = (String) StpUtil.getLoginId();
-        Map<String, Object> map = storeService.findMyStoreDemandList(id,pageNum,pageSize);
-        Object status = map.get("status");
-        if (status.equals(StatusType.SUCCESS)){
-            return R.ok(map);
-        }else if (status.equals(StatusType.NOT_EXISTS)){
-            return R.notExists();
-        }else {
-            return R.error();
-        }
+        return storeService.findMyStoreDemandList(id,pageNum,pageSize);
+
     }
 
     /**

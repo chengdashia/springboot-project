@@ -15,10 +15,7 @@ import org.springframework.http.converter.ResourceHttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.springframework.web.servlet.config.annotation.*;
 
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
@@ -26,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
-public class WebConfig extends WebMvcConfigurationSupport {
+public class WebConfig implements WebMvcConfigurer {
 
 //    // 注册Sa-Token的拦截器
 //    @Override
@@ -73,11 +70,14 @@ public class WebConfig extends WebMvcConfigurationSupport {
 //        })).addPathPatterns("/**").excludePathPatterns(urls);
 //    }
 
+
+
     /*
      * 这里主要为了解决跨域问题,所以重写addCorsMappings方法
      */
     @Override
-    protected void addCorsMappings(CorsRegistry registry) {
+    public void addCorsMappings(CorsRegistry registry) {
+
         registry.addMapping("/**")
                 .allowedOrigins("*")
                 .allowedMethods("GET", "HEAD", "POST", "PUT", "DELETE", "OPTIONS")
@@ -88,7 +88,6 @@ public class WebConfig extends WebMvcConfigurationSupport {
                         "access-control-max-age",
                         "X-Frame-Options")
                 .allowCredentials(false).maxAge(3600);
-        super.addCorsMappings(registry);
     }
 
     //解决swagger映射
@@ -113,7 +112,7 @@ public class WebConfig extends WebMvcConfigurationSupport {
 
 
     @Override
-    protected void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
+    public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
         for (HttpMessageConverter<?> converter : converters) {
             // 解决 Controller 返回普通文本中文乱码问题
             if (converter instanceof StringHttpMessageConverter) {

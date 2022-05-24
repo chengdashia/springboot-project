@@ -2,6 +2,7 @@ package com.nongXingGang.service;
 
 import com.nongXingGang.pojo.ReceivingAddress;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.nongXingGang.utils.result.R;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Map;
@@ -18,9 +19,9 @@ import java.util.Map;
 public interface ReceivingAddressService extends IService<ReceivingAddress> {
 
     //获取收货地址
-    Map<String,Object> getSelfAddress(String openid);
+    R getSelfAddress(String openid);
 
     //添加收货地址
-    int addAddress(String openid, String userRealName, String userTel, String userDetailedAddress);
+    R addAddress(String openid, String userRealName, String userTel, String userDetailedAddress);
 
 }

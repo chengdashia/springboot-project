@@ -10,8 +10,7 @@ import com.nongXingGang.mapper.CertificationMapper;
 import com.nongXingGang.pojo.User;
 import com.nongXingGang.service.CertificationService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.nongXingGang.utils.result.Constants;
-import com.nongXingGang.utils.result.StatusType;
+import com.nongXingGang.utils.result.*;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -36,14 +35,14 @@ public class CertificationServiceImpl extends ServiceImpl<CertificationMapper, C
 
     //认证
     @Override
-    public int idAuthentication(String openid, String idNum, String realName, String idImgFrontPath, String idImgBackPath) throws RuntimeException {
+    public R idAuthentication(String openid, String idNum, String realName, String idImgFrontPath, String idImgBackPath) throws RuntimeException {
 
         Map<String, String> idCardInfo;
         try {
             idCardInfo = IdCardDistinguish.getIdCardInfo(idImgFrontPath);
         } catch (Exception e) {
             e.printStackTrace();
-            return StatusType.ID_CARD_ERROR;
+            return R.error(CodeType.ID_CARD_ERROR, MsgType.ID_CARD_ERROR);
         }
 //        System.out.println("idCardNum:  "+ idCardInfo.get("idCardNumber"));
 //        System.out.println("realName:  "+ idCardInfo.get("realName"));
@@ -52,7 +51,7 @@ public class CertificationServiceImpl extends ServiceImpl<CertificationMapper, C
                 //然后判断 传过来的姓名和身份证号是否一致。
                 if (!idCardInfo.get("idCardNumber").equals(idNum) || !idCardInfo.get("realName").equals(realName)) {
                     //身份信息错误
-                    return StatusType.ID_INFO_ERROR;
+                    return R.error(CodeType.ID_INFO_ERROR, MsgType.ID_INFO_ERROR);
                 } else {
                         Certification certification = certificationMapper.selectOne(new QueryWrapper<Certification>().eq("user_openid", openid));
                         if (certification == null) {
@@ -68,18 +67,17 @@ public class CertificationServiceImpl extends ServiceImpl<CertificationMapper, C
                                         .eq("user_openid",openid));
                                 if (result == 1) {
                                     //成功
-                                    return StatusType.SUCCESS;
+                                    return R.ok();
                                 }
-
                         }
 
                     //错误
-                    return StatusType.ERROR;
+                    return R.error();
                 }
             }
             //如果图片格式不对。请重新上传。
             FileUtil.del(idImgFrontPath);
             FileUtil.del(idImgBackPath);
-            return StatusType.ID_CARD_ERROR;
+        return R.error(CodeType.ID_CARD_ERROR, MsgType.ID_CARD_ERROR);
     }
 }

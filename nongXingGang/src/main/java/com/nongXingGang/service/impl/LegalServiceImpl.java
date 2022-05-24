@@ -10,6 +10,7 @@ import com.nongXingGang.pojo.User;
 import com.nongXingGang.service.LegalService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.nongXingGang.utils.result.Constants;
+import com.nongXingGang.utils.result.R;
 import com.nongXingGang.utils.result.StatusType;
 import org.springframework.stereotype.Service;
 
@@ -33,7 +34,7 @@ public class LegalServiceImpl extends ServiceImpl<LegalMapper, Legal> implements
     private UserMapper userMapper;
 
     @Override
-    public int certification(String openid, String legalNum, String imgPath) {
+    public R certification(String openid, String legalNum, String imgPath) {
         Legal legal = new Legal();
         legal.setUserOpenid(openid);
         legal.setUuid(IdUtil.simpleUUID());
@@ -50,13 +51,13 @@ public class LegalServiceImpl extends ServiceImpl<LegalMapper, Legal> implements
                 userMapper.update(null,new LambdaUpdateWrapper<User>()
                         .set(User::getUserStatus, Constants.SELLER)
                         .eq(User::getUserOpenid,openid));
-                return StatusType.SUCCESS;
+                return R.ok();
             }else {
-                return StatusType.FIRST_CERTIFICATION_ID;
+                return R.error("请先认证身份");
             }
 
         }else {
-            return StatusType.ERROR;
+            return R.error();
         }
     }
 }

@@ -116,19 +116,12 @@ public class GoodsController {
      * @param goodsUUId         商品的uuid
      * @return                 R
      */
-    @ApiOperation("显示商品的详细数据")
+    @ApiOperation(value = "显示商品的详细数据")
     @PostMapping("/getGoodsDetails")
     public R getGoodsDetails(
            @NotNull @NotBlank(message = "状态不能为空") @ApiParam(value = "商品的uuid",required = true) @RequestParam("goodsUUId") String goodsUUId){
         String id = (String) StpUtil.getLoginId();
-        Map<String, Object> map = goodsService.getGoodsDetails(id,goodsUUId);
-        Object resStatus =  map.get("status");
-        if(resStatus.equals(StatusType.SUCCESS)){
-            map.remove("status");
-            return R.ok(map);
-        }else {
-            return R.error();
-        }
+        return goodsService.getGoodsDetails(id,goodsUUId);
     }
 
 
@@ -142,12 +135,8 @@ public class GoodsController {
     public R getGoodsDetails(@Valid @RequestBody GoodsBody goods){
         log.info("商品的信息：{}",goods);
         String openid = (String) StpUtil.getLoginId();
-        int resStatus = goodsService.addGoods(openid, goods);
-        if(resStatus == StatusType.SUCCESS){
-            return R.ok();
-        }else {
-            return R.error();
-        }
+        return goodsService.addGoods(openid, goods);
+
     }
 
 
@@ -161,12 +150,7 @@ public class GoodsController {
     public R updateGoodsDetails( @RequestBody GoodsBody goods){
         log.info("商品的信息：{}",goods);
         String openid = (String) StpUtil.getLoginId();
-        int resStatus = goodsService.updateGoods(openid, goods);
-        if(resStatus == StatusType.SUCCESS){
-            return R.ok();
-        }else {
-            return R.error();
-        }
+        return goodsService.updateGoods(openid, goods);
     }
 
 
@@ -181,14 +165,7 @@ public class GoodsController {
             @NotNull @NotBlank(message = "状态不能为空") @ApiParam(value = "商品的uuid",required = true) @RequestParam("goodsUUId") String goodsUUId
     ){
         String id = (String) StpUtil.getLoginId();
-        int resStatus = goodsService.delGoods(id,goodsUUId);
-        if(resStatus == StatusType.SUCCESS){
-            return R.ok();
-        }else if (resStatus == StatusType.NOT_EXISTS){
-            return R.error();
-        }else {
-            return R.error();
-        }
+        return goodsService.delGoods(id,goodsUUId);
     }
 
     /**

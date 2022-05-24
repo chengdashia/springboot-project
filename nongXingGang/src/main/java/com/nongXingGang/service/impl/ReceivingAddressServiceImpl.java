@@ -1,13 +1,13 @@
 package com.nongXingGang.service.impl;
 
 import cn.hutool.core.util.IdUtil;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.github.yulichang.wrapper.MPJLambdaWrapper;
 import com.nongXingGang.pojo.ReceivingAddress;
 import com.nongXingGang.mapper.ReceivingAddressMapper;
 import com.nongXingGang.pojo.User;
 import com.nongXingGang.service.ReceivingAddressService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.nongXingGang.utils.result.R;
 import com.nongXingGang.utils.result.StatusType;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +32,7 @@ public class ReceivingAddressServiceImpl extends ServiceImpl<ReceivingAddressMap
 
     //获取收货地址
     @Override
-    public Map<String, Object> getSelfAddress(String openid) {
+    public R getSelfAddress(String openid) {
         Map<String, Object> map = new HashMap<>();
         try {
             List<Map<String, Object>> userAddressList = receivingAddressMapper.selectJoinMaps(new MPJLambdaWrapper<>()
@@ -43,21 +43,19 @@ public class ReceivingAddressServiceImpl extends ServiceImpl<ReceivingAddressMap
 //            List<Map<String, Object>> userAddressList = receivingAddressMapper.selectMaps(new QueryWrapper<ReceivingAddress>()
 //                    .eq("user_openid", openid));
             if(userAddressList != null){
-                map.put("status", StatusType.SUCCESS);
-                map.put("data",userAddressList);
+                return R.ok(userAddressList);
             }else {
-                map.put("status",StatusType.NOT_EXISTS);
+                return R.notExists();
             }
         } catch (Exception e) {
             e.printStackTrace();
-            map.put("status",StatusType.SQL_ERROR);
+           return R.sqlError();
         }
-        return map;
     }
 
     //添加地址
     @Override
-    public int addAddress(String openid, String userRealName, String userTel, String userDetailedAddress) {
+    public R addAddress(String openid, String userRealName, String userTel, String userDetailedAddress) {
         try {
             ReceivingAddress receivingAddress = new ReceivingAddress();
             receivingAddress.setUuid(IdUtil.simpleUUID());
@@ -67,13 +65,13 @@ public class ReceivingAddressServiceImpl extends ServiceImpl<ReceivingAddressMap
             receivingAddress.setUserDetailedAddress(userDetailedAddress);
             int insert = receivingAddressMapper.insert(receivingAddress);
             if(insert == 1){
-                return StatusType.SUCCESS;
+                return R.ok();
             }else {
-                return StatusType.ERROR;
+                return R.error();
             }
         } catch (Exception e) {
             e.printStackTrace();
-            return StatusType.SQL_ERROR;
+            return R.sqlError();
         }
     }
 }

@@ -14,6 +14,7 @@ import com.nongXingGang.mapper.StoreMapper;
 import com.nongXingGang.service.StoreService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.nongXingGang.utils.result.Constants;
+import com.nongXingGang.utils.result.R;
 import com.nongXingGang.utils.result.StatusType;
 import org.springframework.stereotype.Service;
 
@@ -41,11 +42,11 @@ public class StoreServiceImpl extends ServiceImpl<StoreMapper, Store> implements
 
     //添加总的收藏列表
     @Override
-    public Map<String, Object> getMyStoreList(String id, int pageNum, int pageSize) {
-        Map<String, Object> map = new HashMap<>();
+    public R getMyStoreList(String id, int pageNum, int pageSize) {
         try {
             IPage<Map<String, Object>> goodsIPage = storeMapper.selectJoinMapsPage(new Page<>(pageNum, pageSize,false), new MPJLambdaWrapper<>()
                     .select(Store::getColUuid, Store::getThingType, Store::getColTime)
+                    .selectAs(Store::getThingUuid,"thingUUId")
                     .selectAs(Goods::getGoodsPrice, "thingPrice")
                     .selectAs(Goods::getGoodsMainImgUrl, "imgUrl")
                     .selectAs(Goods::getGoodsVarieties, "varieties")
@@ -56,6 +57,7 @@ public class StoreServiceImpl extends ServiceImpl<StoreMapper, Store> implements
 
             IPage<Map<String, Object>> demandIPage = storeMapper.selectJoinMapsPage(new Page<>(pageNum, pageSize,false), new MPJLambdaWrapper<>()
                     .select(Store::getColUuid, Store::getThingType, Store::getColTime)
+                    .selectAs(Store::getThingUuid,"thingUUId")
                     .selectAs(Demand::getDemandPrice, "thingPrice")
                     .selectAs(Demand::getDemandImgUrl, "imgUrl")
                     .selectAs(Demand::getDemandVarieties, "varieties")
@@ -75,26 +77,23 @@ public class StoreServiceImpl extends ServiceImpl<StoreMapper, Store> implements
                         return DateUtil.compare(colTime1,colTime2);
                     })
                     .collect(Collectors.toList());
-
-            map.put("status",StatusType.SUCCESS);
-            map.put("data",result);
+            return R.ok(result);
         } catch (Exception e) {
-            map.put("status", StatusType.ERROR);
             e.printStackTrace();
+            return R.sqlError();
         }
-        return map;
     }
 
     //添加收藏
     @Override
-    public int addStore(String id, String thingUUId, int thingType) {
+    public R addStore(String id, String thingUUId, int thingType) {
         Store one = storeMapper.selectOne(new QueryWrapper<Store>()
                 .eq("thing_uuid", thingUUId)
                 .eq("user_openid", id));
         if(one != null){
             one.setColTime(new Date());
             storeMapper.updateById(one);
-            return StatusType.SUCCESS;
+            return R.ok();
         }else {
             Integer count = storeMapper.selectCount(new QueryWrapper<Store>().eq("user_openid", id));
             if(count > 200){
@@ -112,21 +111,22 @@ public class StoreServiceImpl extends ServiceImpl<StoreMapper, Store> implements
                 store.setThingType(thingType);
                 int insert = storeMapper.insert(store);
                 if (insert == 1){
-                    return StatusType.SUCCESS;
+                    return R.ok();
                 }
             }
-            return StatusType.ERROR;
+            return R.error();
         }
     }
 
     //查询商品的收藏记录
     @Override
-    public Map<String, Object> findMyStoreGoodsList(String id, int pageNum, int pageSize) {
+    public R findMyStoreGoodsList(String id, int pageNum, int pageSize) {
 
         Map<String, Object> map = new HashMap<>();
         try {
             IPage<Map<String, Object>> goodsIPage = storeMapper.selectJoinMapsPage(new Page<>(pageNum, pageSize,false), new MPJLambdaWrapper<>()
                     .select(Store::getColUuid, Store::getThingType, Store::getColTime)
+                    .selectAs(Store::getThingUuid,"thingUUId")
                     .selectAs(Goods::getGoodsPrice, "thingPrice")
                     .selectAs(Goods::getGoodsMainImgUrl, "imgUrl")
                     .selectAs(Goods::getGoodsVarieties, "varieties")
@@ -137,24 +137,21 @@ public class StoreServiceImpl extends ServiceImpl<StoreMapper, Store> implements
                     .orderByDesc(Store::getColTime));
 
             List<Map<String, Object>> goodsList = goodsIPage.getRecords();
-            map.put("status",StatusType.SUCCESS);
-            map.put("data",goodsList);
+            return R.ok(goodsList);
         } catch (Exception e) {
-            map.put("status", StatusType.ERROR);
             e.printStackTrace();
+            return R.sqlError();
         }
-        return map;
-
-
     }
 
     //查询需求的收藏记录
     @Override
-    public Map<String, Object> findMyStoreDemandList(String id, int pageNum, int pageSize) {
+    public R findMyStoreDemandList(String id, int pageNum, int pageSize) {
         Map<String, Object> map = new HashMap<>();
         try {
             IPage<Map<String, Object>> demandIPage = storeMapper.selectJoinMapsPage(new Page<>(pageNum, pageSize,false), new MPJLambdaWrapper<>()
                     .select(Store::getColUuid, Store::getThingType, Store::getColTime)
+                    .selectAs(Store::getThingUuid,"thingUUId")
                     .selectAs(Demand::getDemandPrice, "thingPrice")
                     .selectAs(Demand::getDemandImgUrl, "imgUrl")
                     .selectAs(Demand::getDemandVarieties, "varieties")
@@ -163,14 +160,11 @@ public class StoreServiceImpl extends ServiceImpl<StoreMapper, Store> implements
                     .eq(Store::getUserOpenid, id)
                     .eq(Store::getThingType, Constants.DEMANDS)
                     .orderByDesc(Store::getColTime));
-
             List<Map<String, Object>> demandList = demandIPage.getRecords();
-            map.put("status",StatusType.SUCCESS);
-            map.put("data",demandList);
+            return R.ok(demandList);
         } catch (Exception e) {
-            map.put("status", StatusType.ERROR);
             e.printStackTrace();
+            return R.sqlError();
         }
-        return map;
     }
 }

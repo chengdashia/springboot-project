@@ -2,6 +2,7 @@ package com.nongXingGang.service;
 
 import com.nongXingGang.pojo.Legal;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.nongXingGang.utils.result.R;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -16,5 +17,5 @@ import org.springframework.transaction.annotation.Transactional;
 public interface LegalService extends IService<Legal> {
 
     //法人认证
-    int certification(String openid, String legalNum, String imgPath);
+    R certification(String openid, String legalNum, String imgPath);
 }

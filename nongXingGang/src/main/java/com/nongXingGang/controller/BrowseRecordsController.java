@@ -92,15 +92,7 @@ public class BrowseRecordsController {
     public R getBrowseRecords(
     ) {
         String id = (String) StpUtil.getLoginId();
-        Map<String, Object> map = browseRecordsService.getBrowseRecords(id);
-        Object status = map.get("status");
-        if(status.equals(StatusType.SUCCESS)){
-            return R.ok(map);
-        }else if(status.equals(StatusType.SQL_ERROR)){
-            return R.sqlError();
-        }else {
-            return R.error();
-        }
+        return browseRecordsService.getBrowseRecords(id);
     }
 
     /**

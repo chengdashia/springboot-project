@@ -18,6 +18,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.nongXingGang.service.es.GoodEsDao;
 import com.nongXingGang.utils.file.FileUtil;
 import com.nongXingGang.utils.result.Constants;
+import com.nongXingGang.utils.result.R;
 import com.nongXingGang.utils.result.StatusType;
 import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import org.springframework.stereotype.Service;
@@ -84,7 +85,7 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods> implements
 
     //获取商品的详细数据
     @Override
-    public Map<String, Object> getGoodsDetails(String id, String goodsUUId) {
+    public R getGoodsDetails(String id, String goodsUUId) {
         Map<String, Object> map = new HashMap<>();
         try {
             List<Map<String, Object>> maps = goodsMapper.selectMaps(new QueryWrapper<Goods>()
@@ -99,7 +100,6 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods> implements
                         Store store = storeMapper.selectOne(new QueryWrapper<Store>()
                                 .eq("user_openid", id)
                                 .eq("thing_uuid", goodsUUId));
-                        map.put("status",StatusType.SUCCESS);
                         map.put("data",maps);
                         map.put("imgs",goodsImgList);
                         if (store == null){
@@ -108,20 +108,20 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods> implements
                             map.put("colStatus",Constants.STORED);
                         }
                         addBrowseRecords(id,goodsUUId);
+                        return R.ok(map);
                     }
+                    return R.notExists();
                 } catch (Exception e) {
                     e.printStackTrace();
-                    map.put("status",StatusType.SQL_ERROR);
+                    return R.sqlError();
                 }
             }else {
-                map.put("status",StatusType.ERROR);
+                return R.error();
             }
         } catch (Exception e) {
             e.printStackTrace();
-            map.put("status",StatusType.SQL_ERROR);
+            return R.sqlError();
         }
-        return map;
-
 //        Map<String, Object> map = new HashMap<>();
 //        List<Map<String, Object>> maps = goodsMapper.selectJoinMaps(new MPJLambdaWrapper<>()
 //                .select(Goods.class, i -> !i.getColumn().equals("goods_uuid") & !i.getColumn().equals("logical_deletion") & !i.getColumn().equals("user_openid"))
@@ -135,7 +135,7 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods> implements
 
     //添加商品
     @Override
-    public int addGoods(String openid, GoodsBody goodsBody) {
+    public R addGoods(String openid, GoodsBody goodsBody) {
         Goods goods = new Goods();
         String goodsUUId = IdUtil.simpleUUID();
         goods.setGoodsUuid(goodsUUId);
@@ -150,24 +150,24 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods> implements
                 if(i == 1){
                     result++;
                 }else {
-                    return StatusType.ERROR;
+                    return R.error();
                 }
             }
             if(result == 1 + goodsBody.getFileList().size()){
                 GoodEs goodEs = getGoodEs(goodsBody, goodsUUId);
                 goodEsDao.save(goodEs);
-                return StatusType.SUCCESS;
+                return R.ok();
             }else {
-                return StatusType.ERROR;
+                return R.error();
             }
         }else {
-            return StatusType.ERROR;
+            return R.error();
         }
     }
 
     //修改商品
     @Override
-    public int updateGoods(String openid, GoodsBody goodsBody) {
+    public R updateGoods(String openid, GoodsBody goodsBody) {
         String goodsUUId = goodsBody.getGoodsUUId();
         Goods goods = goodsMapper.selectOne(new QueryWrapper<Goods>()
                 .eq("goods_uuid", goodsUUId));
@@ -219,31 +219,31 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods> implements
                         if(x == imgDelList.size()){
                             Goods goods1 = goodsMapper.selectOne(new QueryWrapper<Goods>().eq("goods_uuid", goodsUUId));
                             goodEsDao.save(getGoodEs(goods1));
-                            return StatusType.SUCCESS;
+                            return R.ok();
                         }else {
-                            return StatusType.ERROR;
+                            return R.error();
                         }
                     }else {
-                        return StatusType.ERROR;
+                        return R.error();
                     }
                 }else {
-                    return StatusType.ERROR;
+                    return R.error();
                 }
             }else {
-                return StatusType.ERROR;
+                return R.error();
             }
         }else {
             for (String s : goodsBody.getFileList()) {
                 FileUtil.delete(s);
             }
-            return StatusType.NOT_EXISTS;
+            return R.notExists();
         }
 
     }
 
     //删除商品
     @Override
-    public int delGoods(String id, String goodsUUId) {
+    public R delGoods(String id, String goodsUUId) {
         int delete = 0;
         try {
             delete = goodsMapper.delete(new QueryWrapper<Goods>()
@@ -251,13 +251,13 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods> implements
                     .eq("goods_uuid", goodsUUId));
             if (delete == 1){
                 restTemplate.delete(goodsUUId, GoodEs.class);
-                return StatusType.SUCCESS;
+                return R.ok();
             }else {
-                return StatusType.NOT_EXISTS;
+                return R.notExists();
             }
         } catch (Exception e) {
             e.printStackTrace();
-            return StatusType.SQL_ERROR;
+            return R.sqlError();
         }
     }
 
