@@ -107,7 +107,8 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods> implements
                         }else {
                             map.put("colStatus",Constants.STORED);
                         }
-                        addBrowseRecords(id,goodsUUId);
+                        Object goodsStatus = maps.get(0).get("goodsStatus");
+                        addBrowseRecords(id,goodsUUId,goodsStatus);
                         return R.ok(map);
                     }
                     return R.notExists();
@@ -263,7 +264,7 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods> implements
 
 
     //添加浏览记录
-    public void addBrowseRecords(String id,String goodsUUId){
+    public void addBrowseRecords(String id, String goodsUUId, Object goodsStatus){
         BrowseRecords one = browseRecordsMapper.selectOne(new QueryWrapper<BrowseRecords>()
                 .eq("thing_uuid", goodsUUId)
                 .eq("user_openid", id));
@@ -284,7 +285,10 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods> implements
                 browseRecords.setThingUuid(goodsUUId);
                 browseRecords.setBrUuid(IdUtil.fastUUID());
                 browseRecords.setUserOpenid(id);
-                browseRecords.setStatus(Constants.GOODS);
+                if (goodsStatus.equals(Constants.ON_GOODS)){
+                    browseRecords.setThingType(Constants.ON_GOODS);
+                }
+                browseRecords.setThingType(Constants.PRE_GOODS);
                 browseRecordsMapper.insert(browseRecords);
             }
         }

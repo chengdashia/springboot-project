@@ -17,5 +17,5 @@ import org.springframework.transaction.annotation.Transactional;
 public interface BrowseRecordsService extends IService<BrowseRecords> {
 
     //查询浏览记录
-    R getBrowseRecords(String id);
+    R getBrowseRecords(String id,int pageNum,int pageSize);
 }

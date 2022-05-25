@@ -1,0 +1,86 @@
+2022-05-25 20:07:04 o.h.v.i.u.Version 21 [INFO] HV000001: Hibernate Validator 6.2.3.Final
+ 2022-05-25 20:07:04 c.e.s.SpringbootApplication 55 [INFO] Starting SpringbootApplication using Java 1.8.0_311 on DESKTOP-3058MDQ with PID 8 (E:\springboot\target\classes started by Serendipity in E:\springboot)
+ 2022-05-25 20:07:04 c.e.s.SpringbootApplication 634 [INFO] No active profile set, falling back to 1 default profile: "default"
+ 2022-05-25 20:07:05 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-05-25 20:07:05 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+ 2022-05-25 20:07:05 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+ 2022-05-25 20:07:06 o.s.b.w.e.t.TomcatWebServer 108 [INFO] Tomcat initialized with port(s): 8081 (http)
+ 2022-05-25 20:07:06 o.a.c.h.Http11NioProtocol 173 [INFO] Initializing ProtocolHandler ["http-nio-8081"]
+ 2022-05-25 20:07:06 o.a.c.c.StandardService 173 [INFO] Starting service [Tomcat]
+ 2022-05-25 20:07:06 o.a.c.c.StandardEngine 173 [INFO] Starting Servlet engine: [Apache Tomcat/9.0.63]
+ 2022-05-25 20:07:06 o.a.c.c.C.[.[.[/] 173 [INFO] Initializing Spring embedded WebApplicationContext
+ 2022-05-25 20:07:06 o.s.b.w.s.c.ServletWebServerApplicationContext 292 [INFO] Root WebApplicationContext: initialization completed in 1410 ms
+ 2022-05-25 20:07:08 o.a.c.h.Http11NioProtocol 173 [INFO] Starting ProtocolHandler ["http-nio-8081"]
+ 2022-05-25 20:07:08 o.s.b.w.e.t.TomcatWebServer 220 [INFO] Tomcat started on port(s): 8081 (http) with context path ''
+ 2022-05-25 20:07:08 c.a.d.p.DruidDataSource 2071 [INFO] {dataSource-0} closing ...
+ 2022-05-25 20:07:08 o.a.c.h.Http11NioProtocol 173 [INFO] Pausing ProtocolHandler ["http-nio-8081"]
+ 2022-05-25 20:07:08 o.a.c.c.StandardService 173 [INFO] Stopping service [Tomcat]
+ 2022-05-25 20:07:08 o.a.c.h.Http11NioProtocol 173 [INFO] Stopping ProtocolHandler ["http-nio-8081"]
+ 2022-05-25 20:07:08 o.a.c.h.Http11NioProtocol 173 [INFO] Destroying ProtocolHandler ["http-nio-8081"]
+ 2022-05-25 20:07:08 o.s.b.a.l.ConditionEvaluationReportLoggingListener 136 [INFO] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+ 2022-05-25 20:07:41 c.e.s.SpringbootApplication 55 [INFO] Starting SpringbootApplication using Java 1.8.0_311 on DESKTOP-3058MDQ with PID 18428 (E:\springboot\target\classes started by Serendipity in E:\springboot)
+ 2022-05-25 20:07:41 o.h.v.i.u.Version 21 [INFO] HV000001: Hibernate Validator 6.2.3.Final
+ 2022-05-25 20:07:41 c.e.s.SpringbootApplication 634 [INFO] No active profile set, falling back to 1 default profile: "default"
+ 2022-05-25 20:07:42 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-05-25 20:07:42 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+ 2022-05-25 20:07:42 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+ 2022-05-25 20:07:42 o.s.b.w.e.t.TomcatWebServer 108 [INFO] Tomcat initialized with port(s): 8081 (http)
+ 2022-05-25 20:07:42 o.a.c.h.Http11NioProtocol 173 [INFO] Initializing ProtocolHandler ["http-nio-8081"]
+ 2022-05-25 20:07:42 o.a.c.c.StandardService 173 [INFO] Starting service [Tomcat]
+ 2022-05-25 20:07:42 o.a.c.c.StandardEngine 173 [INFO] Starting Servlet engine: [Apache Tomcat/9.0.63]
+ 2022-05-25 20:07:42 o.a.c.c.C.[.[.[/] 173 [INFO] Initializing Spring embedded WebApplicationContext
+ 2022-05-25 20:07:42 o.s.b.w.s.c.ServletWebServerApplicationContext 292 [INFO] Root WebApplicationContext: initialization completed in 1195 ms
+ 2022-05-25 20:07:44 o.a.c.h.Http11NioProtocol 173 [INFO] Starting ProtocolHandler ["http-nio-8081"]
+ 2022-05-25 20:07:44 o.s.b.w.e.t.TomcatWebServer 220 [INFO] Tomcat started on port(s): 8081 (http) with context path ''
+ 2022-05-25 20:07:44 c.e.s.SpringbootApplication 61 [INFO] Started SpringbootApplication in 2.96 seconds (JVM running for 3.647)
+ 2022-05-25 20:07:55 o.a.c.c.C.[.[.[/] 173 [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+ 2022-05-25 20:07:55 o.s.w.s.DispatcherServlet 525 [INFO] Initializing Servlet 'dispatcherServlet'
+ 2022-05-25 20:07:55 o.s.w.s.DispatcherServlet 547 [INFO] Completed initialization in 1 ms
+ 2022-05-25 20:08:03 c.a.d.p.DruidDataSource 998 [INFO] {dataSource-1} inited
+ 2022-05-25 20:08:53 c.a.d.p.DruidDataSource 2071 [INFO] {dataSource-1} closing ...
+ 2022-05-25 20:08:53 c.a.d.p.DruidDataSource 2144 [INFO] {dataSource-1} closed
+ 2022-05-25 20:08:59 c.e.s.SpringbootApplication 55 [INFO] Starting SpringbootApplication using Java 1.8.0_311 on DESKTOP-3058MDQ with PID 18536 (E:\springboot\target\classes started by Serendipity in E:\springboot)
+ 2022-05-25 20:08:59 o.h.v.i.u.Version 21 [INFO] HV000001: Hibernate Validator 6.2.3.Final
+ 2022-05-25 20:08:59 c.e.s.SpringbootApplication 634 [INFO] No active profile set, falling back to 1 default profile: "default"
+ 2022-05-25 20:08:59 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-05-25 20:08:59 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+ 2022-05-25 20:08:59 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+ 2022-05-25 20:09:00 o.s.b.w.e.t.TomcatWebServer 108 [INFO] Tomcat initialized with port(s): 8081 (http)
+ 2022-05-25 20:09:00 o.a.c.h.Http11NioProtocol 173 [INFO] Initializing ProtocolHandler ["http-nio-8081"]
+ 2022-05-25 20:09:00 o.a.c.c.StandardService 173 [INFO] Starting service [Tomcat]
+ 2022-05-25 20:09:00 o.a.c.c.StandardEngine 173 [INFO] Starting Servlet engine: [Apache Tomcat/9.0.63]
+ 2022-05-25 20:09:00 o.a.c.c.C.[.[.[/] 173 [INFO] Initializing Spring embedded WebApplicationContext
+ 2022-05-25 20:09:00 o.s.b.w.s.c.ServletWebServerApplicationContext 292 [INFO] Root WebApplicationContext: initialization completed in 1201 ms
+ 2022-05-25 20:09:01 o.a.c.h.Http11NioProtocol 173 [INFO] Starting ProtocolHandler ["http-nio-8081"]
+ 2022-05-25 20:09:01 o.s.b.w.e.t.TomcatWebServer 220 [INFO] Tomcat started on port(s): 8081 (http) with context path ''
+ 2022-05-25 20:09:01 c.e.s.SpringbootApplication 61 [INFO] Started SpringbootApplication in 2.885 seconds (JVM running for 3.546)
+ 2022-05-25 20:09:06 o.a.c.c.C.[.[.[/] 173 [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+ 2022-05-25 20:09:06 o.s.w.s.DispatcherServlet 525 [INFO] Initializing Servlet 'dispatcherServlet'
+ 2022-05-25 20:09:06 o.s.w.s.DispatcherServlet 547 [INFO] Completed initialization in 2 ms
+ 2022-05-25 20:09:18 c.a.d.p.DruidDataSource 998 [INFO] {dataSource-1} inited
+ 2022-05-25 20:10:54 c.a.d.p.DruidDataSource 2071 [INFO] {dataSource-1} closing ...
+ 2022-05-25 20:10:54 c.a.d.p.DruidDataSource 2144 [INFO] {dataSource-1} closed
+ 2022-05-25 20:10:59 o.h.v.i.u.Version 21 [INFO] HV000001: Hibernate Validator 6.2.3.Final
+ 2022-05-25 20:10:59 c.e.s.SpringbootApplication 55 [INFO] Starting SpringbootApplication using Java 1.8.0_311 on DESKTOP-3058MDQ with PID 13380 (E:\springboot\target\classes started by Serendipity in E:\springboot)
+ 2022-05-25 20:10:59 c.e.s.SpringbootApplication 634 [INFO] No active profile set, falling back to 1 default profile: "default"
+ 2022-05-25 20:10:59 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-05-25 20:10:59 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+ 2022-05-25 20:10:59 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+ 2022-05-25 20:11:00 o.s.b.w.e.t.TomcatWebServer 108 [INFO] Tomcat initialized with port(s): 8081 (http)
+ 2022-05-25 20:11:00 o.a.c.h.Http11NioProtocol 173 [INFO] Initializing ProtocolHandler ["http-nio-8081"]
+ 2022-05-25 20:11:00 o.a.c.c.StandardService 173 [INFO] Starting service [Tomcat]
+ 2022-05-25 20:11:00 o.a.c.c.StandardEngine 173 [INFO] Starting Servlet engine: [Apache Tomcat/9.0.63]
+ 2022-05-25 20:11:00 o.a.c.c.C.[.[.[/] 173 [INFO] Initializing Spring embedded WebApplicationContext
+ 2022-05-25 20:11:00 o.s.b.w.s.c.ServletWebServerApplicationContext 292 [INFO] Root WebApplicationContext: initialization completed in 1184 ms
+ 2022-05-25 20:11:01 o.a.c.h.Http11NioProtocol 173 [INFO] Starting ProtocolHandler ["http-nio-8081"]
+ 2022-05-25 20:11:01 o.s.b.w.e.t.TomcatWebServer 220 [INFO] Tomcat started on port(s): 8081 (http) with context path ''
+ 2022-05-25 20:11:01 c.e.s.SpringbootApplication 61 [INFO] Started SpringbootApplication in 2.868 seconds (JVM running for 3.534)
+ 2022-05-25 20:11:05 o.a.c.c.C.[.[.[/] 173 [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+ 2022-05-25 20:11:05 o.s.w.s.DispatcherServlet 525 [INFO] Initializing Servlet 'dispatcherServlet'
+ 2022-05-25 20:11:05 o.s.w.s.DispatcherServlet 547 [INFO] Completed initialization in 1 ms
+ 2022-05-25 20:11:13 c.a.d.p.DruidDataSource 998 [INFO] {dataSource-1} inited
+ 2022-05-25 20:11:35 c.a.d.p.DruidDataSource 2071 [INFO] {dataSource-1} closing ...
+ 2022-05-25 20:11:35 c.a.d.p.DruidDataSource 2144 [INFO] {dataSource-1} closed
+ 

@@ -62,7 +62,7 @@
         <dependency>
             <groupId>com.github.yulichang</groupId>
             <artifactId>mybatis-plus-join</artifactId>
-            <version>1.2.2</version>
+            <version>1.2.4</version>
         </dependency>
 
         <!--&lt;!&ndash;代码生成&ndash;&gt;-->

@@ -21,6 +21,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -90,9 +92,11 @@ public class BrowseRecordsController {
     @ApiOperation("查询浏览记录")
     @RequestMapping(value = "/getBrowseRecords",method = RequestMethod.GET)
     public R getBrowseRecords(
+            @Min(0) @NotNull(message = "页数不能为空")@ApiParam(value = "页码",required = true) @RequestParam("pageNum") int pageNum,
+            @Min(0) @Max(30)@NotNull(message = "数量不能为空")@ApiParam(value = "数量",required = true) @RequestParam("pageSize") int pageSize
     ) {
         String id = (String) StpUtil.getLoginId();
-        return browseRecordsService.getBrowseRecords(id);
+        return browseRecordsService.getBrowseRecords(id,pageNum,pageSize);
     }
 
     /**

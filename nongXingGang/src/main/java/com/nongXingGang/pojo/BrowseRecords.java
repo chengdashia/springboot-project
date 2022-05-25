@@ -32,11 +32,11 @@ public class BrowseRecords implements Serializable {
     @ApiModelProperty(value = "微信用户的openid")
     private String userOpenid;
 
-    @ApiModelProperty(value = "商品的uuid 或 需求的 uuid")
+    @ApiModelProperty(value = "在售、预售和需求的类型（0：在售 、1：预售、2：需求）")
     private String thingUuid;
 
-    @ApiModelProperty(value = "商品还是需求")
-    private int status;
+    @ApiModelProperty(value = "在售、预售和需求的类型（0：在售 、1：预售、2：需求）")
+    private int thingType;
 
     @ApiModelProperty(value = "浏览时间")
     private Date createTime;
