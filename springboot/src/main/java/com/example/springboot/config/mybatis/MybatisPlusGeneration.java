@@ -18,7 +18,8 @@ import java.util.List;
  */
 public class MybatisPlusGeneration {
     public static void main(String[] args) {
-        String url = "jdbc:mysql://localhost:3306/demo?useSSL=false&serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8";
+        String databaseName = "demo";
+        String url = "jdbc:mysql://localhost:3306/"+databaseName+"?useSSL=false&serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8";
         String username = "root";
         String password = "mysql729";
 

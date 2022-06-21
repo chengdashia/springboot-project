@@ -68,7 +68,7 @@ public class FileUtil {
 
                     }catch (IOException e){
                         e.printStackTrace();
-                        map.put("status",StatusType.FILE_UPLOAD_ERROR);
+                        map.put("status", StatusType.FILE_UPLOAD_ERROR);
                         map.put("msg","上传失败");
                     }
                     map.put("status",StatusType.SUCCESS);

@@ -1,11 +1,11 @@
 package com.example.springboot.config.swagger;
 
-import com.fasterxml.classmate.TypeResolver;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.env.Environment;
-import org.springframework.core.env.Profiles;
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
@@ -13,31 +13,49 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-import java.util.ArrayList;
-
+/**
+ * @author :成大事
+ * @since :2022-06-04 12:36:15
+ * EnableSwagger2   开启swagger2
+ * EnableKnife4j    该注解是knife4j提供的增强注解,Ui提供了例如动态参数、参数过滤、接口排序等增强功能,如果你想使用这些增强功能就必须加该注解，否则可以不用加
+ */
 @Configuration
-@EnableSwagger2   //开启swagger2
+@EnableSwagger2
+@EnableKnife4j
 public class SwaggerConfig {
 
-    @Autowired
-    private Environment environment;
+    /**
+     *  api的主页显示信息
+     */
+    private static final ApiInfo API_INFO;
 
-    @Autowired
-    private TypeResolver typeResolver;
+    /**
+     * swagger激活环境
+     */
+    @Value(value = "${knife4j.enable}")
+    public boolean enable;
 
-    //配置swagger的Docker的bean实例
+    static {
+        API_INFO = new ApiInfoBuilder()
+                .title("企业用户API接口")
+                .description("API接口文档")
+                .termsOfServiceUrl("https://blog.chengdashi.cn")
+                .contact(new Contact("成大事",
+                        "https://blog.chengdashi.cn",
+                        "1847085602@qq.com"))
+                .version("1.0")
+                .build();
+    }
+
+
+    /**配置swagger的Docker的bean实例*/
     @Bean
     public Docket docket() {
-
-        // 设置显示的swagger环境信息
-//        Profiles profiles = Profiles.of("dev","prod");
-
-        // 判断是否处在自己设定的环境当中
-//        boolean flag = environment.acceptsProfiles(profiles);
-
         return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(apiInfo())
-                .enable(true)   //enable 是否启动swagger，如果为false，则swagger不能浏览器中访问
+                .groupName("api1")
+                .apiInfo(API_INFO)
+                .enable(enable)
+//                .enable(flag)   //enable 是否启动swagger，如果为false，则swagger不能浏览器中访问
                 .select()
                 //RequestHandlerSelectors  配置要扫描接口的方式
                 //basePackage :指定的包
@@ -47,24 +65,25 @@ public class SwaggerConfig {
                 //withMethodAnnotation :扫描类上的注解
                 .apis(RequestHandlerSelectors.basePackage("com.example.springboot.controller"))
                 //path()  过滤什么路径
-//                .paths(PathSelectors.ant("/swagger"))
+                .paths(PathSelectors.any())
                 .build();
     }
 
-    //配置swagger 信息 = info
-    private ApiInfo apiInfo() {
-        //作者信息
-        //作者信息
-        Contact contact = new Contact("成大事", "82.157.157.133/", "1847085602@qq.com");
-        return new ApiInfo("长顺县农营C-api文档",
-                "成果",
-                "1.0",
-                "urn:tos",
-                contact,
-                "Apache 2.0",
-                "http://www.apache.org/licenses/LICENSE-2.0",
-                new ArrayList());
 
-
+    /**如果要新增一个分组：api2*/
+    @Bean
+    public Docket api() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                // 配置分组名
+                .groupName("api2")
+                .apiInfo(API_INFO)
+                .enable(enable)
+                .select()
+                // 设置扫描包的地址 : com.hanliy.controller2
+                .apis(RequestHandlerSelectors.basePackage("com.example.springboot.controller"))
+                .paths(PathSelectors.any())
+                .build();
     }
+
+
 }

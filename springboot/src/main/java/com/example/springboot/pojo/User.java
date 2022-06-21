@@ -6,11 +6,8 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.util.Date;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,9 +17,10 @@ import lombok.Setter;
  * </p>
  *
  * @author 成大事
- * @since 2022-05-25 19:05:52
+ * @since 2022-06-04 12:36:15
  */
-@Data
+@Getter
+@Setter
 @TableName("user")
 @ApiModel(value = "User对象", description = "")
 public class User implements Serializable {
@@ -38,12 +36,10 @@ public class User implements Serializable {
     @TableField("pwd")
     private String pwd;
 
-    @ApiModelProperty("创建时间")
+    @ApiModelProperty("创建时间 啊")
     @TableField(value = "create_time", fill = FieldFill.INSERT)
     private Date createTime;
 
-
-    @JsonFormat
     @ApiModelProperty("更新时间")
     @TableField(value = "update_time", fill = FieldFill.INSERT_UPDATE)
     private Date updateTime;

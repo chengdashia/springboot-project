@@ -1,135 +1,28 @@
-server:
-  port: 8081
 spring:
-  jackson:
-    # 设置属性命名策略,对应jackson下PropertyNamingStrategy中的常量值，SNAKE_CASE-返回的json驼峰式转下划线，json body下划线传到后端自动转驼峰式
-    property-naming-strategy: SNAKE_CASE
-    # 全局设置@JsonFormat的格式pattern
-    date-format: yyyy-MM-dd HH:mm:ss
-    # 当地时区
-    locale: zh
-    # 设置全局时区
-    time-zone: GMT+8
-    # 常用，全局设置pojo或被@JsonInclude注解的属性的序列化方式
-    default-property-inclusion: NON_NULL #不为空的属性才会序列化,具体属性可看JsonInclude.Include
-    # 常规默认,枚举类SerializationFeature中的枚举属性为key，值为boolean设置jackson序列化特性,具体key请看SerializationFeature源码
-    serialization:
-      WRITE_DATES_AS_TIMESTAMPS: true # 返回的java.util.date转换成timestamp
-      FAIL_ON_EMPTY_BEANS: true # 对象为空时是否报错，默认true
-    # 枚举类DeserializationFeature中的枚举属性为key，值为boolean设置jackson反序列化特性,具体key请看DeserializationFeature源码
-    deserialization:
-      # 常用,json中含pojo不存在属性时是否失败报错,默认true
-      FAIL_ON_UNKNOWN_PROPERTIES: false
-    # 枚举类MapperFeature中的枚举属性为key，值为boolean设置jackson ObjectMapper特性
-    # ObjectMapper在jackson中负责json的读写、json与pojo的互转、json tree的互转,具体特性请看MapperFeature,常规默认即可
-    mapper:
-      # 使用getter取代setter探测属性，如类中含getName()但不包含name属性与setName()，传输的vo json格式模板中依旧含name属性
-      USE_GETTERS_AS_SETTERS: true #默认false
-    # 枚举类JsonParser.Feature枚举类中的枚举属性为key，值为boolean设置jackson JsonParser特性
-    # JsonParser在jackson中负责json内容的读取,具体特性请看JsonParser.Feature，一般无需设置默认即可
-    parser:
-      ALLOW_SINGLE_QUOTES: true # 是否允许出现单引号,默认false
-    # 枚举类JsonGenerator.Feature枚举类中的枚举属性为key，值为boolean设置jackson JsonGenerator特性，一般无需设置默认即可
-    # JsonGenerator在jackson中负责编写json内容,具体特性请看JsonGenerator.Feature
+  profiles:
+    active: dev
+mica:
+  xss:
+    enabled: true
+# minio 参数配置
+minio:
+  endpoint: http://10.111.43.55:9000
+  accessKey: admin
+  secretKey: 12345678
+  bucketName: file
+#
+#knife4j:
+#  # 开启增强
+##  enable: true
+#  # 开启登录认证
+#  basic:
+#    enable: true
+#    username: test
+#    password: test
 
-  elasticsearch:
-    uris:
-      - http://10.111.43.55:9200
-  datasource:
-    username: root               #数据库的用户名
-    password: mysql729           #数据库的密码
-    url: jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=GMT%2B8    #url
-    driver-class-name: com.mysql.cj.jdbc.Driver             #数据库的驱动
-    type: com.alibaba.druid.pool.DruidDataSource
-    #数据源其他配置
-    #初始化时建立物理连接的个数
-    initial-size: 5
-    #最小连接池数量
-    min-idle: 5
-    #最大连接池数量 maxIdle已经不再使用
-    max-active: 20
-    #获取连接时最大等待时间，单位毫秒
-    max-wait: 60000
-    #申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。
-    test-while-idle: true
-    #既作为检测的间隔时间又作为testWhileIdel执行的依据
-    time-between-eviction-runs-millis: 60000
-    #销毁线程时检测当前连接的最后活动时间和当前时间差大于该值时，关闭当前连接
-    min-evictable-idle-time-millis: 30000
-    #用来检测连接是否有效的sql 必须是一个查询语句
-    #mysql中为 select 'x'
-    #oracle中为 select 1 from dual
-    validation-query: select 'x'
-    #申请连接时会执行validationQuery检测连接是否有效,开启会降低性能,默认为true
-    test-on-borrow: false
-    #归还连接时会执行validationQuery检测连接是否有效,开启会降低性能,默认为true
-    test-on-return: false
-    # 是否缓存preparedStatement
-    pool-prepared-statements: true
-    #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
-    #配置监拉统计挡成的filters. stat: 监控统计、Log4j:日志记录、waLL: 防御sqL注入
-    #如果启用日志记录时报错java.lang.ClassNotFoundException: org.apache.log4j.Priority
-    #则导入Log4j 依赖即时，Maven 地址: https://mvnrepository. com/artifact/log4j/log4
-    filters: stat,wall,logback
-    max-pool-prepared-statement-per-connection-size: 20
-    use-global-data-source-stat: true
-    connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
-  redis:
-    database: 0             #redis 数据库索引（默认为0）
-    host: 10.111.43.55   #redis 服务器地址
-    port: 6379              #redis 服务器连接端口号
-    password:               #redis 服务器连接密码  默认为空
-    lettuce:
-      pool:
-        max-active: 8        # 连接池最大连接数(使用负值表示没有限制） 默认8
-        max-wait: -1         #连接池最大阻塞等待时间（使用负值表示没有限制） 默认-1
-        max-idle: 8          #连接池最大空闲连接 默认8
-        min-idle: 0          #连接池最小空闲连接 默认 0
-    timeout: 3000
-  application:
-    name: nongXingGang
-  servlet:
-    multipart:
-      enabled: true
-      max-file-size: 20MB
-      max-request-size: 20MB
+## 加密
+#encrypt:
+#  body:
+#    aes-key: 1234567899165456
+#    des-key: 123456789913545343453
 
-mybatis-plus:
-  configuration:
-    call-setters-on-nulls: true                             #如果map查出字段为空，也显示
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-    map-underscore-to-camel-case: true                          #下划线转驼峰
-  mapper-locations: classpath:/mapper/xml/*Mapper.xml
-  type-aliases-package: com.example.springboot.pojo
-  global-config:
-    db-config:
-      logic-delete-value: 0
-      logic-not-delete-value: 1
-txsms:
-  AppId: 1400640150
-  AppKey: 40c489c1430ead6d313f17ffee4859a1
-  TemplateId: 1323547
-  signName: "董博阳成大事个人网"
-
-# Sa-Token配置
-sa-token:
-  jwt-secret-key: "bigDataStudio666##@@&#*#"
-  # token名称 (同时也是cookie名称)
-  token-name: token
-  # token有效期，单位s 默认30天, -1代表永不过期
-  timeout: 2592000
-  # token临时有效期 (指定时间内无操作就视为token过期) 单位: 秒
-  activity-timeout: -1
-  # 是否允许同一账号并发登录 (为true时允许一起登录, 为false时新登录挤掉旧登录)
-  is-concurrent: true
-  # 在多人登录同一账号时，是否共用一个token (为true时所有登录共用一个token, 为false时每次登录新建一个token)
-  is-share: false
-  # token风格
-  token-style: uuid
-  # 是否输出操作日志
-  is-log: false
-
-#Logger Config
-logging:
-  level:
-    com.baomidou.mybatisplus.samples: debug

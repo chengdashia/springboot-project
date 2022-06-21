@@ -2,7 +2,7 @@ package com.example.springboot.utils.validate;
 
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.StrUtil;
-import com.example.springboot.utils.result.R;
+import com.example.springboot.common.result.R;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -41,7 +41,7 @@ public class GlobalExceptionHandler {
             String msg = String.format("%s%s；", fieldError.getField(), fieldError.getDefaultMessage());
             errorList.add(msg);
         }
-        return R.error(errorList);
+        return R.error(errorList.toString());
     }
 
 
@@ -61,7 +61,7 @@ public class GlobalExceptionHandler {
             String msg = message.append(pathArr[1]).append(violation.getMessage()).toString();
             errorList.add(msg);
         }
-        return R.error(errorList);
+        return R.error(errorList.toString());
     }
 
     /**
@@ -74,7 +74,7 @@ public class GlobalExceptionHandler {
         List<String> collect = fieldErrors.stream()
                 .map(o -> o.getField() + o.getDefaultMessage())
                 .collect(Collectors.toList());
-        return R.error(collect);
+        return R.error(collect.toString());
     }
 
     /**
