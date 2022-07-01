@@ -1,22 +1,50 @@
 server:
-  port: 8686
+  port: 9081
 spring:
-  elasticsearch:
-    uris:
-      - http://10.111.43.55:9200
-  jackson:
-    date-format: yyyy-MM-dd HH:mm:ss
-    time-zone: GMT+8
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
   datasource:
     username: root               #数据库的用户名
     password: mysql729           #数据库的密码
-    url: jdbc:mysql://localhost:3306/cloud_disk?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=GMT%2B8    #url
+    url: jdbc:mysql://localhost:3306/cloud_disk?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai   #url
     driver-class-name: com.mysql.cj.jdbc.Driver             #数据库的驱动
-    hikari:
-      minimum-idle: 5
-      max-lifetime: 100
-      maximum-pool-size: 30
-      auto-commit: true
+    type: com.alibaba.druid.pool.DruidDataSource
+    #数据源其他配置
+    #初始化时建立物理连接的个数
+    initial-size: 5
+    #最小连接池数量
+    min-idle: 5
+    #最大连接池数量 maxIdle已经不再使用
+    max-active: 20
+    #获取连接时最大等待时间，单位毫秒
+    max-wait: 60000
+    #申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。
+    test-while-idle: true
+    #既作为检测的间隔时间又作为testWhileIdel执行的依据
+    time-between-eviction-runs-millis: 60000
+    #销毁线程时检测当前连接的最后活动时间和当前时间差大于该值时，关闭当前连接
+    min-evictable-idle-time-millis: 30000
+    #用来检测连接是否有效的sql 必须是一个查询语句
+    #mysql中为 select 'x'
+    #oracle中为 select 1 from dual
+    validation-query: select 'x'
+    #申请连接时会执行validationQuery检测连接是否有效,开启会降低性能,默认为true
+    test-on-borrow: false
+    #归还连接时会执行validationQuery检测连接是否有效,开启会降低性能,默认为true
+    test-on-return: false
+    # 是否缓存preparedStatement
+    pool-prepared-statements: true
+    #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    #配置监拉统计挡成的filters. stat: 监控统计、Log4j:日志记录、waLL: 防御sqL注入
+    #如果启用日志记录时报错java.lang.ClassNotFoundException: org.apache.log4j.Priority
+    #则导入Log4j 依赖即时，Maven 地址: https://mvnrepository. com/artifact/log4j/log4
+    filters: stat,wall,slf4j
+    max-pool-prepared-statement-per-connection-size: 20
+    use-global-data-source-stat: true
+    connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+# redis
   redis:
     database: 0             #redis 数据库索引（默认为0）
     host: 10.111.43.55   #redis 服务器地址
@@ -35,30 +63,21 @@ spring:
     multipart:
       max-file-size: 100MB
       max-request-size: 1000MB
+
 mybatis-plus:
   configuration:
     call-setters-on-nulls: true                             #如果map查出字段为空，也显示
+    #org.apache.ibatis.logging.stdout.StdOutImpl 控制台打印sql语句方便调试sql语句执行错误
+    #org.apache.ibatis.logging.log4j2.Log4j2Impl:这个不在控制台打印查询结果,但是在log4j中打印
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true                          #下划线转驼峰
   mapper-locations: classpath:/mapper/xml/*Mapper.xml
-  type-aliases-package: com.cloudDisk.pojo
+  type-aliases-package: com.example.cloudDisk.pojo
   global-config:
     db-config:
       logic-delete-value: 0
       logic-not-delete-value: 1
 
-
-#txsms:
-#  AppId: 1400640150
-#  AppKey: 40c489c1430ead6d313f17ffee4859a1
-#  TemplateId: 1323547
-#  signName: "董博阳成大事个人网"
-
-txsms:
-  AppId: 1400643654
-  AppKey: 496cfc77abed33fed974c4e32a6ad09e
-  TemplateId: 1330520
-  signName: "云月九千里个人网"
 
 # Sa-Token配置
 sa-token:
@@ -78,7 +97,29 @@ sa-token:
   # 是否输出操作日志
   is-log: false
 
-#Logger Config
-logging:
-  level:
-    com.baomidou.mybatisplus.samples: debug
+
+txsms:
+  AppId: 1400640150
+  AppKey: 40c489c1430ead6d313f17ffee4859a1
+  TemplateId: 1323547
+  signName: "董博阳成大事个人网"
+
+
+## 指定log4j2作为日志记录
+#logging:
+#  config: classpath:log4j2-dev.xml
+#  level:
+#    #这个指定你的dao层，也就是mapper文件的所在包
+#    com.example.springboot.mapper: DEBUG
+#    com.baomidou.mybatisplus: debug
+knife4j:
+  # 开启增强配置
+  enable: true
+  # 开启Swagger的Basic认证功能,默认是false
+  basic:
+    enable: true
+    # Basic认证用户名
+    username: test
+    # Basic认证密码
+    password: 123
+  cors: true

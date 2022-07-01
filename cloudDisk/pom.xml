@@ -5,10 +5,10 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.4</version>
+        <version>2.7.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com</groupId>
+    <groupId>com.example</groupId>
     <artifactId>cloudDisk</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>cloudDisk</name>
@@ -17,10 +17,6 @@
         <java.version>1.8</java.version>
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -28,69 +24,57 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
 
-        <!--mysql 依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
-        <!-- mybatis plus  -->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.4.0</version>
-        </dependency>
-
-        <!-- mybatis-plus 中连表查询-->
         <dependency>
             <groupId>com.github.yulichang</groupId>
             <artifactId>mybatis-plus-join</artifactId>
-            <version>1.2.2</version>
+            <version>1.2.4</version>
         </dependency>
 
-        <!--&lt;!&ndash;代码生成&ndash;&gt;-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-generator</artifactId>
-            <version>3.4.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.freemarker</groupId>
-            <artifactId>freemarker</artifactId>
-            <version>2.3.28</version>
+            <version>3.5.1</version>
         </dependency>
 
-        <!-- 模板引擎 -->
         <dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity-engine-core</artifactId>
-            <version>2.0</version>
+            <version>2.3</version>
         </dependency>
 
-        <!--        &lt;!&ndash; 1. swagger-bootstrap-ui 目前改名为 knife4j &ndash;&gt;-->
-        <!--        &lt;!&ndash; 2. 实现 swagger-bootstrap-ui 的自动化配置  &ndash;&gt;-->
-        <!--        &lt;!&ndash; 3. 因为 knife4j-spring 已经引入 Swagger 依赖，所以无需重复引入 &ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>com.github.xiaoymin</groupId>-->
-        <!--            <artifactId>knife4j-spring</artifactId>-->
-        <!--            <version>1.9.6</version>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>com.github.xiaoymin</groupId>-->
-        <!--            <artifactId>knife4j-spring-ui</artifactId>-->
-        <!--            <version>1.9.6</version>-->
-        <!--        </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/com.github.xiaoymin/knife4j-spring-boot-starter -->
         <dependency>
@@ -99,89 +83,16 @@
             <version>3.0.3</version>
         </dependency>
 
-        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.github.xiaoymin/knife4j-spring-ui &ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>com.github.xiaoymin</groupId>-->
-        <!--            <artifactId>knife4j-spring-ui</artifactId>-->
-        <!--            <version>3.0.3</version>-->
-        <!--        </dependency>-->
-
-
-
-        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml</artifactId>
-            <version>4.1.2</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/junit/junit -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.1</version>
-        </dependency>
-
-
-        <!--jwt 支持-->
-        <dependency>
-            <groupId>com.auth0</groupId>
-            <artifactId>java-jwt</artifactId>
-            <version>3.18.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt</artifactId>
-            <version>0.9.1</version>
-        </dependency>
-
-
-        <!-- 上传文件验证 -->
-        <dependency>
-            <groupId>org.apache.tika</groupId>
-            <artifactId>tika-core</artifactId>
-            <version>1.24.1</version>
-        </dependency>
-
-
-        <!--腾讯云核心API-->
-        <dependency>
-            <groupId>com.tencentcloudapi</groupId>
-            <artifactId>tencentcloud-sdk-java</artifactId>
-            <version>3.1.111</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.qcloudsms</groupId>
-            <artifactId>qcloudsms</artifactId>
-            <version>1.0.6</version>
-        </dependency>
-
         <dependency>
             <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.75</version>
+            <artifactId>druid</artifactId>
+            <version>1.2.8</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
-
-        <!--hutool 工具类-->
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-            <version>5.7.21</version>
-        </dependency>
-
-
-
-        <!--集成redis-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>5.8.0</version>
         </dependency>
 
 
@@ -189,29 +100,27 @@
         <dependency>
             <groupId>cn.dev33</groupId>
             <artifactId>sa-token-spring-boot-starter</artifactId>
-            <version>1.29.1.trial</version>
+            <version>1.30.0</version>
         </dependency>
 
         <!-- Sa-Token 整合 jwt -->
         <dependency>
             <groupId>cn.dev33</groupId>
             <artifactId>sa-token-jwt</artifactId>
-            <version>1.29.1.trial</version>
+            <version>1.30.0</version>
         </dependency>
 
-        <!-- 参数校验 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-validation</artifactId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
 
-        <!-- 压缩文件 -->
-        <!-- https://mvnrepository.com/artifact/net.coobird/thumbnailator -->
         <dependency>
-            <groupId>net.coobird</groupId>
-            <artifactId>thumbnailator</artifactId>
-            <version>0.4.8</version>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
         </dependency>
+
+
 
         <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-common -->
         <dependency>
@@ -241,31 +150,56 @@
             <version>3.3.0</version>
         </dependency>
 
-
-
+        <!--腾讯云核心API-->
         <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.14.1</version>
+            <groupId>com.tencentcloudapi</groupId>
+            <artifactId>tencentcloud-sdk-java</artifactId>
+            <version>3.1.111</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.qcloudsms</groupId>
+            <artifactId>qcloudsms</artifactId>
+            <version>1.0.6</version>
         </dependency>
 
-        <!-- 二维码图片处理 -->
         <dependency>
-            <groupId>com.google.zxing</groupId>
-            <artifactId>core</artifactId>
-            <version>3.3.3</version>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.79</version>
         </dependency>
 
 
+        <!-- 压缩文件 -->
+        <!-- https://mvnrepository.com/artifact/net.coobird/thumbnailator -->
+        <dependency>
+            <groupId>net.coobird</groupId>
+            <artifactId>thumbnailator</artifactId>
+            <version>0.4.8</version>
+        </dependency>
+
+        <!-- 上传文件验证 -->
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-core</artifactId>
+            <version>1.24.1</version>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
+
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>
