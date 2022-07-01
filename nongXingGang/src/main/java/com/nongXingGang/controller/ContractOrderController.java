@@ -51,12 +51,7 @@ public class ContractOrderController {
                 String addressUUId = map.get("addressUUId");
                 String kilogram = map.get("kilogram");
                 String remark = map.get("remark");
-                int order = orderService.placeOrder(openid,signA,goodsUUId,addressUUId,kilogram,remark);
-                if (order == StatusType.SUCCESS){
-                    return R.ok();
-                }else {
-                    return R.error();
-                }
+                return orderService.placeOrder(openid,signA,goodsUUId,addressUUId,kilogram,remark);
             }else {
                 return R.error();
             }
@@ -69,41 +64,33 @@ public class ContractOrderController {
 
     @ApiOperation("卖家签名")
     @PostMapping("/signB")
-    public boolean addSignB(@RequestBody Map<String,String> map){
+    public R addSignB(@RequestBody Map<String,String> map){
         String base64 = map.get("base64");
-        System.out.println("base64str  :" +base64);
         try {
             String imagePath = Base64Util.GenerateImage(base64);
             if(imagePath != null){
-                String path = map.get("path");
-                AddAutograph.AddSignA(imagePath,path);
+                String orderId = map.get("orderId");
+                return orderService.sellerConfirm(imagePath,orderId);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return true;
+        return R.ok();
     }
 
 
-    @ApiOperation("查看订单  不分页")
+    @ApiOperation("卖家、买家 查看订单  分页")
     @PostMapping("/getOrderList")
     public R buyerGetOrderList(
             @ApiParam(value = "用户状态 0:买家  1 卖家",required = true) @NotBlank(message = "用户状态") @NotNull(message = "姓名不能为空") @RequestParam(value = "uStatus",defaultValue = "0") int uStatus
     ){
         String openid = (String) StpUtil.getLoginId();
-        Map<String, Object> orderList = orderService.getOrderList(openid, uStatus);
-        int status = (int) orderList.get("status");
-        if(status == StatusType.SUCCESS){
-            return R.ok(orderList.get("data"));
-        }else {
-            return R.error();
-        }
-
+        return orderService.getOrderList(openid, uStatus);
     }
 
 
 
-    @ApiOperation("查看订单  分页")
+    @ApiOperation("卖家、买家 查看订单  分页")
     @PostMapping("/getOrderListPage")
     public R buyerGetOrderList(
             @ApiParam(value = "用户状态 0:买家  1 卖家",required = true)  @RequestParam(value = "uStatus",defaultValue = "0") int uStatus,
@@ -111,46 +98,58 @@ public class ContractOrderController {
             @Max(10) @ApiParam(value = "数量",required = true) @RequestParam("pageSize") int pageSize
     ){
         String openid = (String) StpUtil.getLoginId();
-        Map<String, Object> orderList = orderService.getOrderListPage(openid, uStatus,pageNum,pageSize);
-        int status = (int) orderList.get("status");
-        if(status == StatusType.SUCCESS){
-            return R.ok(orderList.get("data"));
-        }else {
-            return R.error();
-        }
-
+        return orderService.getOrderListPage(openid, uStatus,pageNum,pageSize);
     }
 
-    @ApiOperation("取消订单")
+    @ApiOperation("卖家查看不同的订单  分页")
+    @PostMapping("/sellerGetOrderPageByStatus")
+    public R sellerGetOrderPageByStatus(
+            @ApiParam(value = "订单状态（1，代签字 2 ；已签字，3，拒绝签字，4交易成功）",required = true)  @RequestParam(value = "oStatus") int oStatus,
+            @Min (0)@ApiParam(value = "页码",required = true) @RequestParam(value = "pageNum",defaultValue = "0") int pageNum,
+            @Max(10) @ApiParam(value = "数量",required = true) @RequestParam("pageSize") int pageSize
+    ){
+        return orderService.sellerGetOrderPageByStatus(oStatus,pageNum,pageSize);
+    }
+
+
+    @ApiOperation("买家取消订单")
     @PostMapping("buyerCancelOrder")
     public R buyerCancelOrder(
-         @NotNull @NotBlank @ApiParam("orderUUId") @RequestParam("orderUUId") String orderUUId
+         @NotNull @NotBlank @ApiParam("订单id") @RequestParam("orderUUId") String orderUuId
     ){
         String id = (String) StpUtil.getLoginId();
-        int delete = orderService.buyerCancelOrder(id, orderUUId);
-        if (delete == StatusType.SUCCESS){
-            return R.ok();
-        }else if(delete == StatusType.SQL_ERROR){
-            return R.sqlError();
-        }else {
-            return R.error();
-        }
+        return orderService.buyerCancelOrder(id, orderUuId);
     }
 
-    @ApiOperation("取消订单")
+    @ApiOperation("卖家取消订单")
     @PostMapping("sellerCancelOrder")
     public R sellerCancelOrder(
-            @NotNull @NotBlank @ApiParam("orderUUId") @RequestParam("orderUUId") String orderUUId
+            @NotNull @NotBlank @ApiParam("订单id") @RequestParam("orderUUId") String orderUuId
     ){
         String id = (String) StpUtil.getLoginId();
-        int delete = orderService.sellerCancelOrder(id, orderUUId);
-        if (delete == StatusType.SUCCESS){
-            return R.ok();
-        }else if(delete == StatusType.SQL_ERROR){
-            return R.sqlError();
-        }else {
-            return R.error();
-        }
+        return orderService.sellerCancelOrder(id, orderUuId);
+    }
+
+    @ApiOperation("查看各种订单的数量")
+    @PostMapping("getAllKindsOfNums")
+    public R getAllKindsOfNums(){
+        return orderService.getAllKindsOfNums();
+    }
+
+
+    /**
+     * 查看订单
+     * @param orderId         订单id
+     * @param uStatus         用户状态 0:买家  1 卖家
+     * @return                R
+     */
+    @ApiOperation("查看合同详情")
+    @PostMapping("viewContract")
+    public R viewContract(
+            @NotNull @NotBlank @ApiParam("订单id") @RequestParam("orderId") String orderId,
+            @ApiParam(value = "用户状态 0:买家  1 卖家",required = true)  @RequestParam(value = "uStatus",defaultValue = "0") int uStatus
+    ){
+        return orderService.viewContract(uStatus,orderId);
     }
 
 

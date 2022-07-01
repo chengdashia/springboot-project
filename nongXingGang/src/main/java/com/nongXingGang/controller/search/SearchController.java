@@ -1,5 +1,6 @@
-package com.nongXingGang.controller.search;
+package com.nongXingGang.controller.Search;
 
+import cn.hutool.core.date.DateUtil;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.nongXingGang.pojo.es.DemandEs;
@@ -97,7 +98,7 @@ public class SearchController {
         NativeSearchQuery query = new NativeSearchQueryBuilder()
                 .withQuery(QueryBuilders.queryStringQuery(name).defaultField(filed1).defaultField(filed2))
                 .withPageable(PageRequest.of(pageNum,pageSize))
-                .withSourceFilter(new FetchSourceFilterBuilder().withIncludes("demandUuid", "demandVarieties", "demandPrice", "demandProductionArea", "demandMainImgUrl").build())
+                .withSourceFilter(new FetchSourceFilterBuilder().withIncludes("demandUuid", "demandVarieties","demandType" ,"demandPrice","demandKilogram", "detailedAddress", "demandImgUrl","deadline").build())
                 .build();
 
         SearchHits<DemandEs> search = restTemplate.search(query, DemandEs.class);
@@ -108,10 +109,8 @@ public class SearchController {
             DemandEs demandEs = searchHit.getContent();
             Map<String, Object> resultMap = JSON.parseObject(JSON.toJSONString(demandEs), new TypeReference<Map<String, Object>>() {});
             resultMap.remove("remark");
-            resultMap.remove("detailedAddress");
-            resultMap.remove("remark");
             resultMap.remove("demandCreateTime");
-            resultMap.remove("deadline");
+            resultMap.put("deadline", DateUtil.date((Long) resultMap.get("deadline")));
             result.add(resultMap);
         }
         return R.ok(result);

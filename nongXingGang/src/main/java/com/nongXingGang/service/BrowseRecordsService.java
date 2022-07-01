@@ -16,6 +16,30 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public interface BrowseRecordsService extends IService<BrowseRecords> {
 
-    //查询浏览记录
+    /**
+     * 查询浏览记录
+     * @param id                 用户id
+     * @param pageNum             页码
+     * @param pageSize            数量
+     * @return  R
+     */
     R getBrowseRecords(String id,int pageNum,int pageSize);
+
+    /**
+     * 查询商品的浏览记录
+     * @param id                 用户id
+     * @param pageNum             页码
+     * @param pageSize            数量
+     * @return  R
+     */
+    R findMyBrowseGoodsList(String id, int pageNum, int pageSize);
+
+    /**
+     * 查询需求的浏览记录
+     * @param id                 用户id
+     * @param pageNum             页码
+     * @param pageSize            数量
+     * @return  R
+     */
+    R findMyBrowseDemandList(String id, int pageNum, int pageSize);
 }

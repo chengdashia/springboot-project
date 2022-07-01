@@ -2,6 +2,8 @@ package com.nongXingGang.controller.wx;
 import cn.dev33.satoken.stp.StpUtil;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.nongXingGang.mapper.UserMapper;
 import com.nongXingGang.pojo.User;
 import com.nongXingGang.service.UserService;
 import com.nongXingGang.utils.result.Constants;
@@ -59,9 +61,7 @@ public class UserLogin {
         }
         // 5.根据返回的User实体类，判断用户是否是新用户，是的话，将用户信息存到数据库；不是的话，更新最新登录时间
         User user = userService.getById(openid);
-
         String nickName = null;
-
         String token;
         if (user == null) {
             // 用户信息入库
@@ -85,8 +85,6 @@ public class UserLogin {
             user.setSessionKey(sessionKey);
             user.setUserAvatarUrl(avatarUrl);
             user.setUserStatus(Constants.COOP);
-            user.setCreateTime(new Date());
-            user.setLastLoginTime(new Date());
             userService.getBaseMapper().insert(user);
         } else {
             Map<String,String> map = new HashMap<>();
@@ -97,10 +95,11 @@ public class UserLogin {
             //放到sa-token中
             StpUtil.login(openid);
 
-            // 已存在，更新用户登录时间
-            user.setLastLoginTime(new Date());
+            //// 已存在，更新用户登录时间
+            //user.setLastLoginTime(new Date());
             // 重新设置会话skey
             user.setSessionKey(sessionKey);
+            user.setLastLoginTime(new Date());
             userService.getBaseMapper().updateById(user);
         }
         //encrypteData比rowData多了appid和openid

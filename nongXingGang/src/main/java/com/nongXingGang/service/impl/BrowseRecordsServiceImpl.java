@@ -35,63 +35,18 @@ import java.util.stream.Stream;
 @Service
 public class BrowseRecordsServiceImpl extends ServiceImpl<BrowseRecordsMapper, BrowseRecords> implements BrowseRecordsService {
 
-
     @Resource
     private BrowseRecordsMapper browseRecordsMapper;
 
+    /**
+     * 获取浏览记录
+     * @param id                     用户的id
+     * @param pageNum                页码
+     * @param pageSize               数量
+     * @return                         R
+     */
     @Override
     public R getBrowseRecords(String id,int pageNum,int pageSize) {
-//        try {
-//            List<Browse> resultList = new ArrayList<>();
-//
-//            List<Map<String, Object>> goodsList = browseRecordsMapper.selectJoinMaps(new MPJLambdaWrapper<>()
-//                    .select(BrowseRecords::getBrUuid,BrowseRecords::getCreateTime,BrowseRecords::getThingUuid)
-//                    .selectAs(Goods::getGoodsVarieties,"name")
-//                    .selectAs(Goods::getGoodsMainImgUrl,"imgUrl")
-//                    .leftJoin(Goods.class, Goods::getGoodsUuid, BrowseRecords::getThingUuid)
-//                    .orderByDesc(BrowseRecords::getCreateTime)
-//                    .eq(BrowseRecords::getUserOpenid, id)
-//                    .ne(BrowseRecords::getStatus, Constants.DEMANDS));
-//
-//            if (goodsList != null){
-//                for (Map<String, Object> goodsMap : goodsList) {
-//                    Browse browse = new Browse();
-//                    browse.setBrUUId(String.valueOf(goodsMap.get("brUuid")));
-//                    browse.setThingUUId(String.valueOf(goodsMap.get("thingUuid")));
-//                    browse.setImgUrl(String.valueOf(goodsMap.get("imgUrl")));
-//                    browse.setCreateTime((Date) goodsMap.get("createTime"));
-//                    browse.setStatus(Constants.GOODS);
-//                    resultList.add(browse);
-//                }
-//            }
-//            List<Map<String, Object>> demandList = browseRecordsMapper.selectJoinMaps(new MPJLambdaWrapper<>()
-//                    .select(BrowseRecords::getBrUuid,BrowseRecords::getCreateTime,BrowseRecords::getThingUuid)
-//                    .selectAs(Demand::getDemandType,"name")
-//                    .selectAs(Demand::getDemandImgUrl,"imgUrl")
-//                    .leftJoin(Demand.class, Demand::getDemandUuid, BrowseRecords::getThingUuid)
-//                    .orderByDesc(BrowseRecords::getCreateTime)
-//                    .eq(BrowseRecords::getUserOpenid, id)
-//                    .eq(BrowseRecords::getStatus, Constants.DEMAND));
-//
-//            if(demandList != null){
-//                for (Map<String, Object> goodsMap : demandList) {
-//                    Browse browse = new Browse();
-//                    browse.setBrUUId(String.valueOf(goodsMap.get("brUuid")));
-//                    browse.setThingUUId(String.valueOf(goodsMap.get("thingUuid")));
-//                    browse.setImgUrl(String.valueOf(goodsMap.get("imgUrl")));
-//                    browse.setCreateTime((Date) goodsMap.get("createTime"));
-//                    browse.setStatus(Constants.DEMAND);
-//                    browse.setName(String.valueOf(goodsMap.get("name")));
-//                    resultList.add(browse);
-//                }
-//            }
-//            List<Browse> collect = resultList.stream().sorted((e1, e2) -> e1.getCreateTime().compareTo(e2.getCreateTime())).collect(Collectors.toList());
-//            return R.ok(collect);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            return R.sqlError();
-//        }
-
         try {
             IPage<Map<String, Object>> goodsIPage = browseRecordsMapper.selectJoinMapsPage(new Page<>(pageNum, pageSize,false), new MPJLambdaWrapper<>()
                     .select(BrowseRecords::getBrUuid, BrowseRecords::getThingType, BrowseRecords::getCreateTime)
@@ -127,6 +82,65 @@ public class BrowseRecordsServiceImpl extends ServiceImpl<BrowseRecordsMapper, B
                     })
                     .collect(Collectors.toList());
             return R.ok(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return R.sqlError();
+        }
+    }
+
+    /**
+     * 查询商品的浏览记录
+     * @param id                 用户id
+     * @param pageNum             页码
+     * @param pageSize            数量
+     * @return  R
+     */
+    @Override
+    public R findMyBrowseGoodsList(String id, int pageNum, int pageSize) {
+
+        try {
+            IPage<Map<String, Object>> goodsIPage = browseRecordsMapper.selectJoinMapsPage(new Page<>(pageNum, pageSize,false), new MPJLambdaWrapper<>()
+                    .select(BrowseRecords::getBrUuid, BrowseRecords::getThingType, BrowseRecords::getCreateTime)
+                    .selectAs(Store::getThingUuid,"thingUUId")
+                    .selectAs(Goods::getGoodsPrice, "thingPrice")
+                    .selectAs(Goods::getGoodsMainImgUrl, "imgUrl")
+                    .selectAs(Goods::getGoodsVarieties, "varieties")
+                    .selectAs(Goods::getGoodsKilogram, "weight")
+                    .leftJoin(Goods.class, Goods::getGoodsUuid, BrowseRecords::getThingUuid)
+                    .eq(Store::getUserOpenid, id)
+                    .ne(Store::getThingType, Constants.DEMANDS)
+                    .orderByDesc(BrowseRecords::getCreateTime));
+
+            return R.ok(goodsIPage);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return R.sqlError();
+        }
+    }
+
+    /**
+     * 查询需求的浏览记录
+     * @param id                 用户id
+     * @param pageNum             页码
+     * @param pageSize            数量
+     * @return  R
+     */
+    @Override
+    public R findMyBrowseDemandList(String id, int pageNum, int pageSize) {
+        try {
+            IPage<Map<String, Object>> demandIPage = browseRecordsMapper.selectJoinMapsPage(new Page<>(pageNum, pageSize,false), new MPJLambdaWrapper<>()
+                    .select(BrowseRecords::getBrUuid, BrowseRecords::getThingUuid, BrowseRecords::getCreateTime)
+                    .selectAs(BrowseRecords::getThingUuid,"thingUUId")
+                    .selectAs(Demand::getDemandPrice, "thingPrice")
+                    .selectAs(Demand::getDemandImgUrl, "imgUrl")
+                    .selectAs(Demand::getDemandVarieties, "varieties")
+                    .selectAs(Demand::getDemandKilogram, "weight")
+                    .leftJoin(Demand.class, Demand::getDemandUuid, BrowseRecords::getThingUuid)
+                    .eq(Store::getUserOpenid, id)
+                    .eq(Store::getThingType, Constants.DEMANDS)
+                    .orderByDesc(BrowseRecords::getCreateTime));
+
+            return R.ok(demandIPage);
         } catch (Exception e) {
             e.printStackTrace();
             return R.sqlError();

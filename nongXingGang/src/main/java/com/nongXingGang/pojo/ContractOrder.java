@@ -58,4 +58,8 @@ public class ContractOrder implements Serializable {
     private String contractAddress;
 
 
+    @ApiModelProperty(value = "订单更新时间")
+    private Date updateTime;
+
+
 }

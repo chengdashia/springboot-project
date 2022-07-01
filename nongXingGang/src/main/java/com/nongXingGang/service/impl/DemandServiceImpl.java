@@ -4,7 +4,9 @@ import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.util.IdUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.nongXingGang.mapper.BrowseRecordsMapper;
 import com.nongXingGang.mapper.StoreMapper;
+import com.nongXingGang.pojo.BrowseRecords;
 import com.nongXingGang.pojo.Demand;
 import com.nongXingGang.mapper.DemandMapper;
 import com.nongXingGang.pojo.Store;
@@ -22,6 +24,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -48,7 +51,12 @@ public class DemandServiceImpl extends ServiceImpl<DemandMapper, Demand> impleme
     @Resource
     private StoreMapper storeMapper;
 
-    //获取需求的列表数据
+    /**
+     * 获取需求数据
+     * @param pageNum              页码
+     * @param pageSize             页数
+     * @return                     R
+     */
     @Override
     public R getDemandGoods(int pageNum, int pageSize) {
         log.info("获取需求：{}",pageNum * pageSize);
@@ -68,7 +76,12 @@ public class DemandServiceImpl extends ServiceImpl<DemandMapper, Demand> impleme
         }
     }
 
-    //获取需求的详细数据
+
+    /**
+     *  获取需求的详细数据
+     * @param demandUUId  需求的uuid
+     * @return R
+     */
     @Override
     public R getNeedDetails(String demandUUId) {
         String id = (String) StpUtil.getLoginId();
@@ -86,6 +99,7 @@ public class DemandServiceImpl extends ServiceImpl<DemandMapper, Demand> impleme
                     map.put("colStatus", Constants.NOT_STORE);
                 }
                 map.put("data",demand);
+                addBrowseRecords(id,demandUUId);
                 return R.ok(map);
             }
             else {
@@ -98,7 +112,12 @@ public class DemandServiceImpl extends ServiceImpl<DemandMapper, Demand> impleme
     }
 
 
-    //添加需求
+    /**
+     * 添加需求
+     * @param openid                 用户id
+     * @param demand                  需求
+     * @return                        R
+     */
     @Override
     public R addDemand(String openid, Demand demand) {
         demand.setDemandUuid(IdUtil.simpleUUID());
@@ -113,7 +132,12 @@ public class DemandServiceImpl extends ServiceImpl<DemandMapper, Demand> impleme
         return R.error();
     }
 
-    //修改需求
+    /**
+     * 修改需求
+     * @param openid                   用户id
+     * @param demand                   需求
+     * @return                           R
+     */
     @Override
     public R updateDemand(String openid, Demand demand) {
             demand.setUserOpenid(openid);
@@ -126,7 +150,12 @@ public class DemandServiceImpl extends ServiceImpl<DemandMapper, Demand> impleme
             return R.error();
     }
 
-    //删除需求信息
+    /**
+     * 删除需求信息
+     * @param id                     用户id
+     * @param demandUUId             需求的uuid
+     * @return                         R
+     */
     @Override
     public R delDemand(String id, String demandUUId) {
         try {
@@ -159,6 +188,43 @@ public class DemandServiceImpl extends ServiceImpl<DemandMapper, Demand> impleme
         demandEs.setCreateTime(new Date());
         demandEs.setDeadline(demand.getDeadline());
         return demandEs;
+
+    }
+
+
+    @Resource
+    private BrowseRecordsMapper browseRecordsMapper;
+
+    /**
+     * 添加浏览记录
+     * @param id               用户id
+     * @param demandUUId       需求的uuid
+     */
+    public void addBrowseRecords(String id, String demandUUId){
+        BrowseRecords one = browseRecordsMapper.selectOne(new QueryWrapper<BrowseRecords>()
+                .eq("thing_uuid", demandUUId)
+                .eq("user_openid", id));
+        if(one != null){
+            one.setCreateTime(new Date());
+            browseRecordsMapper.updateById(one);
+        }else {
+            Integer count = browseRecordsMapper.selectCount(new QueryWrapper<BrowseRecords>().eq("user_openid", id));
+            if(count > 200){
+                List<BrowseRecords> browseRecordsList = browseRecordsMapper.selectPage(new Page<>(200, count-200),
+                        new QueryWrapper<BrowseRecords>()
+                                .orderByAsc("create_time")).getRecords();
+                for (BrowseRecords browseRecords : browseRecordsList) {
+                    browseRecordsMapper.deleteById(browseRecords);
+                }
+            }else {
+                BrowseRecords browseRecords = new BrowseRecords();
+                browseRecords.setThingUuid(demandUUId);
+                browseRecords.setBrUuid(IdUtil.fastUUID());
+                browseRecords.setUserOpenid(id);
+                browseRecords.setThingType(Constants.DEMANDS);
+                browseRecordsMapper.insert(browseRecords);
+            }
+        }
 
     }
 }

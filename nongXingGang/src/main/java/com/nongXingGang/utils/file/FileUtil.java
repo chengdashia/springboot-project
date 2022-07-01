@@ -56,8 +56,10 @@ public class FileUtil {
 
                     String finalFilePath = null;
                     try {
-                        file.transferTo(filePath); //把上传的文件保存至本地
-                        if(isThumbnail){//是否压缩
+                        //把上传的文件保存至本地
+                        file.transferTo(filePath);
+                        //是否压缩
+                        if(isThumbnail){
                             List<String> filePathThumbnails = ThumbnailUtil.generateThumbnail2Directory(folderPath, String.valueOf(filePath));
                             //压缩之后，删除原图片
                             delete(String.valueOf(filePath));
@@ -129,9 +131,9 @@ public class FileUtil {
                 File filePath = new File(folderPath+fileName);
 
                 try {
-                    file.transferTo(filePath); //把上传的文件保存至本地
+                    //把上传的文件保存至本地
+                    file.transferTo(filePath);
                     map.put("status", StatusType.SUCCESS);
-//                    map.put("filePath",filePath);
                     map.put("filePath",getWebImgUrl(fileName));
                 }catch (IOException e){
                     e.printStackTrace();

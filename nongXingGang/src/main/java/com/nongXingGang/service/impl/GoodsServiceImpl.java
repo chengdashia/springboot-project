@@ -60,7 +60,14 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods> implements
     @Resource
     private ElasticsearchRestTemplate restTemplate;
 
-    //获取首页数据
+    /**
+     * 获取首页数据
+     * @param id                  用户id
+     * @param status              状态 ，在售，预售
+     * @param pageNum             页码
+     * @param pageSize             页数
+     * @return    R
+     */
     @Override
     public Map<String, Object> getIndexGoods(String id, int status, int pageNum, int pageSize) {
         Map<String, Object> map = null;
@@ -83,7 +90,12 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods> implements
         return map;
     }
 
-    //获取商品的详细数据
+    /**
+     * 获取商品的详细数据
+     * @param id          用户id
+     * @param goodsUUId   商品的id
+     * @return       R
+     */
     @Override
     public R getGoodsDetails(String id, String goodsUUId) {
         Map<String, Object> map = new HashMap<>();
@@ -123,18 +135,14 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods> implements
             e.printStackTrace();
             return R.sqlError();
         }
-//        Map<String, Object> map = new HashMap<>();
-//        List<Map<String, Object>> maps = goodsMapper.selectJoinMaps(new MPJLambdaWrapper<>()
-//                .select(Goods.class, i -> !i.getColumn().equals("goods_uuid") & !i.getColumn().equals("logical_deletion") & !i.getColumn().equals("user_openid"))
-//                .select(GoodsImgs::getImgUrl)
-//                .leftJoin(GoodsImgs.class, GoodsImgs::getGoodsUuid, Goods::getGoodsUuid)
-//                .eq(GoodsImgs::getGoodsUuid, goodUUId));
-//        map.put("status",StatusType.SUCCESS);
-//        map.put("data",maps);
-//        return map;
     }
 
-    //添加商品
+    /**
+     * 添加商品
+     * @param openid   用户id
+     * @param goodsBody    商品
+     * @return  R
+     */
     @Override
     public R addGoods(String openid, GoodsBody goodsBody) {
         Goods goods = new Goods();
@@ -166,7 +174,12 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods> implements
         }
     }
 
-    //修改商品
+    /**
+     * 修改商品
+     * @param openid   用户id
+     * @param goodsBody  商品
+     * @return     R
+     */
     @Override
     public R updateGoods(String openid, GoodsBody goodsBody) {
         String goodsUUId = goodsBody.getGoodsUUId();
@@ -242,7 +255,12 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods> implements
 
     }
 
-    //删除商品
+    /**
+     * 删除商品
+     * @param id             用户id
+     * @param goodsUUId      商品的id
+     * @return R
+     */
     @Override
     public R delGoods(String id, String goodsUUId) {
         int delete = 0;
@@ -262,8 +280,24 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods> implements
         }
     }
 
+    /**
+     * 我的发布商品的数量
+     * @return                 R
+     */
+    @Override
+    public R getMyPublishGoodsNum(String id) {
+        Integer count = goodsMapper.selectCount(new QueryWrapper<Goods>()
+                .eq("user_openid", id));
+        return R.ok(count);
+    }
 
-    //添加浏览记录
+
+    /**
+     * 添加浏览记录
+     * @param id
+     * @param goodsUUId
+     * @param goodsStatus
+     */
     public void addBrowseRecords(String id, String goodsUUId, Object goodsStatus){
         BrowseRecords one = browseRecordsMapper.selectOne(new QueryWrapper<BrowseRecords>()
                 .eq("thing_uuid", goodsUUId)

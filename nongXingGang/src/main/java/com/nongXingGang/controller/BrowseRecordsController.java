@@ -15,11 +15,7 @@ import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -99,19 +95,57 @@ public class BrowseRecordsController {
         return browseRecordsService.getBrowseRecords(id,pageNum,pageSize);
     }
 
+
+
+    /**
+     * 查询商品的浏览记录
+     * @param pageNum          页码
+     * @param pageSize      数量
+     * @return      R
+     */
+    @ApiOperation("查询商品的浏览记录")
+    @PostMapping("/findMyBrowseGoodsList")
+    public R findMyStoreGoodsList(
+            @Min(0) @NotNull(message = "页数不能为空")@ApiParam(value = "页码",required = true) @RequestParam("pageNum") int pageNum,
+            @Min(0) @Max(30)@NotNull(message = "数量不能为空")@ApiParam(value = "数量",required = true) @RequestParam("pageSize") int pageSize
+    ){
+        String id = (String) StpUtil.getLoginId();
+        return browseRecordsService.findMyBrowseGoodsList(id,pageNum,pageSize);
+    }
+
+
+
+    /**
+     * 查询需求的浏览记录
+     * @param pageNum          页码
+     * @param pageSize      数量
+     * @return      R
+     */
+    @ApiOperation("查询需求的浏览记录")
+    @PostMapping("/findMyBrowseDemandList")
+    public R findMyStoreDemandList(
+            @Min(0) @NotNull(message = "页数不能为空")@ApiParam(value = "页码",required = true) @RequestParam("pageNum") int pageNum,
+            @Min(0) @Max(30)@NotNull(message = "数量不能为空")@ApiParam(value = "数量",required = true) @RequestParam("pageSize") int pageSize
+    ){
+        String id = (String) StpUtil.getLoginId();
+        return browseRecordsService.findMyBrowseDemandList(id,pageNum,pageSize);
+
+    }
+
     /**
      * 删除浏览记录
+     * @param brUuId        浏览记录的uuid
      * @return R
      */
     @ApiOperation("删除浏览记录")
-    @RequestMapping(value = "/delBrowseRecords",method = RequestMethod.GET)
+    @PostMapping(value = "/delBrowseRecords")
     public R delBrowseRecords(
-            @NotNull @NotBlank(message = "浏览记录的uuid不能为空") @ApiParam(value = "浏览记录的uuid",required = true) @RequestParam("brUUId") String brUUId
+            @NotNull @NotBlank(message = "浏览记录的uuid不能为空") @ApiParam(value = "浏览记录的uuid",required = true) @RequestParam("brUuId") String brUuId
     ) {
         String id = (String) StpUtil.getLoginId();
         try {
             boolean remove = browseRecordsService.remove(new QueryWrapper<BrowseRecords>()
-                    .eq("br_uuid", brUUId)
+                    .eq("br_uuid", brUuId)
                     .eq("user_openid", id));
             if(remove){
                 return R.ok();

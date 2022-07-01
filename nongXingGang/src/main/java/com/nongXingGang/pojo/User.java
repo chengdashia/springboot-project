@@ -1,9 +1,8 @@
 package com.nongXingGang.pojo;
 
-import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.util.Date;
-import com.baomidou.mybatisplus.annotation.Version;
-import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -46,6 +45,7 @@ public class User implements Serializable {
 
     @ApiModelProperty(value = "注册时间")
     private Date createTime;
+
 
     @ApiModelProperty(value = "最后登录时间")
     private Date lastLoginTime;

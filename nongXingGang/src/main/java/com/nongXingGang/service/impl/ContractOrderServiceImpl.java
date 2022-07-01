@@ -1,5 +1,6 @@
 package com.nongXingGang.service.impl;
 
+import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.IdUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -21,6 +22,7 @@ import com.nongXingGang.utils.calculation.NumberUtil;
 import com.nongXingGang.utils.pdf.AddAutograph;
 import com.nongXingGang.utils.pdf.GenerateContract;
 import com.nongXingGang.utils.result.Constants;
+import com.nongXingGang.utils.result.R;
 import com.nongXingGang.utils.result.StatusType;
 import org.springframework.stereotype.Service;
 
@@ -51,9 +53,18 @@ public class ContractOrderServiceImpl extends ServiceImpl<ContractOrderMapper, C
     @Resource
     private ReceivingAddressMapper addressMapper;
 
-    //下订单
+    /**
+     * 下订单
+     * @param openid
+     * @param signA
+     * @param goodsUUId
+     * @param addressUUId
+     * @param kilogram
+     * @param remark
+     * @return
+     */
     @Override
-    public int placeOrder(String openid, String signA, String goodsUUId, String addressUUId, String kilogram, String remark) {
+    public R placeOrder(String openid, String signA, String goodsUUId, String addressUUId, String kilogram, String remark) {
             Goods goods = goodsMapper.selectOne(new QueryWrapper<Goods>()
                     .select("user_openid", "goods_kilogram","goods_liaison_man","goods_contact_number","goods_production_area","goods_type","goods_varieties","goods_price")
                     .eq("goods_uuid", goodsUUId));
@@ -66,8 +77,8 @@ public class ContractOrderServiceImpl extends ServiceImpl<ContractOrderMapper, C
                 ReceivingAddress address = addressMapper.selectOne(new QueryWrapper<ReceivingAddress>().eq("uuid", addressUUId));
 
                 //向pdfData  添加数据
-                pdfData.setPartA(address.getUserRealName());
-                pdfData.setPartB(goods.getGoodsLiaisonMan());
+                pdfData.setPartA(goods.getGoodsLiaisonMan());
+                pdfData.setPartB(address.getUserRealName());
                 pdfData.setPartAAddress(address.getUserDetailedAddress());
                 pdfData.setPartBAddress(goods.getGoodsProductionArea());
                 pdfData.setPartAPhone(address.getUserTel());
@@ -85,8 +96,11 @@ public class ContractOrderServiceImpl extends ServiceImpl<ContractOrderMapper, C
                 //获得合同模板
                 String fillTemplate = GenerateContract.wordsFillTemplate(pdfData);
 
-                //添加卖家签名
+                //添加买家签名
                 AddAutograph.AddSignA(signA,fillTemplate);
+
+
+                String pdfFilePath = getWebFileUrl(fillTemplate.substring(fillTemplate.lastIndexOf("/") + 1));
 
 
                 //创建订单。添加到数据库
@@ -101,132 +115,233 @@ public class ContractOrderServiceImpl extends ServiceImpl<ContractOrderMapper, C
                 BigDecimal kilogramS = new BigDecimal(kilogram);
                 order.setOrderKilogram(kilogramS);
                 order.setOrderRemarks(remark);
-                order.setContractAddress(fillTemplate);
+
+                //order.setContractAddress(fillTemplate);
+                order.setContractAddress(pdfFilePath);
+
+                order.setUpdateTime(new Date());
 
                 int insert = orderMapper.insert(order);
                 if(insert == 1){
-                    return StatusType.SUCCESS;
+                    return R.ok();
                 }else {
-                    return StatusType.ERROR;
+                    return R.error();
                 }
             }else {
-                return StatusType.NOT_EXISTS;
+                return R.error();
             }
     }
 
-    //获取订单列表  不分页
+    /**
+     * 获取订单列表  不分页
+     * @param openid
+     * @param uStatus
+     * @return
+     */
     @Override
-    public Map<String, Object> getOrderList(String openid, int uStatus) {
-        Map<String, Object> map = new HashMap<>();
+    public R getOrderList(String openid, int uStatus) {
         List<Map<String, Object>> maps;
         if(uStatus == Constants.BUYER){
-
-                maps = orderMapper.selectMaps(new QueryWrapper<ContractOrder>()
-                        .select(ContractOrder.class, i -> !i.getColumn().equals("contract_address"))
-                        .eq("buyer_openid", openid));
-                if(maps != null){
-                    map.put("status",StatusType.SUCCESS);
-                    map.put("data",maps);
-                }else {
-                    map.put("status",StatusType.ERROR);
-                }
+            maps = orderMapper.selectMaps(new QueryWrapper<ContractOrder>()
+                    .select(ContractOrder.class, i -> ! "contract_address".equals(i.getColumn()))
+                    .eq("buyer_openid", openid));
+            if(maps != null){
+                return R.ok(maps);
+            }else {
+                return R.error();
+            }
         }else if(uStatus == Constants.SELLER){
 
                 maps = orderMapper.selectMaps(new QueryWrapper<ContractOrder>()
-                        .select(ContractOrder.class, i -> !i.getColumn().equals("contract_address"))
+                        .select(ContractOrder.class, i -> !"contract_address".equals(i.getColumn()))
                         .eq("seller_openid", openid));
                 if(maps != null){
-                    map.put("status",StatusType.SUCCESS);
-                    map.put("data",maps);
+                    return R.ok(maps);
                 }else {
-                    map.put("status",StatusType.ERROR);
+                    return R.error();
                 }
         }else {
-            map.put("status",StatusType.ERROR);
+            return R.error();
         }
-
-        return map;
     }
 
-    //获取订单列表  分页
+    /**
+     * 获取订单列表  分页
+     * @param openid
+     * @param uStatus
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
     @Override
-    public Map<String, Object> getOrderListPage(String openid, int uStatus, int pageNum, int pageSize) {
-        Map<String, Object> map = new HashMap<>();
+    public R getOrderListPage(String openid, int uStatus, int pageNum, int pageSize) {
         IPage<Map<String, Object>> mapPage;
-        int start = (pageNum - 1) * pageSize;
         if(uStatus == Constants.BUYER){
-//
-//                mapPage = orderMapper.selectMapsPage(new Page<>(pageNum, pageSize), new QueryWrapper<ContractOrder>()
-//                        .select(ContractOrder.class, i -> !i.getColumn().equals("contract_address"))
-//                        .eq("buyer_openid", openid));
-
-                mapPage = goodsMapper.selectJoinMapsPage(new Page<>(start, pageSize), new MPJLambdaWrapper<>()
-                    .select(Goods::getGoodsVarieties, Goods::getGoodsType,Goods::getGoodsPrice,Goods::getGoodsMainImgUrl)
-                    .select(ContractOrder::getOrderUuid, ContractOrder::getOrderStatus,ContractOrder::getOrderCreateTime)
-                    .leftJoin(ContractOrder.class, ContractOrder::getGoodsUuid, Goods::getGoodsUuid)
-                    .eq(ContractOrder::getBuyerOpenid, openid));
+            mapPage = goodsMapper.selectJoinMapsPage(new Page<>(pageNum, pageSize,false), new MPJLambdaWrapper<>()
+                .select(Goods::getGoodsVarieties, Goods::getGoodsType,Goods::getGoodsPrice,Goods::getGoodsMainImgUrl)
+                .select(ContractOrder::getOrderUuid, ContractOrder::getOrderStatus,ContractOrder::getOrderCreateTime,ContractOrder::getOrderKilogram)
+                .leftJoin(ContractOrder.class, ContractOrder::getGoodsUuid, Goods::getGoodsUuid)
+                .eq(ContractOrder::getBuyerOpenid, openid));
             if(mapPage != null){
-                    map.put("status",StatusType.SUCCESS);
-                    map.put("data", mapPage);
-                }else {
-                    map.put("status",StatusType.ERROR);
-                }
+                return R.ok(mapPage);
+            }else {
+               return R.error();
+            }
         }else if(uStatus == Constants.SELLER){
 
-//                mapPage = orderMapper.selectMapsPage(new Page<>(pageNum,pageSize),new QueryWrapper<ContractOrder>()
-//                        .select(ContractOrder.class, i -> !i.getColumn().equals("contract_address"))
-//                        .eq("seller_openid", openid));
-            mapPage = goodsMapper.selectJoinMapsPage(new Page<>(start, pageSize), new MPJLambdaWrapper<>()
+            mapPage = goodsMapper.selectJoinMapsPage(new Page<>(pageNum, pageSize,false), new MPJLambdaWrapper<>()
                     .select(Goods::getGoodsVarieties, Goods::getGoodsType,Goods::getGoodsPrice,Goods::getGoodsMainImgUrl)
-                    .select(ContractOrder::getOrderUuid, ContractOrder::getOrderStatus,ContractOrder::getOrderCreateTime)
+                    .select(ContractOrder::getOrderUuid, ContractOrder::getOrderStatus,ContractOrder::getOrderCreateTime,ContractOrder::getOrderKilogram)
                     .leftJoin(ContractOrder.class, ContractOrder::getGoodsUuid, Goods::getGoodsUuid)
                     .eq(ContractOrder::getSellerOpenid, openid));
                 if(mapPage != null){
-                    map.put("status",StatusType.SUCCESS);
-                    map.put("data", mapPage);
+                    return R.ok(mapPage);
                 }else {
-                    map.put("status",StatusType.ERROR);
+                    return R.error();
                 }
         }else {
-            map.put("status",StatusType.ERROR);
+            return R.error();
         }
-
-        return map;
     }
 
-    //买家  取消订单
+    /**
+     * 买家  取消订单
+     * @param id
+     * @param orderUUId
+     * @return
+     */
     @Override
-    public int buyerCancelOrder(String id, String orderUUId) {
+    public R buyerCancelOrder(String id, String orderUUId) {
         try {
             int delete = orderMapper.delete(new QueryWrapper<ContractOrder>()
                     .eq("buyer_openid", id)
                     .eq("order_uuid", orderUUId));
             if(delete == 1){
-                return StatusType.SUCCESS;
+                return R.ok();
             }
-            return StatusType.ERROR;
+            return R.error();
         } catch (Exception e) {
             e.printStackTrace();
-            return StatusType.SQL_ERROR;
+            return R.sqlError();
         }
     }
 
-    //卖家 取消订单
+    /**
+     * 卖家 取消订单
+     * @param id
+     * @param orderUuId
+     * @return
+     */
     @Override
-    public int sellerCancelOrder(String id, String orderUUId) {
+    public R sellerCancelOrder(String id, String orderUuId) {
         try {
             int update = orderMapper.update(null, new UpdateWrapper<ContractOrder>()
                     .set("order_status", Constants.REFUSE_SIGNED)
                     .eq("seller_openid", id)
-                    .eq("order_uuid", orderUUId));
+                    .eq("order_uuid", orderUuId));
             if(update == 1){
-                return StatusType.SUCCESS;
+                return R.ok();
             }
-            return StatusType.ERROR;
+            return R.error();
         } catch (Exception e) {
             e.printStackTrace();
-            return StatusType.SQL_ERROR;
+            return R.sqlError();
         }
+
+    }
+
+    /**
+     * 查看各种订单的数量
+     * @return R
+     */
+    @Override
+    public R getAllKindsOfNums() {
+        String id = (String) StpUtil.getLoginId();
+        List<Map<String, Object>> maps = orderMapper.selectMaps(new QueryWrapper<ContractOrder>()
+                .select("order_status","count(1) as num")
+                .groupBy("order_status")
+                .eq("seller_openid", id));
+        return R.ok(maps);
+    }
+
+    /**
+     * 卖家确认
+     * @param imagePath 签名的图片的地址
+     * @param orderId      订单id
+     * @return  R
+     */
+    @Override
+    public R sellerConfirm(String imagePath, String orderId) {
+        ContractOrder order = orderMapper.selectOne(new QueryWrapper<ContractOrder>().select("contract_address")
+                .eq("order_uuid",orderId));
+        //添加卖家签名
+        AddAutograph.AddSignB(imagePath,getDockerFileUrl(order.getContractAddress()));
+        int update = orderMapper.update(null, new UpdateWrapper<ContractOrder>()
+                .set("order_status", Constants.SIGNED)
+                .set("update_time", new Date())
+                .eq("order_uuid", orderId));
+        if (update == 1){
+            return R.ok();
+        }
+        return R.error();
+    }
+
+    /**
+     * 卖家查看不同的订单  分页
+     * @param oStatus         订单状态
+     * @param pageNum           页码
+     * @param pageSize           数量
+     * @return               R
+     */
+    @Override
+    public R sellerGetOrderPageByStatus(int oStatus, int pageNum, int pageSize) {
+        String id = (String) StpUtil.getLoginId();
+        IPage<Map<String, Object>> maps = goodsMapper.selectJoinMapsPage(new Page<>(pageNum, pageSize, false), new MPJLambdaWrapper<>()
+                .select(Goods::getGoodsVarieties, Goods::getGoodsType, Goods::getGoodsPrice, Goods::getGoodsMainImgUrl)
+                .select(ContractOrder::getOrderUuid, ContractOrder::getOrderStatus, ContractOrder::getOrderCreateTime, ContractOrder::getOrderKilogram)
+                .leftJoin(ContractOrder.class, ContractOrder::getGoodsUuid, Goods::getGoodsUuid)
+                .eq(ContractOrder::getSellerOpenid, id)
+                .eq(ContractOrder::getOrderStatus, oStatus));
+        return R.ok(maps);
+    }
+
+    /**
+     * 查看订单
+     * @param orderId         订单id
+     * @param uStatus         用户状态 0:买家  1 卖家
+     * @return                R
+     */
+    @Override
+    public R viewContract(int uStatus,String orderId) {
+        String id = (String) StpUtil.getLoginId();
+        List<Map<String, Object>> maps = null;
+        if(uStatus == Constants.BUYER){
+            maps = orderMapper.selectMaps(new QueryWrapper<ContractOrder>()
+                            .select("contract_address")
+                    .eq("order_uuid", orderId)
+                    .eq("buyer_openid", id));
+        }else if(uStatus == Constants.SELLER){
+            maps = orderMapper.selectMaps(new QueryWrapper<ContractOrder>()
+                    .select("contract_address")
+                    .eq("order_uuid", orderId)
+                    .eq("seller_openid", id));
+        }else {
+            return R.error();
+        }
+        return R.ok(maps);
+    }
+
+
+    //获取网站的文件地址
+    public static String getWebFileUrl(String fileName){
+        return "https://chengdashi.cn/file/"+fileName;
+
+    }
+
+    //获取docker部署下的的文件地址
+    public static String getDockerFileUrl(String filePath){
+        String fileName = filePath.substring(filePath.lastIndexOf("/") + 1);
+        return "/home/file/" + fileName;
 
     }
 }

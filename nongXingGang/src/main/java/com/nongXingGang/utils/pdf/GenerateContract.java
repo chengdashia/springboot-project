@@ -1,6 +1,7 @@
 package com.nongXingGang.utils.pdf;
 
 
+import cn.hutool.log.Log;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Image;
@@ -9,6 +10,7 @@ import com.itextpdf.text.pdf.*;
 import com.nongXingGang.pojo.PdfData;
 import com.nongXingGang.utils.file.FileUtil;
 import com.nongXingGang.utils.result.Constants;
+import lombok.extern.slf4j.Slf4j;
 
 import java.beans.BeanInfo;
 import java.beans.Introspector;
@@ -22,19 +24,22 @@ import java.util.Map;
 /**
  * 生成合同 的工具类
  */
+@Slf4j
 public class GenerateContract {
 
     public static String wordsFillTemplate(PdfData pdfData) {
         Map<String, String> pdfWordMap = convertBeanToMap(pdfData);
         // 生成的新文件路径
-        String newPdfPath = Constants.TEMP_Folder + System.currentTimeMillis() + ".pdf";
+        String fileName = String.valueOf(System.currentTimeMillis());
+        String newPdfPath = Constants.TEMP_FOLDER + fileName + ".pdf";
+        log.info("新合同的额路径:{}",newPdfPath);
         PdfReader reader;
         FileOutputStream out;
         ByteArrayOutputStream bos;
         PdfStamper stamper;
         try {
             out = new FileOutputStream(newPdfPath);
-            reader = new PdfReader(Constants.CONTRACT_FilePath);
+            reader = new PdfReader(Constants.CONTRACT_FILE_PATH);
             bos = new ByteArrayOutputStream();
             stamper = new PdfStamper(reader, bos);
             //获取有哪些字段
@@ -76,7 +81,7 @@ public class GenerateContract {
      */
     public static void signAFillTemplate(String templatePath,String imagePath) throws IOException, DocumentException {
         // 生成的文件路径
-        String targetPath = Constants.TEMP_Folder + System.currentTimeMillis() + ".pdf";
+        String targetPath = Constants.TEMP_FOLDER + System.currentTimeMillis() + ".pdf";
         // 书签名
         String fieldName = "buyerSign";
 
@@ -140,6 +145,11 @@ public class GenerateContract {
         return map;
     }
 
+    //获取网站的文件地址
+    public static String getWebFileUrl(String fileName){
+        return "https://chengdashi.cn/file/"+fileName;
+
+    }
 
 
 

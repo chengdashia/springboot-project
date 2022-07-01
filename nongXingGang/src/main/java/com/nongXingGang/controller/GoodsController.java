@@ -185,6 +185,7 @@ public class GoodsController {
                             .eq("user_openid", id)
                             .eq("goods_status",status)
                             .orderByDesc("goods_create_time"));
+
             if(goodsList != null){
                 return R.ok(goodsList);
             }else {
@@ -194,6 +195,17 @@ public class GoodsController {
             e.printStackTrace();
             return R.sqlError();
         }
+    }
+
+    /**
+     * 我的发布商品的数量
+     * @return                 R
+     */
+    @ApiOperation("我的发布商品的数量")
+    @PostMapping("/getMyPublishGoodsNum")
+    public R getMyPublishGoodsNum(){
+        String id = (String) StpUtil.getLoginId();
+        return goodsService.getMyPublishGoodsNum(id);
     }
 
 

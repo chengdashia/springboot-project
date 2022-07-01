@@ -19,18 +19,51 @@ import java.util.Map;
 @Transactional
 public interface GoodsService extends IService<Goods> {
 
-    //获取首页数据
+    /**
+     * 获取首页数据
+     * @param id                  用户id
+     * @param status              状态 ，在售，预售
+     * @param pageNum             页码
+     * @param pageSize             页数
+     * @return                      R
+     */
     Map<String ,Object> getIndexGoods(String id,int status, int pageNum, int pageSize);
 
-    //获取商品的详细数据
+    /**
+     * 获取商品的详细数据
+     * @param id          用户id
+     * @param goodsUUId   商品的id
+     * @return   R
+     */
     R getGoodsDetails(String id, String goodsUUId);
 
-    //添加商品
+    /**
+     * 添加商品
+     * @param openid   用户id
+     * @param goods    商品
+     * @return            R
+     */
     R addGoods(String openid,GoodsBody goods);
 
-    //修改商品
+    /**
+     * 修改商品
+     * @param openid   用户id
+     * @param goods  商品
+     * @return            R
+     */
     R updateGoods(String openid, GoodsBody goods);
 
-    //删除商品信息
+    /**
+     * 删除商品信息
+     * @param id             用户id
+     * @param goodsUUId      商品的id
+     * @return                 R
+     */
     R delGoods(String id, String goodsUUId);
+
+    /**
+     * 我的发布商品的数量
+     * @return                 R
+     */
+    R getMyPublishGoodsNum(String id);
 }

@@ -16,15 +16,39 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public interface StoreService extends IService<Store> {
 
-    //查询收藏记录
+    /**
+     * 查询收藏记录
+     * @param id                  用户id
+     * @param pageNum             页码
+     * @param pageSize             页数
+     * @return                   R
+     */
     R getMyStoreList(String id, int pageNum, int pageSize);
 
-    //添加收藏
+    /**
+     * 添加收藏
+     * @param id           用户id
+     * @param thingUUId     事情的uuid
+     * @param thingType      事情的类型
+     * @return
+     */
     R addStore(String id, String thingUUId, int thingType);
 
-    //查询商品的收藏记录
+    /**
+     * 查询商品的收藏记录
+     * @param id
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
     R findMyStoreGoodsList(String id, int pageNum, int pageSize);
 
-    //查询需求的收藏记录
+    /**
+     * 查询需求的收藏记录
+     * @param id
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
    R findMyStoreDemandList(String id, int pageNum, int pageSize);
 }

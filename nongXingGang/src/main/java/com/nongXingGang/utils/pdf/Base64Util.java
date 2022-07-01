@@ -58,12 +58,13 @@ public class Base64Util {
             // Base64解码
             byte[] bytes = decoder.decodeBuffer(base64Str);
             for (int i = 0; i < bytes.length; ++i) {
-                if (bytes[i] < 0) {// 调整异常数据
+                // 调整异常数据
+                if (bytes[i] < 0) {
                     bytes[i] += 256;
                 }
             }
             // 生成png图片
-            imgFilePath = Constants.TEMP_Folder + System.currentTimeMillis()+"."+type;
+            imgFilePath = Constants.TEMP_FOLDER + System.currentTimeMillis()+"."+type;
             out = new FileOutputStream(imgFilePath);
             out.write(bytes);
             System.out.println(imgFilePath);

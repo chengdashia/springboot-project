@@ -1,0 +1,341 @@
+2022-06-29 15:23:57 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 15:23:58 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVXTlpMQm1LMXZQc3FFNFFiYXdXME5nIiwicm5TdHIiOiIzYUF1M1NXd3JOMnNSc3J1akpZTVlObkhIUkt5RzBGRSJ9.T-FDMgAIxXwitQjpC7U8ObCvYLjS1bv9hLMLv5AFeIs
+ 2022-06-29 15:24:24 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 15:24:25 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVXTlpMQm1LMXZQc3FFNFFiYXdXME5nIiwicm5TdHIiOiJHbjJrV2tWVVdMcHJ3ZDRydVczM0EzWGdaZjZrOUd1QSJ9._eGrGNyiIL-LdrwGXZ324P1bSGWmlbfvbYool6UuR_Y
+ 2022-06-29 15:24:57 c.n.c.ContractOrderController 48 [INFO] signA :{}E:\test\pdf\1656487497796.png
+ 2022-06-29 15:25:19 c.n.c.ContractOrderController 48 [INFO] signA :{}E:\test\pdf\1656487519791.png
+ 2022-06-29 15:25:29 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 15:25:39 c.n.c.ContractOrderController 48 [INFO] signA :{}E:\test\pdf\1656487539723.png
+ 2022-06-29 15:26:49 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 15:26:50 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiJNUUFYZmNhTzBES3JFbnFSOVlFeHRFdW1iZnMwdGhxWCJ9.xPXmCbDTcHx4fjCa4-bxEUUmADlbbWqPx0YUriyfEHs
+ 2022-06-29 15:27:37 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 15:27:38 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVVb3Y2ckFZampDSDNyNmpyN05vazdJIiwicm5TdHIiOiJpWHBkc3p1VnNoSVpzcVVCNzdSUnBOcmg2MmxZY2lQbiJ9.-Bf57x6d7biLpkSOKs3x4jULjZUsBLE5uQy35cf0iR4
+ 2022-06-29 15:31:03 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 15:31:05 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 15:32:50 c.n.c.ContractOrderController 48 [INFO] signA :{}E:\test\pdf\1656487970509.png
+ 2022-06-29 15:33:30 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 15:33:31 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiIyZWxpNkQ3RnZReEZPS0hWamZWSGdxckxUVDFvVFhvUyJ9.blkeQeVYeErO0UdccGKYc_TGue4lGkXuIlbQhxd_LNo
+ 2022-06-29 15:35:24 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 15:35:25 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiJ0dUtIQXlNTmpOa2pGTGRBcHNKNnM1dkxMV1pRTjNQWSJ9.b_D2ZJkU8HRroNp9tmDvUCszVwu37ijR_iVGUmy5Kwk
+ 2022-06-29 15:36:51 c.a.d.p.DruidDataSource 2043 [INFO] {dataSource-1} closing ...
+ 2022-06-29 15:36:51 c.a.d.p.DruidDataSource 2116 [INFO] {dataSource-1} closed
+ 2022-06-29 15:36:57 c.n.NongXingGangApplication 55 [INFO] Starting NongXingGangApplication using Java 1.8.0_311 on DESKTOP-3058MDQ with PID 7716 (E:\test\git\springboot-project\nongXingGang\target\classes started by Serendipity in E:\test\git\springboot-project\nongXingGang)
+ 2022-06-29 15:36:57 o.h.v.i.u.Version 21 [INFO] HV000001: Hibernate Validator 6.2.2.Final
+ 2022-06-29 15:36:57 c.n.NongXingGangApplication 646 [INFO] The following 1 profile is active: "prod"
+ 2022-06-29 15:36:57 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-06-29 15:36:57 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+ 2022-06-29 15:36:57 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 59 ms. Found 2 Elasticsearch repository interfaces.
+ 2022-06-29 15:36:57 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-06-29 15:36:57 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+ 2022-06-29 15:36:57 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 10 ms. Found 0 Reactive Elasticsearch repository interfaces.
+ 2022-06-29 15:36:57 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-06-29 15:36:57 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+ 2022-06-29 15:36:57 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.nongXingGang.service.es.DemandEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-06-29 15:36:57 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.nongXingGang.service.es.GoodEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-06-29 15:36:57 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+ 2022-06-29 15:36:58 o.s.b.w.e.t.TomcatWebServer 108 [INFO] Tomcat initialized with port(s): 8686 (https) 8086 (http)
+ 2022-06-29 15:36:58 o.a.c.h.Http11NioProtocol 173 [INFO] Initializing ProtocolHandler ["https-jsse-nio-8686"]
+ 2022-06-29 15:36:58 o.a.c.h.Http11NioProtocol 173 [INFO] Initializing ProtocolHandler ["http-nio-8086"]
+ 2022-06-29 15:36:58 o.a.c.c.StandardService 173 [INFO] Starting service [Tomcat]
+ 2022-06-29 15:36:58 o.a.c.c.StandardEngine 173 [INFO] Starting Servlet engine: [Apache Tomcat/9.0.58]
+ 2022-06-29 15:36:58 o.a.c.c.C.[.[.[/] 173 [INFO] Initializing Spring embedded WebApplicationContext
+ 2022-06-29 15:36:58 o.s.b.w.s.c.ServletWebServerApplicationContext 290 [INFO] Root WebApplicationContext: initialization completed in 1482 ms
+ 2022-06-29 15:37:01 o.a.c.h.Http11NioProtocol 173 [INFO] Starting ProtocolHandler ["https-jsse-nio-8686"]
+ 2022-06-29 15:37:01 o.a.c.h.Http11NioProtocol 173 [INFO] Starting ProtocolHandler ["http-nio-8086"]
+ 2022-06-29 15:37:01 o.s.b.w.e.t.TomcatWebServer 220 [INFO] Tomcat started on port(s): 8686 (https) 8086 (http) with context path ''
+ 2022-06-29 15:37:01 c.n.NongXingGangApplication 61 [INFO] Started NongXingGangApplication in 5.151 seconds (JVM running for 6.067)
+ 2022-06-29 15:37:08 o.a.c.c.C.[.[.[/] 173 [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+ 2022-06-29 15:37:08 o.s.w.s.DispatcherServlet 525 [INFO] Initializing Servlet 'dispatcherServlet'
+ 2022-06-29 15:37:08 o.s.w.s.DispatcherServlet 547 [INFO] Completed initialization in 4 ms
+ 2022-06-29 15:37:11 c.a.d.p.DruidDataSource 990 [INFO] {dataSource-1} inited
+ 2022-06-29 15:37:12 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 15:37:13 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiJwajljY3dhTkFzY2tqMXhtNFZCaDM2UXlncU5QMEhpZiJ9.rSAEZ8hF1ohsXIEI5dFrCpS13Yo_TuUoAopgnDcEP1Q
+ 2022-06-29 15:37:51 c.a.d.p.DruidDataSource 2043 [INFO] {dataSource-1} closing ...
+ 2022-06-29 15:37:51 c.a.d.p.DruidDataSource 2116 [INFO] {dataSource-1} closed
+ 2022-06-29 15:37:59 o.h.v.i.u.Version 21 [INFO] HV000001: Hibernate Validator 6.2.2.Final
+ 2022-06-29 15:37:59 c.n.NongXingGangApplication 55 [INFO] Starting NongXingGangApplication using Java 1.8.0_311 on DESKTOP-3058MDQ with PID 26812 (E:\test\git\springboot-project\nongXingGang\target\classes started by Serendipity in E:\test\git\springboot-project\nongXingGang)
+ 2022-06-29 15:37:59 c.n.NongXingGangApplication 646 [INFO] The following 1 profile is active: "prod"
+ 2022-06-29 15:38:00 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-06-29 15:38:00 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+ 2022-06-29 15:38:00 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 59 ms. Found 2 Elasticsearch repository interfaces.
+ 2022-06-29 15:38:00 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-06-29 15:38:00 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+ 2022-06-29 15:38:00 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 10 ms. Found 0 Reactive Elasticsearch repository interfaces.
+ 2022-06-29 15:38:00 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-06-29 15:38:00 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+ 2022-06-29 15:38:00 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.nongXingGang.service.es.DemandEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-06-29 15:38:00 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.nongXingGang.service.es.GoodEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-06-29 15:38:00 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+ 2022-06-29 15:38:00 o.s.b.w.e.t.TomcatWebServer 108 [INFO] Tomcat initialized with port(s): 8686 (https) 8086 (http)
+ 2022-06-29 15:38:00 o.a.c.h.Http11NioProtocol 173 [INFO] Initializing ProtocolHandler ["https-jsse-nio-8686"]
+ 2022-06-29 15:38:00 o.a.c.h.Http11NioProtocol 173 [INFO] Initializing ProtocolHandler ["http-nio-8086"]
+ 2022-06-29 15:38:00 o.a.c.c.StandardService 173 [INFO] Starting service [Tomcat]
+ 2022-06-29 15:38:00 o.a.c.c.StandardEngine 173 [INFO] Starting Servlet engine: [Apache Tomcat/9.0.58]
+ 2022-06-29 15:38:01 o.a.c.c.C.[.[.[/] 173 [INFO] Initializing Spring embedded WebApplicationContext
+ 2022-06-29 15:38:01 o.s.b.w.s.c.ServletWebServerApplicationContext 290 [INFO] Root WebApplicationContext: initialization completed in 1472 ms
+ 2022-06-29 15:38:03 o.a.c.h.Http11NioProtocol 173 [INFO] Starting ProtocolHandler ["https-jsse-nio-8686"]
+ 2022-06-29 15:38:04 o.a.c.h.Http11NioProtocol 173 [INFO] Starting ProtocolHandler ["http-nio-8086"]
+ 2022-06-29 15:38:04 o.s.b.w.e.t.TomcatWebServer 220 [INFO] Tomcat started on port(s): 8686 (https) 8086 (http) with context path ''
+ 2022-06-29 15:38:04 c.n.NongXingGangApplication 61 [INFO] Started NongXingGangApplication in 5.116 seconds (JVM running for 6.027)
+ 2022-06-29 15:38:15 o.a.c.c.C.[.[.[/] 173 [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+ 2022-06-29 15:38:15 o.s.w.s.DispatcherServlet 525 [INFO] Initializing Servlet 'dispatcherServlet'
+ 2022-06-29 15:38:15 o.s.w.s.DispatcherServlet 547 [INFO] Completed initialization in 3 ms
+ 2022-06-29 15:38:18 c.a.d.p.DruidDataSource 990 [INFO] {dataSource-1} inited
+ 2022-06-29 15:38:19 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 15:38:20 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiJoYXFnQktISTc4NVMxS1VSellDRlJ1a2QwRXhWcUc3YiJ9.p4EjgbVNNkv5Vq0iJexJ8ArxesSbdSQte6P62IjboFQ
+ 2022-06-29 15:56:07 c.n.s.i.DemandServiceImpl 57 [INFO] 获取需求：0
+ 2022-06-29 15:56:07 c.n.s.i.DemandServiceImpl 58 [INFO] 获取需求10
+ 2022-06-29 15:57:21 c.n.s.i.DemandServiceImpl 57 [INFO] 获取需求：10
+ 2022-06-29 15:57:21 c.n.s.i.DemandServiceImpl 58 [INFO] 获取需求10
+ 2022-06-29 16:03:22 c.a.d.p.DruidDataSource 2043 [INFO] {dataSource-1} closing ...
+ 2022-06-29 16:03:22 c.a.d.p.DruidDataSource 2116 [INFO] {dataSource-1} closed
+ 2022-06-29 16:03:30 o.h.v.i.u.Version 21 [INFO] HV000001: Hibernate Validator 6.2.2.Final
+ 2022-06-29 16:03:30 c.n.NongXingGangApplication 55 [INFO] Starting NongXingGangApplication using Java 1.8.0_311 on DESKTOP-3058MDQ with PID 25916 (E:\test\git\springboot-project\nongXingGang\target\classes started by Serendipity in E:\test\git\springboot-project\nongXingGang)
+ 2022-06-29 16:03:30 c.n.NongXingGangApplication 646 [INFO] The following 1 profile is active: "prod"
+ 2022-06-29 16:03:31 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-06-29 16:03:31 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+ 2022-06-29 16:03:31 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 59 ms. Found 2 Elasticsearch repository interfaces.
+ 2022-06-29 16:03:31 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-06-29 16:03:31 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+ 2022-06-29 16:03:31 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 10 ms. Found 0 Reactive Elasticsearch repository interfaces.
+ 2022-06-29 16:03:31 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-06-29 16:03:31 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+ 2022-06-29 16:03:31 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.nongXingGang.service.es.DemandEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-06-29 16:03:31 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.nongXingGang.service.es.GoodEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-06-29 16:03:31 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+ 2022-06-29 16:03:31 o.s.b.w.e.t.TomcatWebServer 108 [INFO] Tomcat initialized with port(s): 8686 (https) 8086 (http)
+ 2022-06-29 16:03:31 o.a.c.h.Http11NioProtocol 173 [INFO] Initializing ProtocolHandler ["https-jsse-nio-8686"]
+ 2022-06-29 16:03:31 o.a.c.h.Http11NioProtocol 173 [INFO] Initializing ProtocolHandler ["http-nio-8086"]
+ 2022-06-29 16:03:31 o.a.c.c.StandardService 173 [INFO] Starting service [Tomcat]
+ 2022-06-29 16:03:31 o.a.c.c.StandardEngine 173 [INFO] Starting Servlet engine: [Apache Tomcat/9.0.58]
+ 2022-06-29 16:03:31 o.a.c.c.C.[.[.[/] 173 [INFO] Initializing Spring embedded WebApplicationContext
+ 2022-06-29 16:03:31 o.s.b.w.s.c.ServletWebServerApplicationContext 290 [INFO] Root WebApplicationContext: initialization completed in 1456 ms
+ 2022-06-29 16:03:34 o.a.c.h.Http11NioProtocol 173 [INFO] Starting ProtocolHandler ["https-jsse-nio-8686"]
+ 2022-06-29 16:03:34 o.a.c.h.Http11NioProtocol 173 [INFO] Starting ProtocolHandler ["http-nio-8086"]
+ 2022-06-29 16:03:34 o.s.b.w.e.t.TomcatWebServer 220 [INFO] Tomcat started on port(s): 8686 (https) 8086 (http) with context path ''
+ 2022-06-29 16:03:35 c.n.NongXingGangApplication 61 [INFO] Started NongXingGangApplication in 5.138 seconds (JVM running for 6.146)
+ 2022-06-29 16:04:03 o.a.c.c.C.[.[.[/] 173 [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+ 2022-06-29 16:04:03 o.s.w.s.DispatcherServlet 525 [INFO] Initializing Servlet 'dispatcherServlet'
+ 2022-06-29 16:04:03 o.s.w.s.DispatcherServlet 547 [INFO] Completed initialization in 3 ms
+ 2022-06-29 16:05:50 c.a.d.p.DruidDataSource 990 [INFO] {dataSource-1} inited
+ 2022-06-29 16:05:51 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 16:05:52 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVXTlpMQm1LMXZQc3FFNFFiYXdXME5nIiwicm5TdHIiOiJGbkhvZW9Zem81eUVIMHRFVmx0UEZhWWJ3T3BlbUtLaSJ9.JGgSMw_xncz7uGUv8xG2-kN1MbPKWqaZq_ucuaYax34
+ 2022-06-29 16:05:57 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 16:06:33 c.n.c.ContractOrderController 48 [INFO] signA :{}E:\test\pdf\1656489993351.png
+ 2022-06-29 16:08:31 c.n.c.ContractOrderController 48 [INFO] signA :{}E:\test\pdf\1656490111103.png
+ 2022-06-29 16:09:13 c.n.c.ContractOrderController 48 [INFO] signA :{}E:\test\pdf\1656490153327.png
+ 2022-06-29 16:10:06 c.n.c.ContractOrderController 48 [INFO] signA :{}E:\test\pdf\1656490206614.png
+ 2022-06-29 16:11:14 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 16:11:15 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiJiODF0S2U4bDNyUW1lMEF1TkNmMzA2TEQ0WnhqMVF1ZSJ9.OxaqbnnnuCXU7npeCLpBMWR132KadMCpfA-eSnMqWJo
+ 2022-06-29 16:12:46 c.a.d.p.DruidDataSource 2043 [INFO] {dataSource-1} closing ...
+ 2022-06-29 16:12:46 c.a.d.p.DruidDataSource 2116 [INFO] {dataSource-1} closed
+ 2022-06-29 16:12:54 c.n.NongXingGangApplication 55 [INFO] Starting NongXingGangApplication using Java 1.8.0_311 on DESKTOP-3058MDQ with PID 26240 (E:\test\git\springboot-project\nongXingGang\target\classes started by Serendipity in E:\test\git\springboot-project\nongXingGang)
+ 2022-06-29 16:12:54 o.h.v.i.u.Version 21 [INFO] HV000001: Hibernate Validator 6.2.2.Final
+ 2022-06-29 16:12:54 c.n.NongXingGangApplication 646 [INFO] The following 1 profile is active: "prod"
+ 2022-06-29 16:12:54 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-06-29 16:12:54 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+ 2022-06-29 16:12:55 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 57 ms. Found 2 Elasticsearch repository interfaces.
+ 2022-06-29 16:12:55 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-06-29 16:12:55 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+ 2022-06-29 16:12:55 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 10 ms. Found 0 Reactive Elasticsearch repository interfaces.
+ 2022-06-29 16:12:55 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-06-29 16:12:55 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+ 2022-06-29 16:12:55 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.nongXingGang.service.es.DemandEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-06-29 16:12:55 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.nongXingGang.service.es.GoodEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-06-29 16:12:55 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+ 2022-06-29 16:12:55 o.s.b.w.e.t.TomcatWebServer 108 [INFO] Tomcat initialized with port(s): 8686 (https) 8086 (http)
+ 2022-06-29 16:12:55 o.a.c.h.Http11NioProtocol 173 [INFO] Initializing ProtocolHandler ["https-jsse-nio-8686"]
+ 2022-06-29 16:12:55 o.a.c.h.Http11NioProtocol 173 [INFO] Initializing ProtocolHandler ["http-nio-8086"]
+ 2022-06-29 16:12:55 o.a.c.c.StandardService 173 [INFO] Starting service [Tomcat]
+ 2022-06-29 16:12:55 o.a.c.c.StandardEngine 173 [INFO] Starting Servlet engine: [Apache Tomcat/9.0.58]
+ 2022-06-29 16:12:55 o.a.c.c.C.[.[.[/] 173 [INFO] Initializing Spring embedded WebApplicationContext
+ 2022-06-29 16:12:55 o.s.b.w.s.c.ServletWebServerApplicationContext 290 [INFO] Root WebApplicationContext: initialization completed in 1485 ms
+ 2022-06-29 16:12:58 o.a.c.h.Http11NioProtocol 173 [INFO] Starting ProtocolHandler ["https-jsse-nio-8686"]
+ 2022-06-29 16:12:58 o.a.c.h.Http11NioProtocol 173 [INFO] Starting ProtocolHandler ["http-nio-8086"]
+ 2022-06-29 16:12:58 o.s.b.w.e.t.TomcatWebServer 220 [INFO] Tomcat started on port(s): 8686 (https) 8086 (http) with context path ''
+ 2022-06-29 16:12:58 c.n.NongXingGangApplication 61 [INFO] Started NongXingGangApplication in 5.184 seconds (JVM running for 6.573)
+ 2022-06-29 16:15:16 o.a.c.c.C.[.[.[/] 173 [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+ 2022-06-29 16:15:16 o.s.w.s.DispatcherServlet 525 [INFO] Initializing Servlet 'dispatcherServlet'
+ 2022-06-29 16:15:16 o.s.w.s.DispatcherServlet 547 [INFO] Completed initialization in 3 ms
+ 2022-06-29 16:15:31 c.a.d.p.DruidDataSource 990 [INFO] {dataSource-1} inited
+ 2022-06-29 16:15:47 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 16:15:48 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiJsaVpQYUxQcW84OElGWGdJT0ZZYjE5b0lkR082em1ISSJ9.ZTQBEk3mSqZL5rJro_y421JnAx06UJdMQ1ovBEl65BY
+ 2022-06-29 16:16:56 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 16:16:57 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiIwREd6ZkVHSTBabDI3WTVHV1BRUzk5TEhvcmR3OU5NcyJ9.OzHKgsi_9Tb8B2dWYrx1NFI2UpqrlxWJLlnRJUDnXA0
+ 2022-06-29 16:21:18 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 16:21:19 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiI5c21xeGpUdUhyT21OcUwxenl0eDlBcE92bnBTNE1NaSJ9.LExFuczG1XNS6HrFqRYLfhAv287lc_9cD91xJaCdyJo
+ 2022-06-29 16:23:19 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 16:23:20 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiJ5cGRTZENWSlVKVE5IZzFCeVpabUtzcXFMV3pncldVMyJ9.tquFcOeh0mans-_fU--WWw2jFxy01VTVaf-hM05eUt8
+ 2022-06-29 16:26:15 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 16:26:16 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiJBaWdGdmJWNVFLZXRPblRHRG4xN3psT281SDVXRnNZRiJ9.eO0IRfHBC9Kzt2Ay4zqeNjGXNxjLona5Z7gd4dQSJGA
+ 2022-06-29 16:27:34 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 16:27:35 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiJhakcyY2pyUHZmSVRnQzkxT212Vk1kRkZ4RU1RVm83YSJ9.IEAi3_n-_EaMuv46POyBSXq7SjcvJ2PtfBMqXfl2gYg
+ 2022-06-29 16:31:06 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 16:31:07 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiJWcEtxaWc2ZEw2NW0yRU1RQmlPa3l3bUZlaTdEdkhORCJ9.CaFAGmcPG83U4uVf9xmPrXN5DtK_NKtAiQ4hRXppdpI
+ 2022-06-29 16:46:30 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 16:46:31 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVXTlpMQm1LMXZQc3FFNFFiYXdXME5nIiwicm5TdHIiOiJyakRsY05WcXgzVGl0Y1B6bDlSQ1A0YUdrQ2JGcHF2WSJ9.flTuqIpmojPu1p_h3kbaSRYjemfKhL3hV7htbHk1Zuk
+ 2022-06-29 16:48:33 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 16:48:34 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiJ4cXpNSjdmcFpTUkU2cW5BZzBEdWNURkdqa0RkVWlsaCJ9.SyMxLzkaNIkhsV9hwQEUFxVD1ZCoLnhB_Xci3h9T410
+ 2022-06-29 18:08:38 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 18:08:39 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiJyZ3FjWmRFVHl1WDBtdTFJeTlHS1JEcUJBZlM3eDY1NCJ9.imSrBpGTbsSwY5pbGnml1Q86deL-PLiKOTHrbH6tLNI
+ 2022-06-29 18:09:01 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 18:09:02 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiI4dmpZcGJoaG11OUJEbHAwRjcyTzJCT25xOWNGdFN5NiJ9.609Ijqf9lzuQU55malCuM8UAg5nQV5spZQ3sg8-mFa8
+ 2022-06-29 18:09:04 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 18:10:00 c.n.c.ContractOrderController 48 [INFO] signA :{}E:\test\pdf\1656497400835.png
+ 2022-06-29 18:10:31 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 18:10:32 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiJMZnNNZHIyYklaN1FBak9pcW1iNzJRSjBTZGhiREVEcyJ9.d_8CVTip1CPmCJI4KAQ4Ko7XnQGRgoG9B-fnSSpYAk0
+ 2022-06-29 18:10:48 c.n.c.ContractOrderController 48 [INFO] signA :{}E:\test\pdf\1656497448723.png
+ 2022-06-29 18:12:42 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 18:12:43 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiJWenA5SGUyM1VpdnAySmNQd2NEcVhpemJNaVpoak9UOCJ9.bk06FrXcoICpb-dEHZaNO82ZstfG6Y6Gt-M_95f4EpA
+ 2022-06-29 18:12:47 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 18:12:55 c.n.c.ContractOrderController 48 [INFO] signA :{}E:\test\pdf\1656497575636.png
+ 2022-06-29 18:14:07 c.n.c.GoodsController 74 [INFO] goodsStatus  1
+ 2022-06-29 18:30:59 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 18:31:00 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiJXMFFYSFQ3ek5MSHNkZGg0U1Q2Zzh4Y3VqbG5FYTNYbCJ9.WrCKvCs8wnHl8sMyD6LgFFFCqPbKLq_APWM8dSz479A
+ 2022-06-29 18:31:43 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 18:31:44 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiJwZ0taR2RYRzZCdENBWjZuTTRrancwa2VLU3RWRGV5WiJ9.pgF8Dzm9-JeRBx12veLSARZ6HQag3tSdfJUJPmuDKPU
+ 2022-06-29 19:01:55 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 19:01:56 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiJSamxXM3NQc1BvYTJBSkQ0S2RNcFR4YWFNSzZPZmIydCJ9.i3Fz0suKykZMtnfrsx1poymiqOa4BHxOaaTXnI89FbM
+ 2022-06-29 19:02:19 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 19:02:20 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiJEbG85aFhzcGdJOVdtZlluNTRzUHVJSTVnSHdaM204dyJ9.0I_MdY9BJHg0iVoM7s-wfN3UNP6QFOvLuGBHYBFpdsA
+ 2022-06-29 19:07:42 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 19:07:43 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiJxMDBKY0lQNWZiQWtJTzc5bDBWam52Q3BOdjFEZTA4dyJ9.N76mcQdP8BZs9JQqeSgpxzQoJLF7xljcYC4Lc790yr8
+ 2022-06-29 19:09:40 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 19:09:41 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiI2R29KVEVFRFkwbU9NMVZRdFhyWnlacXdDQVhPeWliTiJ9.6NCVH1VbQDNx3ez32lM6dQJoReCy90eBHAP1zmAKBpw
+ 2022-06-29 19:11:22 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 19:11:23 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiJiVFJmT3BCbk83V2RxWmNROTRrb1ZzMVRnQzNtSHFKTCJ9.ZBqngrCqk4taY-zBz4-65QO5gNqgI2f1zamU2wRtbmA
+ 2022-06-29 19:15:15 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 19:15:16 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiJOUTNkQlduczhRMml0UnJ1NzJubWdHc2dpWDFWUEtlTyJ9.eTf9Q0n9WxQ2vYI6TD3q6r_FZx9-rGPCARq5avRJ3dQ
+ 2022-06-29 19:23:16 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 19:23:17 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiIwTkFzeTFOMzA1YjZhN2RweDRNS214bkhGeUI2aXlPZiJ9.6MSMv6wKiRNSfEPjSKxLF6hFBMFjOLDTvcjy5b19xJc
+ 2022-06-29 19:31:07 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 19:31:08 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiJxYXEydmZoYXRyakNQdzc2T2lmclQzSDNzaXJoN2dmdyJ9.lZFFXFvmEVgmTspJKIgUEYXSphoPmHqACk-lS81WNV0
+ 2022-06-29 19:34:06 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 19:34:07 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVVb3Y2ckFZampDSDNyNmpyN05vazdJIiwicm5TdHIiOiJBNW01UzhlbUIyYXd2VkJsR0Q5ejlyWm1mZlFqQVJyNyJ9.wWs5qrQYzuzhB23QDJ_2TEnYVjIB1DM8VRmeUBhNRXg
+ 2022-06-29 19:36:19 c.n.c.ContractOrderController 48 [INFO] signA :{}E:\test\pdf\1656502579348.png
+ 2022-06-29 19:36:48 c.n.c.ContractOrderController 48 [INFO] signA :{}E:\test\pdf\1656502608971.png
+ 2022-06-29 19:37:25 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 19:37:26 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiJMNlU1akcxVHlRTWNVTUZsZ01JMWNYSmhVcURuRGxnZiJ9.NKaq8RJgT74kPJLuY9bfj5b26IA8C1GVROyY6ORjXGU
+ 2022-06-29 20:01:35 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 20:01:36 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVVb3Y2ckFZampDSDNyNmpyN05vazdJIiwicm5TdHIiOiIwSUpYNWp6SkdWU2tRRDNwR2J6UkVnZGhNRVI2RnJxRSJ9.wkOyve57rlyzrMQfdl4XZfUVV5tiGzpYheU7Mr4GxCA
+ 2022-06-29 20:02:19 c.n.c.ContractOrderController 48 [INFO] signA :{}E:\test\pdf\1656504139446.png
+ 2022-06-29 20:02:51 c.n.c.ContractOrderController 48 [INFO] signA :{}E:\test\pdf\1656504171588.png
+ 2022-06-29 20:03:22 c.n.c.ContractOrderController 48 [INFO] signA :{}E:\test\pdf\1656504202827.png
+ 2022-06-29 20:04:09 c.n.c.ContractOrderController 48 [INFO] signA :{}E:\test\pdf\1656504249226.png
+ 2022-06-29 20:04:51 c.n.c.ContractOrderController 48 [INFO] signA :{}E:\test\pdf\1656504291945.png
+ 2022-06-29 20:05:07 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 20:05:08 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiI3RkxEelNiYjBXaWhpQm1jNXdqejZnR3lBenRib1l5ViJ9.tUIM4dU4A5kFCdR39NPDmpzGmGnlapAxZoQt3BedHz8
+ 2022-06-29 20:08:38 c.n.s.i.DemandServiceImpl 57 [INFO] 获取需求：0
+ 2022-06-29 20:08:38 c.n.s.i.DemandServiceImpl 58 [INFO] 获取需求10
+ 2022-06-29 20:13:31 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 20:13:32 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVmbVhqUGd6em1YeFBESnNJa0Z1OC1JIiwicm5TdHIiOiJvaDF6cDJqWjVVUVphQTZDQVVmZWMwQUo0UDM0UkZrQyJ9.0CL5mIhFaHFuMFyioCsmDsbNdWhhO0QfPVmOdIT5tO8
+ 2022-06-29 20:16:36 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 20:16:37 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVVb3Y2ckFZampDSDNyNmpyN05vazdJIiwicm5TdHIiOiJXQkphS1dqME5BVjFNcnJwa1B5MjBVeUM2VDF2bGxmNCJ9.QWu0AWewxEzkDIkJr4mqAlGX0PfdOUZUUFiuaDRvZp0
+ 2022-06-29 20:16:59 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 20:16:59 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 20:17:01 c.n.s.i.DemandServiceImpl 57 [INFO] 获取需求：0
+ 2022-06-29 20:17:01 c.n.s.i.DemandServiceImpl 58 [INFO] 获取需求10
+ 2022-06-29 20:28:42 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 20:29:40 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 20:29:41 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVVb3Y2ckFZampDSDNyNmpyN05vazdJIiwicm5TdHIiOiJnOTlHaTROZ3lnN3BYRjJaRmVFaHhrSlE5TFNTSDF4NCJ9.xM2On_t8f_vr3dJTSgrUcwodYOM2WhwylGpZZC4jUmQ
+ 2022-06-29 20:29:43 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 20:29:44 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 21:30:27 c.a.d.p.DruidDataSource 2043 [INFO] {dataSource-1} closing ...
+ 2022-06-29 21:30:27 c.a.d.p.DruidDataSource 2116 [INFO] {dataSource-1} closed
+ 2022-06-29 21:31:07 o.h.v.i.u.Version 21 [INFO] HV000001: Hibernate Validator 6.2.2.Final
+ 2022-06-29 21:31:07 c.n.NongXingGangApplication 55 [INFO] Starting NongXingGangApplication using Java 1.8.0_311 on DESKTOP-3058MDQ with PID 892 (E:\test\git\springboot-project\nongXingGang\target\classes started by Serendipity in E:\test\git\springboot-project\nongXingGang)
+ 2022-06-29 21:31:07 c.n.NongXingGangApplication 646 [INFO] The following 1 profile is active: "prod"
+ 2022-06-29 21:31:08 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-06-29 21:31:08 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+ 2022-06-29 21:31:08 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 61 ms. Found 2 Elasticsearch repository interfaces.
+ 2022-06-29 21:31:08 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-06-29 21:31:08 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+ 2022-06-29 21:31:08 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 11 ms. Found 0 Reactive Elasticsearch repository interfaces.
+ 2022-06-29 21:31:08 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-06-29 21:31:08 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+ 2022-06-29 21:31:08 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.nongXingGang.service.es.DemandEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-06-29 21:31:08 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.nongXingGang.service.es.GoodEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-06-29 21:31:08 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+ 2022-06-29 21:31:09 o.s.b.w.e.t.TomcatWebServer 108 [INFO] Tomcat initialized with port(s): 8686 (https) 8086 (http)
+ 2022-06-29 21:31:09 o.a.c.h.Http11NioProtocol 173 [INFO] Initializing ProtocolHandler ["https-jsse-nio-8686"]
+ 2022-06-29 21:31:09 o.a.c.h.Http11NioProtocol 173 [INFO] Initializing ProtocolHandler ["http-nio-8086"]
+ 2022-06-29 21:31:09 o.a.c.c.StandardService 173 [INFO] Starting service [Tomcat]
+ 2022-06-29 21:31:09 o.a.c.c.StandardEngine 173 [INFO] Starting Servlet engine: [Apache Tomcat/9.0.58]
+ 2022-06-29 21:31:09 o.a.c.c.C.[.[.[/] 173 [INFO] Initializing Spring embedded WebApplicationContext
+ 2022-06-29 21:31:09 o.s.b.w.s.c.ServletWebServerApplicationContext 290 [INFO] Root WebApplicationContext: initialization completed in 1570 ms
+ 2022-06-29 21:31:12 o.a.c.h.Http11NioProtocol 173 [INFO] Starting ProtocolHandler ["https-jsse-nio-8686"]
+ 2022-06-29 21:31:12 o.a.c.h.Http11NioProtocol 173 [INFO] Starting ProtocolHandler ["http-nio-8086"]
+ 2022-06-29 21:31:12 o.s.b.w.e.t.TomcatWebServer 220 [INFO] Tomcat started on port(s): 8686 (https) 8086 (http) with context path ''
+ 2022-06-29 21:31:12 c.n.NongXingGangApplication 61 [INFO] Started NongXingGangApplication in 5.441 seconds (JVM running for 6.684)
+ 2022-06-29 21:32:01 o.a.c.c.C.[.[.[/] 173 [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+ 2022-06-29 21:32:01 o.s.w.s.DispatcherServlet 525 [INFO] Initializing Servlet 'dispatcherServlet'
+ 2022-06-29 21:32:01 o.s.w.s.DispatcherServlet 547 [INFO] Completed initialization in 2 ms
+ 2022-06-29 21:32:01 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 21:32:34 c.a.d.p.DruidDataSource 990 [INFO] {dataSource-1} inited
+ 2022-06-29 21:32:36 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 21:32:37 c.n.c.ReceivingAddressController 54 [INFO] 收货地址的：  openid:  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJvRGlNVzVVb3Y2ckFZampDSDNyNmpyN05vazdJIiwicm5TdHIiOiJRMU9URHQ5RVdkUEdUUTBBYmdoM3NoR0Jub3NxZnd2NiJ9.vKjh9tYvuCy6rQuHMRpsa1fsiaRFzgiby4jhdlLb8As
+ 2022-06-29 21:32:38 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 21:32:39 c.n.c.GoodsController 74 [INFO] goodsStatus  0
+ 2022-06-29 21:32:55 c.n.c.ContractOrderController 48 [INFO] signA :{}E:\test\pdf\1656509575722.png
+ 2022-06-29 21:36:15 c.n.NongXingGangApplicationTests 55 [INFO] Starting NongXingGangApplicationTests using Java 1.8.0_311 on DESKTOP-3058MDQ with PID 20168 (started by Serendipity in E:\test\git\springboot-project\nongXingGang)
+ 2022-06-29 21:36:15 c.n.NongXingGangApplicationTests 646 [INFO] The following 1 profile is active: "prod"
+ 2022-06-29 21:36:15 o.h.v.i.u.Version 21 [INFO] HV000001: Hibernate Validator 6.2.2.Final
+ 2022-06-29 21:36:16 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-06-29 21:36:16 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+ 2022-06-29 21:36:16 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 208 ms. Found 2 Elasticsearch repository interfaces.
+ 2022-06-29 21:36:16 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-06-29 21:36:16 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+ 2022-06-29 21:36:16 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 14 ms. Found 0 Reactive Elasticsearch repository interfaces.
+ 2022-06-29 21:36:16 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-06-29 21:36:16 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+ 2022-06-29 21:36:16 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.nongXingGang.service.es.DemandEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-06-29 21:36:16 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.nongXingGang.service.es.GoodEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-06-29 21:36:16 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+ 2022-06-29 21:36:23 c.n.NongXingGangApplicationTests 61 [INFO] Started NongXingGangApplicationTests in 8.959 seconds (JVM running for 10.008)
+ 2022-06-29 21:36:26 c.a.d.p.DruidDataSource 990 [INFO] {dataSource-1} inited
+ 2022-06-29 21:36:26 c.n.NongXingGangApplicationTests 97 [INFO] count ��20
+ 2022-06-29 21:37:40 c.a.d.p.DruidDataSource 2043 [INFO] {dataSource-1} closing ...
+ 2022-06-29 21:37:40 c.a.d.p.DruidDataSource 2116 [INFO] {dataSource-1} closed
+ 2022-06-29 22:34:06 c.n.NongXingGangApplication 55 [INFO] Starting NongXingGangApplication using Java 1.8.0_311 on DESKTOP-3058MDQ with PID 20608 (E:\test\git\springboot-project\nongXingGang\target\classes started by Serendipity in E:\test\git\springboot-project\nongXingGang)
+ 2022-06-29 22:34:06 o.h.v.i.u.Version 21 [INFO] HV000001: Hibernate Validator 6.2.2.Final
+ 2022-06-29 22:34:06 c.n.NongXingGangApplication 646 [INFO] The following 1 profile is active: "prod"
+ 2022-06-29 22:34:07 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-06-29 22:34:07 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+ 2022-06-29 22:34:07 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 58 ms. Found 2 Elasticsearch repository interfaces.
+ 2022-06-29 22:34:07 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-06-29 22:34:07 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+ 2022-06-29 22:34:07 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 10 ms. Found 0 Reactive Elasticsearch repository interfaces.
+ 2022-06-29 22:34:07 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-06-29 22:34:07 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+ 2022-06-29 22:34:07 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.nongXingGang.service.es.DemandEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-06-29 22:34:07 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.nongXingGang.service.es.GoodEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-06-29 22:34:07 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+ 2022-06-29 22:34:07 o.s.b.a.l.ConditionEvaluationReportLoggingListener 136 [INFO] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+ 2022-06-29 22:34:58 c.n.NongXingGangApplication 55 [INFO] Starting NongXingGangApplication using Java 1.8.0_311 on DESKTOP-3058MDQ with PID 14032 (E:\test\git\springboot-project\nongXingGang\target\classes started by Serendipity in E:\test\git\springboot-project\nongXingGang)
+ 2022-06-29 22:34:58 o.h.v.i.u.Version 21 [INFO] HV000001: Hibernate Validator 6.2.2.Final
+ 2022-06-29 22:34:58 c.n.NongXingGangApplication 646 [INFO] The following 1 profile is active: "prod"
+ 2022-06-29 22:34:59 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-06-29 22:34:59 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+ 2022-06-29 22:34:59 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 56 ms. Found 2 Elasticsearch repository interfaces.
+ 2022-06-29 22:34:59 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-06-29 22:34:59 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+ 2022-06-29 22:34:59 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 9 ms. Found 0 Reactive Elasticsearch repository interfaces.
+ 2022-06-29 22:34:59 o.s.d.r.c.RepositoryConfigurationDelegate 262 [INFO] Multiple Spring Data modules found, entering strict repository configuration mode!
+ 2022-06-29 22:34:59 o.s.d.r.c.RepositoryConfigurationDelegate 132 [INFO] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+ 2022-06-29 22:34:59 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.nongXingGang.service.es.DemandEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-06-29 22:34:59 o.s.d.r.c.RepositoryConfigurationExtensionSupport 349 [INFO] Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.nongXingGang.service.es.GoodEsDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+ 2022-06-29 22:34:59 o.s.d.r.c.RepositoryConfigurationDelegate 201 [INFO] Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+ 2022-06-29 22:34:59 o.s.b.w.e.t.TomcatWebServer 108 [INFO] Tomcat initialized with port(s): 8686 (https) 8086 (http)
+ 2022-06-29 22:34:59 o.a.c.h.Http11NioProtocol 173 [INFO] Initializing ProtocolHandler ["https-jsse-nio-8686"]
+ 2022-06-29 22:34:59 o.a.c.h.Http11NioProtocol 173 [INFO] Initializing ProtocolHandler ["http-nio-8086"]
+ 2022-06-29 22:34:59 o.a.c.c.StandardService 173 [INFO] Starting service [Tomcat]
+ 2022-06-29 22:34:59 o.a.c.c.StandardEngine 173 [INFO] Starting Servlet engine: [Apache Tomcat/9.0.58]
+ 2022-06-29 22:34:59 o.a.c.c.C.[.[.[/] 173 [INFO] Initializing Spring embedded WebApplicationContext
+ 2022-06-29 22:34:59 o.s.b.w.s.c.ServletWebServerApplicationContext 290 [INFO] Root WebApplicationContext: initialization completed in 1506 ms
+ 2022-06-29 22:35:02 o.a.c.h.Http11NioProtocol 173 [INFO] Starting ProtocolHandler ["https-jsse-nio-8686"]
+ 2022-06-29 22:35:02 o.a.c.h.Http11NioProtocol 173 [INFO] Starting ProtocolHandler ["http-nio-8086"]
+ 2022-06-29 22:35:02 o.s.b.w.e.t.TomcatWebServer 220 [INFO] Tomcat started on port(s): 8686 (https) 8086 (http) with context path ''
+ 2022-06-29 22:35:03 c.n.NongXingGangApplication 61 [INFO] Started NongXingGangApplication in 5.495 seconds (JVM running for 6.941)
+ 

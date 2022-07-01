@@ -1,5 +1,10 @@
 package com.nongXingGang.utils.result;
 
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+
+import java.io.IOException;
+
 /**
  * @author 成大事
  * @date 2022/3/15 10:29
@@ -81,10 +86,25 @@ public class Constants {
 
 
     //地址
-    public static final String TEMP_Folder = "E:\\test\\pdf\\";
+    public static final String TEMP_FOLDER = "/home/file/";
 
     /**
      * 合同模板的位置
      */
-    public static final String CONTRACT_FilePath = "E:\\test\\pdf\\农产品购销合同.pdf";
+    public static final String CONTRACT_FILE_PATH = "https://chengdashi.cn/file/%E5%86%9C%E4%BA%A7%E5%93%81%E8%B4%AD%E9%94%80%E5%90%88%E5%90%8C.pdf";
+
+
+
+
+    //public static String getContractPath() {
+    //    Resource resource = new ClassPathResource("file/农产品购销合同.pdf");
+    //    //获1.txt的取相对路径
+    //    String path = null;
+    //    try {
+    //        path = resource.getFile().getPath();
+    //    } catch (IOException e) {
+    //        throw new RuntimeException(e);
+    //    }
+    //    return path;
+    //}
 }

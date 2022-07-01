@@ -28,8 +28,8 @@ public class AddAutograph {
         //添加一个空白页，目的为了删除jar包添加的水印，后面再移除这一页
         pdf.getPages().add();
 
-        //获取第一页
-        PdfPageBase page = pdf.getPages().get(0);
+        //获取需要签名的页
+        PdfPageBase page = pdf.getPages().get(pdf.getPages().getCount() - 2);
 
         //加载图片，并获取图片高宽
         PdfImage image = PdfImage.fromFile(imagePath);
@@ -37,7 +37,7 @@ public class AddAutograph {
         int height = image.getHeight()/2;
 
         //绘制图片到PDF
-        page.getCanvas().drawImage(image,150,570,width / 6, height / 6);
+        page.getCanvas().drawImage(image,150,590,width / 6, height / 6);
 
         //移除第一个页
         pdf.getPages().remove(pdf.getPages().get(pdf.getPages().getCount()-1));
@@ -66,7 +66,7 @@ public class AddAutograph {
         pdf.getPages().add();
 
         //获取第一页
-        PdfPageBase page = pdf.getPages().get(0);
+        PdfPageBase page = pdf.getPages().get(pdf.getPages().getCount() - 2);
 
         //加载图片，并获取图片高宽
         PdfImage image = PdfImage.fromFile(imagePath);
@@ -74,7 +74,7 @@ public class AddAutograph {
         int height = image.getHeight()/2;
 
         //绘制图片到PDF
-        page.getCanvas().drawImage(image,370,570,width / 6, height / 6);
+        page.getCanvas().drawImage(image,370,590,width / 6, height / 6);
 
         //移除第一个页
         pdf.getPages().remove(pdf.getPages().get(pdf.getPages().getCount()-1));

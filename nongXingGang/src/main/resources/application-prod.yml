@@ -46,7 +46,7 @@ spring:
     #配置监拉统计挡成的filters. stat: 监控统计、Log4j:日志记录、waLL: 防御sqL注入
     #如果启用日志记录时报错java.lang.ClassNotFoundException: org.apache.log4j.Priority
     #则导入Log4j 依赖即时，Maven 地址: https://mvnrepository. com/artifact/log4j/log4
-    filters: stat,wall,1og4j
+    filters: stat,wall,slf4j
     max-pool-prepared-statement-per-connection-size: 20
     use-global-data-source-stat: true
     connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
